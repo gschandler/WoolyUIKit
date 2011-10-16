@@ -1,0 +1,549 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4C9581B21336F71C00E0873C /* WBNetworkActivity.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C9581B01336F71C00E0873C /* WBNetworkActivity.h */; };
+		4C9581B31336F71C00E0873C /* WBNetworkActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9581B11336F71C00E0873C /* WBNetworkActivity.m */; };
+		4CA1A11614286A62003458B0 /* UISplitViewController+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA1A11514286A62003458B0 /* UISplitViewController+Extensions.m */; };
+		4CBA6E1713240AB50052CED7 /* UIKit+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CBA6E0413240AB50052CED7 /* UIKit+Extensions.h */; };
+		4CBA6E1A13240AB50052CED7 /* UIButton+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CBA6E0713240AB50052CED7 /* UIButton+Extensions.h */; };
+		4CBA6E1B13240AB50052CED7 /* UIButton+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBA6E0813240AB50052CED7 /* UIButton+Extensions.m */; };
+		4CBA6E1C13240AB50052CED7 /* UIColor+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CBA6E0913240AB50052CED7 /* UIColor+Extensions.h */; };
+		4CBA6E1D13240AB50052CED7 /* UIColor+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBA6E0A13240AB50052CED7 /* UIColor+Extensions.m */; };
+		4CBA6E1E13240AB50052CED7 /* UIColor+Crayons.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CBA6E0B13240AB50052CED7 /* UIColor+Crayons.h */; };
+		4CBA6E1F13240AB50052CED7 /* UIColor+Crayons.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBA6E0C13240AB50052CED7 /* UIColor+Crayons.m */; };
+		4CBA6E2013240AB50052CED7 /* UIDevice+Orientation.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CBA6E0D13240AB50052CED7 /* UIDevice+Orientation.h */; };
+		4CBA6E2113240AB50052CED7 /* UIDevice+Orientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBA6E0E13240AB50052CED7 /* UIDevice+Orientation.m */; };
+		4CBA6E2213240AB50052CED7 /* UIFont+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CBA6E0F13240AB50052CED7 /* UIFont+Extensions.h */; };
+		4CBA6E2313240AB50052CED7 /* UIFont+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBA6E1013240AB50052CED7 /* UIFont+Extensions.m */; };
+		4CBA6E2413240AB50052CED7 /* UIImage+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CBA6E1113240AB50052CED7 /* UIImage+Extensions.h */; };
+		4CBA6E2513240AB50052CED7 /* UIImage+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBA6E1213240AB50052CED7 /* UIImage+Extensions.m */; };
+		4CBA6E2613240AB50052CED7 /* UITextField+Indicator.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CBA6E1313240AB50052CED7 /* UITextField+Indicator.h */; };
+		4CBA6E2713240AB50052CED7 /* UITextField+Indicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBA6E1413240AB50052CED7 /* UITextField+Indicator.m */; };
+		4CBA6E2813240AB50052CED7 /* UIView+Geometry.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CBA6E1513240AB50052CED7 /* UIView+Geometry.h */; };
+		4CBA6E2913240AB50052CED7 /* UIView+Geometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBA6E1613240AB50052CED7 /* UIView+Geometry.m */; };
+		4CBA6E2E13240AE20052CED7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CBA6E2D13240AE20052CED7 /* UIKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		4CBA6E8913240AF90052CED7 /* MathUtils.c in Sources */ = {isa = PBXBuildFile; fileRef = 4CBA6E8513240AF90052CED7 /* MathUtils.c */; };
+		4CBA6E8A13240AF90052CED7 /* MathUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CBA6E8613240AF90052CED7 /* MathUtils.h */; };
+		4CBA6E8B13240AF90052CED7 /* GeometryExtras.c in Sources */ = {isa = PBXBuildFile; fileRef = 4CBA6E8713240AF90052CED7 /* GeometryExtras.c */; };
+		4CBA6E8C13240AF90052CED7 /* GeometryExtras.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CBA6E8813240AF90052CED7 /* GeometryExtras.h */; };
+		4CBA6E8E13240B7B0052CED7 /* WoolyUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CBA6E8D13240B7B0052CED7 /* WoolyUI.h */; };
+		4CBA6EA913240CA50052CED7 /* WBPopoverCoordinator.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CBA6EA713240CA50052CED7 /* WBPopoverCoordinator.h */; };
+		4CBA6EAA13240CA50052CED7 /* WBPopoverCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBA6EA813240CA50052CED7 /* WBPopoverCoordinator.m */; };
+		4CBA6EAE13240CC00052CED7 /* WBActionSheetCoordinator.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CBA6EAC13240CC00052CED7 /* WBActionSheetCoordinator.h */; };
+		4CBA6EAF13240CC00052CED7 /* WBActionSheetCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBA6EAD13240CC00052CED7 /* WBActionSheetCoordinator.m */; };
+		4CD26508141AEF4200DAD9D5 /* UIViewController+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CD26506141AEF4200DAD9D5 /* UIViewController+Extensions.h */; };
+		4CD26509141AEF4200DAD9D5 /* UIViewController+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD26507141AEF4200DAD9D5 /* UIViewController+Extensions.m */; };
+		4CD2650A141AEF4200DAD9D5 /* UIViewController+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD26507141AEF4200DAD9D5 /* UIViewController+Extensions.m */; };
+		4CD51B96134BB3EE00F7AC76 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CBA6E2D13240AE20052CED7 /* UIKit.framework */; };
+		4CD51B97134BB3F200F7AC76 /* UIColor+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBA6E0A13240AB50052CED7 /* UIColor+Extensions.m */; };
+		4CD51B9B134BB41700F7AC76 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD51B9A134BB41600F7AC76 /* CoreGraphics.framework */; };
+		4CD51BBB134BB41C00F7AC76 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD51B9A134BB41600F7AC76 /* CoreGraphics.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		4CD51BC7134BB54600F7AC76 /* MathUtilsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD51BC4134BB53900F7AC76 /* MathUtilsTests.m */; };
+		4CD51BCE134BB62F00F7AC76 /* MathUtils.c in Sources */ = {isa = PBXBuildFile; fileRef = 4CBA6E8513240AF90052CED7 /* MathUtils.c */; };
+		4CD51BCF134BB63000F7AC76 /* GeometryExtras.c in Sources */ = {isa = PBXBuildFile; fileRef = 4CBA6E8713240AF90052CED7 /* GeometryExtras.c */; };
+		4CD51BD6134BB76F00F7AC76 /* GeometryExtrasTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD51BD5134BB76F00F7AC76 /* GeometryExtrasTests.m */; };
+		AA747D9F0F9514B9006C5449 /* WoolyUI_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* WoolyUI_Prefix.pch */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4C9581B01336F71C00E0873C /* WBNetworkActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBNetworkActivity.h; sourceTree = "<group>"; };
+		4C9581B11336F71C00E0873C /* WBNetworkActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBNetworkActivity.m; sourceTree = "<group>"; };
+		4CA1A11414286A62003458B0 /* UISplitViewController+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISplitViewController+Extensions.h"; sourceTree = "<group>"; };
+		4CA1A11514286A62003458B0 /* UISplitViewController+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISplitViewController+Extensions.m"; sourceTree = "<group>"; };
+		4CBA6E0413240AB50052CED7 /* UIKit+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIKit+Extensions.h"; sourceTree = "<group>"; };
+		4CBA6E0713240AB50052CED7 /* UIButton+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Extensions.h"; sourceTree = "<group>"; };
+		4CBA6E0813240AB50052CED7 /* UIButton+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Extensions.m"; sourceTree = "<group>"; };
+		4CBA6E0913240AB50052CED7 /* UIColor+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extensions.h"; sourceTree = "<group>"; };
+		4CBA6E0A13240AB50052CED7 /* UIColor+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extensions.m"; sourceTree = "<group>"; };
+		4CBA6E0B13240AB50052CED7 /* UIColor+Crayons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Crayons.h"; sourceTree = "<group>"; };
+		4CBA6E0C13240AB50052CED7 /* UIColor+Crayons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Crayons.m"; sourceTree = "<group>"; };
+		4CBA6E0D13240AB50052CED7 /* UIDevice+Orientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+Orientation.h"; sourceTree = "<group>"; };
+		4CBA6E0E13240AB50052CED7 /* UIDevice+Orientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+Orientation.m"; sourceTree = "<group>"; };
+		4CBA6E0F13240AB50052CED7 /* UIFont+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+Extensions.h"; sourceTree = "<group>"; };
+		4CBA6E1013240AB50052CED7 /* UIFont+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+Extensions.m"; sourceTree = "<group>"; };
+		4CBA6E1113240AB50052CED7 /* UIImage+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extensions.h"; sourceTree = "<group>"; };
+		4CBA6E1213240AB50052CED7 /* UIImage+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extensions.m"; sourceTree = "<group>"; };
+		4CBA6E1313240AB50052CED7 /* UITextField+Indicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+Indicator.h"; sourceTree = "<group>"; };
+		4CBA6E1413240AB50052CED7 /* UITextField+Indicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Indicator.m"; sourceTree = "<group>"; };
+		4CBA6E1513240AB50052CED7 /* UIView+Geometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Geometry.h"; sourceTree = "<group>"; };
+		4CBA6E1613240AB50052CED7 /* UIView+Geometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Geometry.m"; sourceTree = "<group>"; };
+		4CBA6E2D13240AE20052CED7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4CBA6E8513240AF90052CED7 /* MathUtils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MathUtils.c; sourceTree = "<group>"; };
+		4CBA6E8613240AF90052CED7 /* MathUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathUtils.h; sourceTree = "<group>"; };
+		4CBA6E8713240AF90052CED7 /* GeometryExtras.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = GeometryExtras.c; sourceTree = "<group>"; };
+		4CBA6E8813240AF90052CED7 /* GeometryExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeometryExtras.h; sourceTree = "<group>"; };
+		4CBA6E8D13240B7B0052CED7 /* WoolyUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WoolyUI.h; sourceTree = "<group>"; };
+		4CBA6EA713240CA50052CED7 /* WBPopoverCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBPopoverCoordinator.h; sourceTree = "<group>"; };
+		4CBA6EA813240CA50052CED7 /* WBPopoverCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBPopoverCoordinator.m; sourceTree = "<group>"; };
+		4CBA6EAC13240CC00052CED7 /* WBActionSheetCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBActionSheetCoordinator.h; sourceTree = "<group>"; };
+		4CBA6EAD13240CC00052CED7 /* WBActionSheetCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBActionSheetCoordinator.m; sourceTree = "<group>"; };
+		4CD26506141AEF4200DAD9D5 /* UIViewController+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Extensions.h"; sourceTree = "<group>"; };
+		4CD26507141AEF4200DAD9D5 /* UIViewController+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Extensions.m"; sourceTree = "<group>"; };
+		4CD51AFA134BA4BF00F7AC76 /* WoolyUITests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WoolyUITests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CD51AFB134BA4BF00F7AC76 /* WoolyUITests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WoolyUITests-Info.plist"; sourceTree = "<group>"; };
+		4CD51B9A134BB41600F7AC76 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4CD51BC4134BB53900F7AC76 /* MathUtilsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MathUtilsTests.m; path = Tests/MathUtilsTests.m; sourceTree = "<group>"; };
+		4CD51BD5134BB76F00F7AC76 /* GeometryExtrasTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GeometryExtrasTests.m; path = Tests/GeometryExtrasTests.m; sourceTree = "<group>"; };
+		AA747D9E0F9514B9006C5449 /* WoolyUI_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WoolyUI_Prefix.pch; sourceTree = SOURCE_ROOT; };
+		D2AAC07E0554694100DB518D /* libWoolyUI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libWoolyUI.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4CD51AF7134BA4BF00F7AC76 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CD51B96134BB3EE00F7AC76 /* UIKit.framework in Frameworks */,
+				4CD51B9B134BB41700F7AC76 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2AAC07C0554694100DB518D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CBA6E2E13240AE20052CED7 /* UIKit.framework in Frameworks */,
+				4CD51BBB134BB41C00F7AC76 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		034768DFFF38A50411DB9C8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D2AAC07E0554694100DB518D /* libWoolyUI.a */,
+				4CD51AFA134BA4BF00F7AC76 /* WoolyUITests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0867D691FE84028FC02AAC07 /* WoolyUI */ = {
+			isa = PBXGroup;
+			children = (
+				4CD51B05134BAC1100F7AC76 /* Tests */,
+				08FB77AEFE84172EC02AAC07 /* Classes */,
+				32C88DFF0371C24200C91783 /* Other Sources */,
+				0867D69AFE84028FC02AAC07 /* Frameworks */,
+				034768DFFF38A50411DB9C8B /* Products */,
+				4CD51AFB134BA4BF00F7AC76 /* WoolyUITests-Info.plist */,
+			);
+			name = WoolyUI;
+			sourceTree = "<group>";
+		};
+		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4CBA6E2D13240AE20052CED7 /* UIKit.framework */,
+				4CD51B9A134BB41600F7AC76 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		08FB77AEFE84172EC02AAC07 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				4C9581AF1336F6DB00E0873C /* Network Activity */,
+				4CBA6EAB13240CAE0052CED7 /* Action Sheet Coordinator */,
+				4CBA6EA613240C880052CED7 /* Popover Coordinator */,
+				4CBA6EA513240C760052CED7 /* UIKit */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		32C88DFF0371C24200C91783 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				4CBA6E8513240AF90052CED7 /* MathUtils.c */,
+				4CBA6E8613240AF90052CED7 /* MathUtils.h */,
+				4CBA6E8713240AF90052CED7 /* GeometryExtras.c */,
+				4CBA6E8813240AF90052CED7 /* GeometryExtras.h */,
+				AA747D9E0F9514B9006C5449 /* WoolyUI_Prefix.pch */,
+				4CBA6E8D13240B7B0052CED7 /* WoolyUI.h */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		4C9581AF1336F6DB00E0873C /* Network Activity */ = {
+			isa = PBXGroup;
+			children = (
+				4C9581B01336F71C00E0873C /* WBNetworkActivity.h */,
+				4C9581B11336F71C00E0873C /* WBNetworkActivity.m */,
+			);
+			name = "Network Activity";
+			sourceTree = "<group>";
+		};
+		4CBA6EA513240C760052CED7 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				4CBA6E0413240AB50052CED7 /* UIKit+Extensions.h */,
+				4CBA6E0713240AB50052CED7 /* UIButton+Extensions.h */,
+				4CBA6E0813240AB50052CED7 /* UIButton+Extensions.m */,
+				4CBA6E0913240AB50052CED7 /* UIColor+Extensions.h */,
+				4CBA6E0A13240AB50052CED7 /* UIColor+Extensions.m */,
+				4CBA6E0B13240AB50052CED7 /* UIColor+Crayons.h */,
+				4CBA6E0C13240AB50052CED7 /* UIColor+Crayons.m */,
+				4CBA6E0D13240AB50052CED7 /* UIDevice+Orientation.h */,
+				4CBA6E0E13240AB50052CED7 /* UIDevice+Orientation.m */,
+				4CBA6E0F13240AB50052CED7 /* UIFont+Extensions.h */,
+				4CBA6E1013240AB50052CED7 /* UIFont+Extensions.m */,
+				4CBA6E1113240AB50052CED7 /* UIImage+Extensions.h */,
+				4CBA6E1213240AB50052CED7 /* UIImage+Extensions.m */,
+				4CBA6E1313240AB50052CED7 /* UITextField+Indicator.h */,
+				4CBA6E1413240AB50052CED7 /* UITextField+Indicator.m */,
+				4CBA6E1513240AB50052CED7 /* UIView+Geometry.h */,
+				4CBA6E1613240AB50052CED7 /* UIView+Geometry.m */,
+				4CD26506141AEF4200DAD9D5 /* UIViewController+Extensions.h */,
+				4CD26507141AEF4200DAD9D5 /* UIViewController+Extensions.m */,
+				4CA1A11414286A62003458B0 /* UISplitViewController+Extensions.h */,
+				4CA1A11514286A62003458B0 /* UISplitViewController+Extensions.m */,
+			);
+			name = UIKit;
+			sourceTree = "<group>";
+		};
+		4CBA6EA613240C880052CED7 /* Popover Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				4CBA6EA713240CA50052CED7 /* WBPopoverCoordinator.h */,
+				4CBA6EA813240CA50052CED7 /* WBPopoverCoordinator.m */,
+			);
+			name = "Popover Coordinator";
+			sourceTree = "<group>";
+		};
+		4CBA6EAB13240CAE0052CED7 /* Action Sheet Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				4CBA6EAC13240CC00052CED7 /* WBActionSheetCoordinator.h */,
+				4CBA6EAD13240CC00052CED7 /* WBActionSheetCoordinator.m */,
+			);
+			name = "Action Sheet Coordinator";
+			sourceTree = "<group>";
+		};
+		4CD51B05134BAC1100F7AC76 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				4CD51BC4134BB53900F7AC76 /* MathUtilsTests.m */,
+				4CD51BD5134BB76F00F7AC76 /* GeometryExtrasTests.m */,
+			);
+			name = Tests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D2AAC07A0554694100DB518D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA747D9F0F9514B9006C5449 /* WoolyUI_Prefix.pch in Headers */,
+				4CBA6E1713240AB50052CED7 /* UIKit+Extensions.h in Headers */,
+				4CBA6E1A13240AB50052CED7 /* UIButton+Extensions.h in Headers */,
+				4CBA6E1C13240AB50052CED7 /* UIColor+Extensions.h in Headers */,
+				4CBA6E1E13240AB50052CED7 /* UIColor+Crayons.h in Headers */,
+				4CBA6E2013240AB50052CED7 /* UIDevice+Orientation.h in Headers */,
+				4CBA6E2213240AB50052CED7 /* UIFont+Extensions.h in Headers */,
+				4CBA6E2413240AB50052CED7 /* UIImage+Extensions.h in Headers */,
+				4CBA6E2613240AB50052CED7 /* UITextField+Indicator.h in Headers */,
+				4CBA6E2813240AB50052CED7 /* UIView+Geometry.h in Headers */,
+				4CBA6E8A13240AF90052CED7 /* MathUtils.h in Headers */,
+				4CBA6E8C13240AF90052CED7 /* GeometryExtras.h in Headers */,
+				4CBA6E8E13240B7B0052CED7 /* WoolyUI.h in Headers */,
+				4CBA6EA913240CA50052CED7 /* WBPopoverCoordinator.h in Headers */,
+				4CBA6EAE13240CC00052CED7 /* WBActionSheetCoordinator.h in Headers */,
+				4C9581B21336F71C00E0873C /* WBNetworkActivity.h in Headers */,
+				4CD26508141AEF4200DAD9D5 /* UIViewController+Extensions.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		4CD51AF9134BA4BF00F7AC76 /* WoolyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4CD51AFE134BA4BF00F7AC76 /* Build configuration list for PBXNativeTarget "WoolyUITests" */;
+			buildPhases = (
+				4CD51AF5134BA4BF00F7AC76 /* Resources */,
+				4CD51AF6134BA4BF00F7AC76 /* Sources */,
+				4CD51AF7134BA4BF00F7AC76 /* Frameworks */,
+				4CD51AF8134BA4BF00F7AC76 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WoolyUITests;
+			productName = WoolyUITests;
+			productReference = 4CD51AFA134BA4BF00F7AC76 /* WoolyUITests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+		D2AAC07D0554694100DB518D /* WoolyUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "WoolyUI" */;
+			buildPhases = (
+				D2AAC07A0554694100DB518D /* Headers */,
+				D2AAC07B0554694100DB518D /* Sources */,
+				D2AAC07C0554694100DB518D /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WoolyUI;
+			productName = WoolyUI;
+			productReference = D2AAC07E0554694100DB518D /* libWoolyUI.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0867D690FE84028FC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "WoolyUI" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 0867D691FE84028FC02AAC07 /* WoolyUI */;
+			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D2AAC07D0554694100DB518D /* WoolyUI */,
+				4CD51AF9134BA4BF00F7AC76 /* WoolyUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4CD51AF5134BA4BF00F7AC76 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4CD51AF8134BA4BF00F7AC76 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4CD51AF6134BA4BF00F7AC76 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CD51B97134BB3F200F7AC76 /* UIColor+Extensions.m in Sources */,
+				4CD51BC7134BB54600F7AC76 /* MathUtilsTests.m in Sources */,
+				4CD51BCE134BB62F00F7AC76 /* MathUtils.c in Sources */,
+				4CD51BCF134BB63000F7AC76 /* GeometryExtras.c in Sources */,
+				4CD51BD6134BB76F00F7AC76 /* GeometryExtrasTests.m in Sources */,
+				4CD2650A141AEF4200DAD9D5 /* UIViewController+Extensions.m in Sources */,
+				4CA1A11614286A62003458B0 /* UISplitViewController+Extensions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2AAC07B0554694100DB518D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CBA6E1B13240AB50052CED7 /* UIButton+Extensions.m in Sources */,
+				4CBA6E1D13240AB50052CED7 /* UIColor+Extensions.m in Sources */,
+				4CBA6E1F13240AB50052CED7 /* UIColor+Crayons.m in Sources */,
+				4CBA6E2113240AB50052CED7 /* UIDevice+Orientation.m in Sources */,
+				4CBA6E2313240AB50052CED7 /* UIFont+Extensions.m in Sources */,
+				4CBA6E2513240AB50052CED7 /* UIImage+Extensions.m in Sources */,
+				4CBA6E2713240AB50052CED7 /* UITextField+Indicator.m in Sources */,
+				4CBA6E2913240AB50052CED7 /* UIView+Geometry.m in Sources */,
+				4CBA6E8913240AF90052CED7 /* MathUtils.c in Sources */,
+				4CBA6E8B13240AF90052CED7 /* GeometryExtras.c in Sources */,
+				4CBA6EAA13240CA50052CED7 /* WBPopoverCoordinator.m in Sources */,
+				4CBA6EAF13240CC00052CED7 /* WBActionSheetCoordinator.m in Sources */,
+				4C9581B31336F71C00E0873C /* WBNetworkActivity.m in Sources */,
+				4CD26509141AEF4200DAD9D5 /* UIViewController+Extensions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB921F08733DC00010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/WoolyUI.dst;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = WoolyUI_Prefix.pch;
+				INSTALL_PATH = /usr/local/lib;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
+				PRODUCT_NAME = WoolyUI;
+				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = ..;
+			};
+			name = Debug;
+		};
+		1DEB922008733DC00010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				DSTROOT = /tmp/WoolyUI.dst;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = WoolyUI_Prefix.pch;
+				INSTALL_PATH = /usr/local/lib;
+				PRODUCT_NAME = WoolyUI;
+				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = ..;
+			};
+			name = Release;
+		};
+		1DEB922308733DC00010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_LDFLAGS = "";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1DEB922408733DC00010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_LDFLAGS = "";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		4CD51AFC134BA4BF00F7AC76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INFOPLIST_FILE = "WoolyUITests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					SenTestingKit,
+					"-framework",
+					UIKit,
+				);
+				PRODUCT_NAME = WoolyUITests;
+				SDKROOT = iphoneos;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		4CD51AFD134BA4BF00F7AC76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				INFOPLIST_FILE = "WoolyUITests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					SenTestingKit,
+					"-framework",
+					UIKit,
+				);
+				PRODUCT_NAME = WoolyUITests;
+				SDKROOT = iphoneos;
+				WRAPPER_EXTENSION = octest;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "WoolyUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB921F08733DC00010E9CD /* Debug */,
+				1DEB922008733DC00010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "WoolyUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB922308733DC00010E9CD /* Debug */,
+				1DEB922408733DC00010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4CD51AFE134BA4BF00F7AC76 /* Build configuration list for PBXNativeTarget "WoolyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CD51AFC134BA4BF00F7AC76 /* Debug */,
+				4CD51AFD134BA4BF00F7AC76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0867D690FE84028FC02AAC07 /* Project object */;
+}
