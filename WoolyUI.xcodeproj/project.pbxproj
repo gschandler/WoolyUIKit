@@ -7,9 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C3E9B70144E1360001E42C0 /* UITableView+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3E9B6F144E1360001E42C0 /* UITableView+Extensions.m */; };
+		4C7F0814144BE7AD0053363C /* WBTableConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C7F0804144BE7AD0053363C /* WBTableConfiguration.h */; };
+		4C7F0815144BE7AD0053363C /* WBTableConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7F0805144BE7AD0053363C /* WBTableConfiguration.m */; };
+		4C7F0816144BE7AD0053363C /* WBTableConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7F0805144BE7AD0053363C /* WBTableConfiguration.m */; };
+		4C7F081A144BE7AD0053363C /* WBTableViewCellController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C7F0808144BE7AD0053363C /* WBTableViewCellController.h */; };
+		4C7F081B144BE7AD0053363C /* WBTableViewCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7F0809144BE7AD0053363C /* WBTableViewCellController.m */; };
+		4C7F081C144BE7AD0053363C /* WBTableViewCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7F0809144BE7AD0053363C /* WBTableViewCellController.m */; };
+		4C7F081D144BE7AD0053363C /* WBTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C7F080A144BE7AD0053363C /* WBTableViewController.h */; };
+		4C7F0820144BE7AD0053363C /* WBTableViewSectionHeaderView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C7F080C144BE7AD0053363C /* WBTableViewSectionHeaderView.h */; };
 		4C9581B21336F71C00E0873C /* WBNetworkActivity.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C9581B01336F71C00E0873C /* WBNetworkActivity.h */; };
 		4C9581B31336F71C00E0873C /* WBNetworkActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9581B11336F71C00E0873C /* WBNetworkActivity.m */; };
 		4CA1A11614286A62003458B0 /* UISplitViewController+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA1A11514286A62003458B0 /* UISplitViewController+Extensions.m */; };
+		4CA34E1C14CC014B00428088 /* UIBarButtonItem+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CA34E1A14CC014B00428088 /* UIBarButtonItem+Extensions.h */; };
+		4CA34E1D14CC014B00428088 /* UIBarButtonItem+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA34E1B14CC014B00428088 /* UIBarButtonItem+Extensions.m */; };
 		4CBA6E1713240AB50052CED7 /* UIKit+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CBA6E0413240AB50052CED7 /* UIKit+Extensions.h */; };
 		4CBA6E1A13240AB50052CED7 /* UIButton+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CBA6E0713240AB50052CED7 /* UIButton+Extensions.h */; };
 		4CBA6E1B13240AB50052CED7 /* UIButton+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBA6E0813240AB50052CED7 /* UIButton+Extensions.m */; };
@@ -37,6 +48,8 @@
 		4CBA6EAA13240CA50052CED7 /* WBPopoverCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBA6EA813240CA50052CED7 /* WBPopoverCoordinator.m */; };
 		4CBA6EAE13240CC00052CED7 /* WBActionSheetCoordinator.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CBA6EAC13240CC00052CED7 /* WBActionSheetCoordinator.h */; };
 		4CBA6EAF13240CC00052CED7 /* WBActionSheetCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBA6EAD13240CC00052CED7 /* WBActionSheetCoordinator.m */; };
+		4CC5125E144E164600DF8734 /* UITableView+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3E9B6F144E1360001E42C0 /* UITableView+Extensions.m */; };
+		4CC5125F144E165800DF8734 /* UITableView+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C3E9B6E144E1360001E42C0 /* UITableView+Extensions.h */; };
 		4CD26508141AEF4200DAD9D5 /* UIViewController+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CD26506141AEF4200DAD9D5 /* UIViewController+Extensions.h */; };
 		4CD26509141AEF4200DAD9D5 /* UIViewController+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD26507141AEF4200DAD9D5 /* UIViewController+Extensions.m */; };
 		4CD2650A141AEF4200DAD9D5 /* UIViewController+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD26507141AEF4200DAD9D5 /* UIViewController+Extensions.m */; };
@@ -52,10 +65,22 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C3E9B6E144E1360001E42C0 /* UITableView+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+Extensions.h"; sourceTree = "<group>"; };
+		4C3E9B6F144E1360001E42C0 /* UITableView+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+Extensions.m"; sourceTree = "<group>"; };
+		4C7F0804144BE7AD0053363C /* WBTableConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBTableConfiguration.h; sourceTree = "<group>"; };
+		4C7F0805144BE7AD0053363C /* WBTableConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBTableConfiguration.m; sourceTree = "<group>"; };
+		4C7F0808144BE7AD0053363C /* WBTableViewCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBTableViewCellController.h; sourceTree = "<group>"; };
+		4C7F0809144BE7AD0053363C /* WBTableViewCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBTableViewCellController.m; sourceTree = "<group>"; };
+		4C7F080A144BE7AD0053363C /* WBTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBTableViewController.h; sourceTree = "<group>"; };
+		4C7F080B144BE7AD0053363C /* WBTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBTableViewController.m; sourceTree = "<group>"; };
+		4C7F080C144BE7AD0053363C /* WBTableViewSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBTableViewSectionHeaderView.h; sourceTree = "<group>"; };
+		4C7F080D144BE7AD0053363C /* WBTableViewSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBTableViewSectionHeaderView.m; sourceTree = "<group>"; };
 		4C9581B01336F71C00E0873C /* WBNetworkActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBNetworkActivity.h; sourceTree = "<group>"; };
 		4C9581B11336F71C00E0873C /* WBNetworkActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBNetworkActivity.m; sourceTree = "<group>"; };
 		4CA1A11414286A62003458B0 /* UISplitViewController+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISplitViewController+Extensions.h"; sourceTree = "<group>"; };
 		4CA1A11514286A62003458B0 /* UISplitViewController+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISplitViewController+Extensions.m"; sourceTree = "<group>"; };
+		4CA34E1A14CC014B00428088 /* UIBarButtonItem+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extensions.h"; sourceTree = "<group>"; };
+		4CA34E1B14CC014B00428088 /* UIBarButtonItem+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extensions.m"; sourceTree = "<group>"; };
 		4CBA6E0413240AB50052CED7 /* UIKit+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIKit+Extensions.h"; sourceTree = "<group>"; };
 		4CBA6E0713240AB50052CED7 /* UIButton+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Extensions.h"; sourceTree = "<group>"; };
 		4CBA6E0813240AB50052CED7 /* UIButton+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Extensions.m"; sourceTree = "<group>"; };
@@ -150,6 +175,7 @@
 		08FB77AEFE84172EC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				4C7F07E7144BE6430053363C /* Table Support */,
 				4C9581AF1336F6DB00E0873C /* Network Activity */,
 				4CBA6EAB13240CAE0052CED7 /* Action Sheet Coordinator */,
 				4CBA6EA613240C880052CED7 /* Popover Coordinator */,
@@ -169,6 +195,29 @@
 				4CBA6E8D13240B7B0052CED7 /* WoolyUI.h */,
 			);
 			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		4C7F07E7144BE6430053363C /* Table Support */ = {
+			isa = PBXGroup;
+			children = (
+				4C7F0804144BE7AD0053363C /* WBTableConfiguration.h */,
+				4C7F0805144BE7AD0053363C /* WBTableConfiguration.m */,
+				4C7F0808144BE7AD0053363C /* WBTableViewCellController.h */,
+				4C7F0809144BE7AD0053363C /* WBTableViewCellController.m */,
+				4C7F0823144BE8070053363C /* Deprecated */,
+			);
+			name = "Table Support";
+			sourceTree = "<group>";
+		};
+		4C7F0823144BE8070053363C /* Deprecated */ = {
+			isa = PBXGroup;
+			children = (
+				4C7F080A144BE7AD0053363C /* WBTableViewController.h */,
+				4C7F080B144BE7AD0053363C /* WBTableViewController.m */,
+				4C7F080C144BE7AD0053363C /* WBTableViewSectionHeaderView.h */,
+				4C7F080D144BE7AD0053363C /* WBTableViewSectionHeaderView.m */,
+			);
+			name = Deprecated;
 			sourceTree = "<group>";
 		};
 		4C9581AF1336F6DB00E0873C /* Network Activity */ = {
@@ -204,6 +253,10 @@
 				4CD26507141AEF4200DAD9D5 /* UIViewController+Extensions.m */,
 				4CA1A11414286A62003458B0 /* UISplitViewController+Extensions.h */,
 				4CA1A11514286A62003458B0 /* UISplitViewController+Extensions.m */,
+				4C3E9B6E144E1360001E42C0 /* UITableView+Extensions.h */,
+				4C3E9B6F144E1360001E42C0 /* UITableView+Extensions.m */,
+				4CA34E1A14CC014B00428088 /* UIBarButtonItem+Extensions.h */,
+				4CA34E1B14CC014B00428088 /* UIBarButtonItem+Extensions.m */,
 			);
 			name = UIKit;
 			sourceTree = "<group>";
@@ -242,6 +295,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CC5125F144E165800DF8734 /* UITableView+Extensions.h in Headers */,
 				AA747D9F0F9514B9006C5449 /* WoolyUI_Prefix.pch in Headers */,
 				4CBA6E1713240AB50052CED7 /* UIKit+Extensions.h in Headers */,
 				4CBA6E1A13240AB50052CED7 /* UIButton+Extensions.h in Headers */,
@@ -259,6 +313,11 @@
 				4CBA6EAE13240CC00052CED7 /* WBActionSheetCoordinator.h in Headers */,
 				4C9581B21336F71C00E0873C /* WBNetworkActivity.h in Headers */,
 				4CD26508141AEF4200DAD9D5 /* UIViewController+Extensions.h in Headers */,
+				4C7F0814144BE7AD0053363C /* WBTableConfiguration.h in Headers */,
+				4C7F081A144BE7AD0053363C /* WBTableViewCellController.h in Headers */,
+				4C7F081D144BE7AD0053363C /* WBTableViewController.h in Headers */,
+				4C7F0820144BE7AD0053363C /* WBTableViewSectionHeaderView.h in Headers */,
+				4CA34E1C14CC014B00428088 /* UIBarButtonItem+Extensions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,6 +426,9 @@
 				4CD51BD6134BB76F00F7AC76 /* GeometryExtrasTests.m in Sources */,
 				4CD2650A141AEF4200DAD9D5 /* UIViewController+Extensions.m in Sources */,
 				4CA1A11614286A62003458B0 /* UISplitViewController+Extensions.m in Sources */,
+				4C7F0816144BE7AD0053363C /* WBTableConfiguration.m in Sources */,
+				4C7F081C144BE7AD0053363C /* WBTableViewCellController.m in Sources */,
+				4C3E9B70144E1360001E42C0 /* UITableView+Extensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,6 +436,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CC5125E144E164600DF8734 /* UITableView+Extensions.m in Sources */,
 				4CBA6E1B13240AB50052CED7 /* UIButton+Extensions.m in Sources */,
 				4CBA6E1D13240AB50052CED7 /* UIColor+Extensions.m in Sources */,
 				4CBA6E1F13240AB50052CED7 /* UIColor+Crayons.m in Sources */,
@@ -388,6 +451,9 @@
 				4CBA6EAF13240CC00052CED7 /* WBActionSheetCoordinator.m in Sources */,
 				4C9581B31336F71C00E0873C /* WBNetworkActivity.m in Sources */,
 				4CD26509141AEF4200DAD9D5 /* UIViewController+Extensions.m in Sources */,
+				4C7F0815144BE7AD0053363C /* WBTableConfiguration.m in Sources */,
+				4C7F081B144BE7AD0053363C /* WBTableViewCellController.m in Sources */,
+				4CA34E1D14CC014B00428088 /* UIBarButtonItem+Extensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
