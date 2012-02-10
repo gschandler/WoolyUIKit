@@ -7,6 +7,7 @@
 //
 
 #import "WBActionSheetCoordinator.h"
+#import <objc/message.h>
 
 static WBActionSheetCoordinator *gActionSheetModeratorSingleton = nil;
 
@@ -16,20 +17,25 @@ static NSString * const kOtherActionKey			= @"other";
 static NSString * const kTitleKey				= @"title";
 static NSString * const kActionKey				= @"action";
 
-static NSString * const kStateKey				= @"state";
-static NSString * const kStatePrepare			= @"prepare";
-static NSString * const kStatePresented			= @"presented";
-static NSString * const kStateDismissed			= @"dismissed";
+//static NSString * const kStateKey				= @"state";
+//static NSString * const kStatePrepare			= @"prepare";
+//static NSString * const kStatePresented			= @"presented";
+//static NSString * const kStateDismissed			= @"dismissed";
 
 @interface WBActionSheetCoordinator()
-@property (nonatomic,readonly,retain) NSMutableDictionary *data;
-
+@property (nonatomic,retain) UIActionSheet *actionSheet;
+@property (nonatomic,retain) NSMutableDictionary *data;
 - (NSInvocation *)invocationForAction:(SEL)action target:(id)target object:(id)object;
+#if NS_BLOCKS_AVAILABLE
+- (void)prepareToShow;
+#endif
+- (void)cleanup;
 @end
 
 @implementation WBActionSheetCoordinator
+@synthesize actionSheet=_actionSheet;
 @synthesize delegate=_delegate;
-
+@synthesize data=_data;
 
 + (WBActionSheetCoordinator *)sharedActionSheetCoordinator
 {
@@ -70,41 +76,42 @@ static NSString * const kStateDismissed			= @"dismissed";
 	return self;
 }
 
-- (BOOL)isBusy
+- (void)cleanup
 {
-    return _actionSheet != nil && _actionSheet.isVisible;
+	self.actionSheet = nil;
+	self.data = nil;
+#if NS_BLOCKS_AVAILABLE
+	if ( _completion ) {
+		Block_release(_completion);
+		_completion = NULL;
+	}
+#endif	
 }
 
-
-static NSString *const kActionTitleKey = @"title";
-static NSString *const kActionInvocationKey = @"invocation";
-
-- (UIActionSheet *)createActionSheet
+- (UIActionSheet *)actionSheet
 {
-    UIActionSheet *actionSheet = [[[UIActionSheet alloc] initWithTitle:[self.data objectForKey:kTitleKey]
-                                                              delegate:self
-                                                     cancelButtonTitle:nil
-												destructiveButtonTitle:nil
-                                                     otherButtonTitles:nil] autorelease];
-    NSArray *otherButtons = [self.data objectForKey:kOtherActionKey];
-    for ( NSDictionary *other in otherButtons ) {
-        [actionSheet addButtonWithTitle:[other objectForKey:kActionTitleKey]];
-    }
-	if ( [self.data objectForKey:kDestructiveActionKey] ) {
-		[actionSheet setDestructiveButtonIndex:[actionSheet addButtonWithTitle:[[self.data objectForKey:kDestructiveActionKey] objectForKey:kActionTitleKey]]];
+	if ( _actionSheet == nil ) {
+		_actionSheet = [UIActionSheet new];
+		_actionSheet.delegate = self;
 	}
-	if ( [self.data objectForKey:kCancelActionKey] ) {
-		[actionSheet setCancelButtonIndex:[actionSheet addButtonWithTitle:[[self.data objectForKey:kCancelActionKey] objectForKey:kActionTitleKey]]];
+	return _actionSheet;
+}
+
+- (void)setActionSheet:(UIActionSheet *)actionSheet
+{
+	if ( _actionSheet != actionSheet ) {
+		if ( _actionSheet.isVisible ) {
+			[_actionSheet dismissWithClickedButtonIndex:_actionSheet.cancelButtonIndex animated:NO];
+		}
+		[_actionSheet release];
+		_actionSheet = [actionSheet retain];
 	}
-    return actionSheet;
-                                  
 }
 
 - (NSMutableDictionary *)data
 {
 	if ( _data == nil ) {
-		_data = [[NSMutableDictionary alloc] initWithCapacity:3];
-		[_data setObject:[NSArray array] forKey:kOtherActionKey];
+		_data = [NSMutableDictionary new];
 	}
 	return _data;
 }
@@ -126,47 +133,31 @@ static NSString *const kActionInvocationKey = @"invocation";
 	return invocation;
 }
 
-
-- (void)prepareSheet
-{
-	[self.data removeAllObjects];
-	[self.data setObject:kStatePrepare forKey:kStateKey];
-	[self.data setObject:[NSArray array] forKey:kOtherActionKey];
-}
-
-- (void)setTitle:(NSString *)title
-{
-	NSAssert([[self.data objectForKey:kStateKey] isEqual:kStatePrepare],@"Can't alter title unless in Prepare state");
-    [self.data setObject:title forKey:kTitleKey];
-}
-
-- (void)setCancelTitle:(NSString *)title action:(SEL)action target:(id)target object:(id)object
+- (NSInteger)addButtonWithTitle:(NSString *)title action:(SEL)action target:(id)target object:(id)object
 {
 	NSParameterAssert(title);
-	NSAssert([[self.data objectForKey:kStateKey] isEqual:kStatePrepare],@"Can't alter cancel title unless in Prepare state");
-	NSInvocation *invocation = [self invocationForAction:action target:target object:object];
-	[self.data setObject:[NSDictionary dictionaryWithObjectsAndKeys:title,kActionTitleKey,invocation,kActionInvocationKey, nil] forKey:kCancelActionKey];
-}
-
-- (void)setDestructiveTitle:(NSString *)title action:(SEL)action target:(id)target object:(id)object
-{
-	NSParameterAssert(title);
-	NSAssert([[self.data objectForKey:kStateKey] isEqual:kStatePrepare],@"Can't alter destructive title unless in Prepare state");
-	NSInvocation *invocation = [self invocationForAction:action target:target object:object];
-	[self.data setObject:[NSDictionary dictionaryWithObjectsAndKeys:title,kActionTitleKey,invocation,kActionInvocationKey, nil] forKey:kDestructiveActionKey];
-}
-
-- (NSInteger)addOtherTitle:(NSString *)title action:(SEL)action target:(id)target object:(id)object
-{
-	NSParameterAssert(title);
-	NSAssert([[self.data objectForKey:kStateKey] isEqual:kStatePrepare],@"Can't alter other title unless in Prepare state");
-	NSInvocation *invocation = [self invocationForAction:action target:target object:object];
+	NSParameterAssert(action);
+	NSParameterAssert(target);
 	
-	NSArray *actions = [[self.data objectForKey:kOtherActionKey] arrayByAddingObject:[NSDictionary dictionaryWithObjectsAndKeys:title,kActionTitleKey,invocation,kActionInvocationKey, nil]];
-	[self.data setObject:actions forKey:kOtherActionKey];
-	return actions.count - 1;
+	NSInteger index = [self addButtonWithTitle:title];
+	if ( action && target ) {
+		NSInvocation *invocation = [self invocationForAction:action target:target object:object];
+		[self.data setValue:invocation forKey:title];
+	}
+	return index;
 }
 
+- (NSRange)addButtonsWithTitles:(NSArray *)titles
+{
+	NSParameterAssert(titles);
+	__block NSRange range = NSMakeRange(NSNotFound, titles.count);
+	[titles enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+		NSInteger index = [self addButtonWithTitle:obj];
+		if ( range.location == NSNotFound ) range.location = index;
+	}];
+	
+	return range;
+}
 
 - (void)dealloc
 {
@@ -175,92 +166,158 @@ static NSString *const kActionInvocationKey = @"invocation";
 	[super dealloc];
 }
 
-- (BOOL)invokeFromBarButtonItem:(UIBarButtonItem *)item animated:(BOOL)animated
+- (void)showFromBarButtonItem:(UIBarButtonItem *)item animated:(BOOL)animated
 {
-	NSAssert([[self.data objectForKey:kStateKey] isEqual:kStatePrepare],@"Can't invoke unless in Prepare state");
-	if ( _actionSheet == nil ) {
-   		[self.data setObject:kStatePresented forKey:kStateKey];
-     _actionSheet = [self createActionSheet];
-        [_actionSheet retain];
-		[_actionSheet showFromBarButtonItem:item animated:animated];
-        return YES;
-	}
-    else {
-        return NO;
-    }
+	NSParameterAssert(item);
+
+	[self.actionSheet showFromBarButtonItem:item animated:animated];
 }
 
-- (BOOL)invokeFromToolbar:(UIToolbar *)toolbar animated:(BOOL)animated
+- (void)showFromToolbar:(UIToolbar *)toolbar
 {
-	NSAssert([[self.data objectForKey:kStateKey] isEqual:kStatePrepare],@"Can't invoke unless in Prepare state");
-	if ( _actionSheet == nil ) {
-		[self.data setObject:kStatePresented forKey:kStateKey];
-		_actionSheet = [self createActionSheet];
-		[_actionSheet retain];
-		[_actionSheet showFromToolbar:toolbar];
-		return YES;
+	NSParameterAssert(toolbar);
+
+	[self.actionSheet showFromToolbar:toolbar];
+}
+
+- (void)showFromTabBar:(UITabBar *)tabBar
+{
+	NSParameterAssert(tabBar);
+	
+	[self.actionSheet showFromTabBar:tabBar];
+}
+
+- (void)showFromRect:(CGRect)rect inView:(UIView *)view animated:(BOOL)animated
+{
+	NSParameterAssert(view);
+	NSParameterAssert(!CGRectIsEmpty(rect));
+	
+	[self.actionSheet showFromRect:rect inView:view animated:animated];
+}
+
+- (void)showInView:(UIView *)view
+{
+	NSParameterAssert(view);
+	
+	[self.actionSheet showInView:view];
+}
+
+- (void)dismiss
+{
+	[self dismissAnimated:NO];
+}
+
+- (void)dismissAnimated:(BOOL)animated
+{
+	if ( self.isVisible ) {
+		[self dismissWithClickedButtonIndex:self.cancelButtonIndex animated:animated];
 	}
 	else {
-		return NO;
+		[self cleanup];
 	}
 }
 
-
-- (void)cancel
+#if NS_BLOCKS_AVAILABLE
+- (void)prepareToShow
 {
-    [self cancelAnimated:NO];
 }
 
-- (void)cancelAnimated:(BOOL)animated
+- (void)showFromToolbar:(UIToolbar *)view completion:(WBActionSheetCompletion)completion
 {
-    if ( _actionSheet != nil ) {
-        [_actionSheet dismissWithClickedButtonIndex:_actionSheet.cancelButtonIndex animated:animated];
-    }
+	NSParameterAssert(view);
+	[self prepareToShow];
+	if ( completion ) {
+		_completion = Block_copy(completion);
+	}
+	[self.actionSheet showFromToolbar:view];
 }
+
+- (void)showFromTabBar:(UITabBar *)view completion:(WBActionSheetCompletion)completion
+{
+	NSParameterAssert(view);
+	[self prepareToShow];
+	if ( completion ) {
+		_completion = Block_copy(completion);
+	}
+	[self.actionSheet showFromTabBar:view];
+}
+
+- (void)showFromBarButtonItem:(UIBarButtonItem *)item animated:(BOOL)animated completion:(WBActionSheetCompletion)completion
+{
+	NSParameterAssert(item);
+	[self prepareToShow];
+	if ( completion ) {
+		_completion = Block_copy(completion);
+	}
+	[self.actionSheet showFromBarButtonItem:item animated:animated];
+}
+
+- (void)showFromRect:(CGRect)rect inView:(UIView *)view animated:(BOOL)animated completion:(WBActionSheetCompletion)completion
+{
+	NSParameterAssert(view);
+	NSParameterAssert(!CGRectIsEmpty(rect));
+	[self prepareToShow];
+	if ( completion ) {
+		_completion = Block_copy(completion);
+	}
+	[self.actionSheet showFromRect:rect inView:view animated:animated];
+}
+
+- (void)showInView:(UIView *)view completion:(WBActionSheetCompletion)completion
+{
+	NSParameterAssert(view);
+	[self prepareToShow];
+	if ( completion ) {
+		_completion = Block_copy(completion);
+	}
+	[self.actionSheet showInView:view];
+}
+#endif
 
 #pragma mark UIActionSheetDelegate Methods
 
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-	if ( actionSheet != _actionSheet ) return;
-	
-	NSInvocation *invocation = nil;
-	if ( buttonIndex == actionSheet.cancelButtonIndex ) {
-		invocation = [[self.data objectForKey:kCancelActionKey] objectForKey:kActionInvocationKey];
-	}
-	else if ( buttonIndex == actionSheet.destructiveButtonIndex ) {
-		invocation = [[self.data objectForKey:kDestructiveActionKey] objectForKey:kActionInvocationKey];
-	}
-	else {
-		NSInteger index = buttonIndex;
-		if ( actionSheet.firstOtherButtonIndex > 0 )
-			index -= actionSheet.firstOtherButtonIndex;
-		NSArray *actions = [self.data objectForKey:kOtherActionKey];
-		if ( actions.count > index ) {
-            NSDictionary *action = [actions objectAtIndex:index];
-            
-			invocation = [action objectForKey:kActionInvocationKey];
-            
-		}
-	}
-	
-	if ( invocation && invocation != (NSInvocation *)[NSNull null] ) {
-		[invocation invoke];
-	}
-}
+//- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+//{
+//	if ( actionSheet != _actionSheet ) return;
+//	
+//	if ( _completion ) {
+//		NSString * title = (buttonIndex >= 0) ? [actionSheet buttonTitleAtIndex:buttonIndex] : nil;
+//		_completion(buttonIndex,title);
+//	}
+//	else {
+//		NSString *title = [self buttonTitleAtIndex:buttonIndex];
+//		NSInvocation *invocation = [self.data objectForKey:title];
+//		if ( invocation && invocation != (NSInvocation *)[NSNull null] ) {
+//			[invocation invoke];
+//		}
+//	}
+//}
 
 - (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
-	if ( self.delegate && [self.delegate respondsToSelector:@selector(actionSheetModeratorDidFinish:)] ) {
-		[self.delegate actionSheetModeratorDidFinish:self];
+	if ( actionSheet != _actionSheet ) return;
+	
+	if ( _completion ) {
+		NSString * title = (buttonIndex >= 0) ? [actionSheet buttonTitleAtIndex:buttonIndex] : nil;
+		_completion(buttonIndex,title);
+	}
+	else {
+		NSString *title = [self buttonTitleAtIndex:buttonIndex];
+		NSInvocation *invocation = [self.data objectForKey:title];
+		if ( invocation && invocation != (NSInvocation *)[NSNull null] ) {
+			[invocation invoke];
+		}
 	}
 
-	[_actionSheet release];
-	_actionSheet = nil;
-
-	[self.data setObject:kStateDismissed forKey:kStateKey];
-	[self.data removeAllObjects];
+	if ( self.delegate && [self.delegate respondsToSelector:@selector(actionSheetCoordinatorDidFinish:)] ) {
+		[self.delegate actionSheetCoordinatorDidFinish:self];
+	}
+	[self cleanup];
 }
 
 
+- (id)forwardingTargetForSelector:(SEL)aSelector
+{
+	return self.actionSheet;
+}
 @end

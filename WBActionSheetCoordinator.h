@@ -8,34 +8,81 @@
 
 #import <UIKit/UIKit.h>
 
-@class WBActionSheetCoordinator;
-@protocol WBActionSheetModeratorDelegate<NSObject>
+enum {
+	WBActionSheetPrepareState = 0,
+	WBActionSheetPresentedState,
+	WBActionSheetDismissedState
+};
+typedef NSUInteger WBActionSheetState;
 
-- (void)actionSheetModeratorDidFinish:(WBActionSheetCoordinator *)actionSheetModerator;
+@class WBActionSheetCoordinator;
+
+//
+//	Delegate Protocol
+//
+@protocol WBActionSheetModeratorDelegate<NSObject>
+@optional
+- (void)actionSheetCoordinatorDidFinish:(WBActionSheetCoordinator *)actionSheetModerator;
 
 @end
 
+
+#if NS_BLOCKS_AVAILABLE
+typedef void (^WBActionSheetCompletion)(NSUInteger buttonIndex, NSString *buttonTitle);
+#endif
+
+//
+// Class declaration
+//
 @interface WBActionSheetCoordinator : NSObject<UIActionSheetDelegate> {
 	id<WBActionSheetModeratorDelegate>	_delegate;
-	NSMutableDictionary *_data;
-	UIActionSheet	*_actionSheet;
+	id									_data;
+	UIActionSheet						*_actionSheet;
+#if NS_BLOCKS_AVAILABLE
+	WBActionSheetCompletion				_completion;
+#endif
 }
 @property (nonatomic,assign) id<WBActionSheetModeratorDelegate> delegate;
-@property (nonatomic,readonly,getter=isBusy) BOOL busy;
 
 + (WBActionSheetCoordinator *)sharedActionSheetCoordinator;
 
-- (void)prepareSheet;
-- (void)setTitle:(NSString *)title;
-- (void)setCancelTitle:(NSString *)title action:(SEL)action target:(id)target object:(id)object;
-- (void)setDestructiveTitle:(NSString *)title action:(SEL)action target:(id)target object:(id)object;
-- (NSInteger)addOtherTitle:(NSString *)title action:(SEL)action target:(id)target object:(id)object;
+- (NSInteger)addButtonWithTitle:(NSString *)title action:(SEL)action target:(id)target object:(id)object;
 
+- (void)showFromBarButtonItem:(UIBarButtonItem *)item animated:(BOOL)animated;
+- (void)showFromToolbar:(UIToolbar *)toolbar;
+- (void)showFromTabBar:(UITabBar *)tabBar;
+- (void)showFromRect:(CGRect)rect inView:(UIView *)view animated:(BOOL)animated;
+- (void)showInView:(UIView *)view;
 
-- (void)cancel;
-- (void)cancelAnimated:(BOOL)animated;
+#if NS_BLOCKS_AVAILABLE
+- (void)showFromToolbar:(UIToolbar *)view completion:(WBActionSheetCompletion)completion;
+- (void)showFromTabBar:(UITabBar *)view completion:(WBActionSheetCompletion)completion;
+- (void)showFromBarButtonItem:(UIBarButtonItem *)item animated:(BOOL)animated completion:(WBActionSheetCompletion)completion;
+- (void)showFromRect:(CGRect)rect inView:(UIView *)view animated:(BOOL)animated completion:(WBActionSheetCompletion)completion;
+- (void)showInView:(UIView *)view completion:(WBActionSheetCompletion)completion;
+#endif
 
-- (BOOL)invokeFromBarButtonItem:(UIBarButtonItem *)item animated:(BOOL)animated;
-- (BOOL)invokeFromToolbar:(UIToolbar *)toolbar animated:(BOOL)animated;
+- (void)dismiss;
+- (void)dismissAnimated:(BOOL)animated;
+
+- (NSRange)addButtonsWithTitles:(NSArray *)titles;
 @end
 
+
+@interface WBActionSheetCoordinator(Forwarding)
+@property(nonatomic,copy) NSString *title;
+@property(nonatomic) UIActionSheetStyle actionSheetStyle; // default is UIActionSheetStyleAutomatic. ignored if alert is visible
+
+// adds a button with the title. returns the index (0 based) of where it was added. buttons are displayed in the order added except for the
+// destructive and cancel button which will be positioned based on HI requirements. buttons cannot be customized.
+- (NSInteger)addButtonWithTitle:(NSString *)title;    // returns index of button. 0 based.
+- (NSString *)buttonTitleAtIndex:(NSInteger)buttonIndex;
+@property(nonatomic,readonly) NSInteger numberOfButtons;
+@property(nonatomic) NSInteger cancelButtonIndex;      // if the delegate does not implement -actionSheetCancel:, we pretend this button was clicked on. default is -1
+@property(nonatomic) NSInteger destructiveButtonIndex;        // sets destructive (red) button. -1 means none set. default is -1. ignored if only one button
+
+@property(nonatomic,readonly) NSInteger firstOtherButtonIndex;	// -1 if no otherButtonTitles or initWithTitle:... not used
+@property(nonatomic,readonly,getter=isVisible) BOOL visible;
+
+- (void)dismissWithClickedButtonIndex:(NSInteger)buttonIndex animated:(BOOL)animated;
+@end
