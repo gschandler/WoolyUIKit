@@ -31,3 +31,5 @@
 #import "WBActionSheetCoordinator.h"
 #import "WBNetworkActivity.h"
 
+#import "WBTableConfiguration.h"
+#import "WBTableViewCellController.h"
