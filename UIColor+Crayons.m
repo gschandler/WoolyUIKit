@@ -8,6 +8,8 @@
 
 #import "UIColor+Crayons.h"
 
+static const CGFloat kMaximumHue = 360.0;
+#define HUE(angle)	(angle/kMaximumHue)
 
 @implementation UIColor(Crayons)
 + (UIColor *)licoriceColor
@@ -72,64 +74,64 @@
 
 + (UIColor *)blueberryColor
 {
-	return [UIColor colorWithHue:240.0/360.0 saturation:1.0 brightness:1.0 alpha:1.0];
+	return [UIColor colorWithHue:HUE(240.0) saturation:1.0 brightness:1.0 alpha:1.0];
 }
 
 + (UIColor *)springColor
 {
-	return [UIColor colorWithHue:120.0/360.0 saturation:1.0 brightness:1.0 alpha:1.0];
+	return [UIColor colorWithHue:HUE(120.0) saturation:1.0 brightness:1.0 alpha:1.0];
 }
 
 + (UIColor *)maraschinoColor
 {
-	return [UIColor colorWithHue:359.0/360.0 saturation:1.0 brightness:1.0 alpha:1.0];
+	return [UIColor colorWithHue:HUE(359.0) saturation:1.0 brightness:1.0 alpha:1.0];
 }
 
 + (UIColor *)tangerineColor
 {
-	return [UIColor colorWithHue:30.0/360.0 saturation:1.0 brightness:1.0 alpha:1.0];
+	return [UIColor colorWithHue:HUE(30.0) saturation:1.0 brightness:1.0 alpha:1.0];
 	
 }
 
 + (UIColor *)lemonColor
 {
-	return [UIColor colorWithHue:60.0/360.0 saturation:1.0 brightness:1.0 alpha:1.0];	
+	return [UIColor colorWithHue:HUE(60.0) saturation:1.0 brightness:1.0 alpha:1.0];	
 }
 
 + (UIColor *)limeColor
 {
-	return [UIColor colorWithHue:90.0/360.0 saturation:1.0 brightness:1.0 alpha:1.0];	
+	return [UIColor colorWithHue:HUE(90.0) saturation:1.0 brightness:1.0 alpha:1.0];	
 }
 
 + (UIColor *)cayenneColor
 {
-	return [UIColor colorWithHue:359.0/360.0 saturation:1.0 brightness:0.50 alpha:1.0];
+	return [UIColor colorWithHue:HUE(359.0) saturation:1.0 brightness:0.50 alpha:1.0];
 }
 
 + (UIColor *)mochaColor
 {
-	return [UIColor colorWithHue:30.0/360.0 saturation:1.0 brightness:0.50 alpha:1.0];
+	return [UIColor colorWithHue:HUE(30.0) saturation:1.0 brightness:0.50 alpha:1.0];
 	
 }
 
 + (UIColor *)aquaColor
 {
-	return [UIColor colorWithHue:210.0/360.0 saturation:1.0 brightness:1.0 alpha:1.0];
+	return [UIColor colorWithHue:HUE(210.0) saturation:1.0 brightness:1.0 alpha:1.0];
 }
 
 + (UIColor *)skyColor
 {
-	return [UIColor colorWithHue:200.0/360.0 saturation:0.60 brightness:1.0 alpha:1.0];
+	return [UIColor colorWithHue:HUE(200.0) saturation:0.60 brightness:1.0 alpha:1.0];
 }
 
 + (UIColor *)carnationColor
 {
-	return [UIColor colorWithHue:320.0/360.0 saturation:0.56 brightness:1.0 alpha:1.0];
+	return [UIColor colorWithHue:HUE(320.0) saturation:0.56 brightness:1.0 alpha:1.0];
 }
 
 + (UIColor *)lavenderColor
 {
-	return [UIColor colorWithHue:280.0/360.0 saturation:0.60 brightness:1.0 alpha:1.0];
+	return [UIColor colorWithHue:HUE(280.0) saturation:0.60 brightness:1.0 alpha:1.0];
 }
 
 @end
