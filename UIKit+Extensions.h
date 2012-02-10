@@ -18,3 +18,5 @@
 #import "UIImage+Extensions.h"
 #import "UIViewController+Extensions.h"
 #import "UISplitViewController+Extensions.h"
+#import "UITableView+Extensions.h"
+#import "UIBarButtonItem+Extensions.h"
