@@ -12,6 +12,11 @@ static WBPopoverCoordinator *gSharedPopoverModerator = nil;
 
 @interface WBPopoverCoordinator()
 //@property (nonatomic,retain) UIPopoverController *popoverController;
+
+@end
+
+@interface WBPopoverCoordinator(TimeOut)
+- (void)dismissPopoverAfterTimeOut:(NSNumber *)animated;
 @end
 
 @implementation WBPopoverCoordinator
@@ -44,21 +49,49 @@ static WBPopoverCoordinator *gSharedPopoverModerator = nil;
 	return [[self sharedPopoverCoordinator] retain];
 }
 
+//
+//	Method:
+//		
+//
+//	Synopsis:
+//		
+//
 - (id)retain
 {
 	return self;
 }
 
+//
+//	Method:
+//		
+//
+//	Synopsis:
+//		
+//
 - (NSUInteger)retainCount
 {
 	return NSUIntegerMax;
 }
 
+//
+//	Method:
+//		
+//
+//	Synopsis:
+//		
+//
 - (oneway void)release
 {
 	// do nothing
 }
 
+//
+//	Method:
+//		
+//
+//	Synopsis:
+//		
+//
 - (id)autorelease
 {
 	return self;
@@ -115,6 +148,7 @@ static WBPopoverCoordinator *gSharedPopoverModerator = nil;
 {
 	if ( _popoverController != pc ) {
 		if ( [self.popoverController isPopoverVisible] ) {
+			[self cancelDismissPopoverWithDelay];
 			[self.popoverController dismissPopoverAnimated:NO];
 		}
 		WBRelease(_popoverController);
@@ -146,9 +180,37 @@ static WBPopoverCoordinator *gSharedPopoverModerator = nil;
 - (void)dismissPopoverAnimated:(BOOL)animated
 {
 	if ( [self.popoverController isPopoverVisible] ) {
+		[self cancelDismissPopoverWithDelay];
 		[self.popoverController dismissPopoverAnimated:animated];
 	}
 	self.popoverController = nil;
+}
+
+//
+//	Method:
+//		
+//
+//	Synopsis:
+//		
+//
+- (void)dismissPopoverWithDelay:(NSTimeInterval)delay animated:(BOOL)animated
+{
+	[self cancelDismissPopoverWithDelay];
+	if ( [self.popoverController isPopoverVisible] && delay > 0.0 ) {
+		[self performSelector:@selector(dismissPopoverAfterTimeOut:) withObject:[NSNumber numberWithBool:animated] afterDelay:delay];
+	}
+}
+
+//
+//	Method:
+//		
+//
+//	Synopsis:
+//		
+//
+- (void)cancelDismissPopoverWithDelay
+{
+	[NSObject cancelPreviousPerformRequestsWithTarget:self];
 }
 
 //
@@ -162,7 +224,9 @@ static WBPopoverCoordinator *gSharedPopoverModerator = nil;
 {
 	NSParameterAssert(view);
 	NSParameterAssert(pc);
-    
+
+ 	[self cancelDismissPopoverWithDelay];
+   
 	self.popoverController = pc;
 	self.popoverController.delegate = self;
 	[self.popoverController presentPopoverFromRect:rect inView:view permittedArrowDirections:arrowDirections animated:animated];
@@ -181,6 +245,8 @@ static WBPopoverCoordinator *gSharedPopoverModerator = nil;
 	NSParameterAssert(item);
 	NSParameterAssert(pc);
     
+ 	[self cancelDismissPopoverWithDelay];
+
 	self.popoverController = pc;
 	self.popoverController.delegate = self;
 	[self.popoverController presentPopoverFromBarButtonItem:item permittedArrowDirections:arrowDirections animated:animated];
@@ -230,6 +296,8 @@ static WBPopoverCoordinator *gSharedPopoverModerator = nil;
 - (void)popoverControllerDidDismissPopover:(UIPopoverController *)pc
 {
 	if ( _popoverController == pc ) {
+		[self cancelDismissPopoverWithDelay];
+		
 		if ( self.delegate && [self.delegate respondsToSelector:@selector(popoverModerator:didDismissPopoverController:)] ) {
 			[self.delegate popoverModerator:self didDismissPopoverController:self.popoverController];
 		}
@@ -253,6 +321,21 @@ static WBPopoverCoordinator *gSharedPopoverModerator = nil;
 		dismiss = [self.delegate popoverModerator:self shouldDismissPopoverController:self.popoverController];
 	}
 	return dismiss;
+}
+
+@end
+
+@implementation WBPopoverCoordinator(TimeOut)
+//
+//	Method:
+//		
+//
+//	Synopsis:
+//		
+//
+- (void)dismissPopoverAfterTimeOut:(NSNumber *)animated
+{
+	[self dismissPopoverAnimated:[animated boolValue]];
 }
 
 @end

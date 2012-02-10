@@ -20,8 +20,8 @@
 
 
 @interface WBPopoverCoordinator : NSObject<UIPopoverControllerDelegate> {
-	id<WBPopoverModeratorDelegate> _delegate;
-	UIPopoverController *_popoverController;
+	id<WBPopoverModeratorDelegate>	_delegate;
+	UIPopoverController *			_popoverController;
 }
 
 @property (nonatomic,assign) id<WBPopoverModeratorDelegate> delegate;
@@ -30,6 +30,8 @@
 + (WBPopoverCoordinator *)sharedPopoverCoordinator;
 
 - (void)dismissPopoverAnimated:(BOOL)animated;
+- (void)dismissPopoverWithDelay:(NSTimeInterval)delay animated:(BOOL)animated;
+- (void)cancelDismissPopoverWithDelay;
 
 - (void)presentPopover:(UIPopoverController *)pc fromRect:(CGRect)rect inView:(UIView *)view permittedArrowDirections:(UIPopoverArrowDirection)arrowDirections animated:(BOOL)animated;
 - (void)presentPopover:(UIPopoverController *)pc fromBarButtonItem:(UIBarButtonItem *)item permittedArrowDirections:(UIPopoverArrowDirection)arrowDirections animated:(BOOL)animated;
