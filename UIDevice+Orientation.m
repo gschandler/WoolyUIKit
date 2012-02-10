@@ -26,6 +26,9 @@
 	CGFloat pi = 3.141592;
 	CGAffineTransform transform = CGAffineTransformIdentity;
 	switch (self.orientation) {
+		case	UIDeviceOrientationUnknown :
+		case	UIDeviceOrientationFaceUp :
+		case	UIDeviceOrientationFaceDown :
 		case	UIDeviceOrientationPortrait : break;
 		case	UIDeviceOrientationPortraitUpsideDown : transform = CGAffineTransformRotate(transform, pi); break;
 		case	UIDeviceOrientationLandscapeLeft : transform = CGAffineTransformRotate(transform, pi/2.0); break;
