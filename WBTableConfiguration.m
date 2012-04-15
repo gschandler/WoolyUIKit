@@ -25,7 +25,7 @@
 @end
 
 @interface WBTableSection()
-@property(nonatomic,retain) NSMutableArray *controllers;
+@property(nonatomic,copy) NSArray *controllers;
 @end
 
 @implementation WBTableSection
@@ -50,7 +50,7 @@
 	self = [super init];
 	if ( self ) {
 		_tag = 0;
-		_controllers = [[NSMutableArray alloc] initWithArray:controllers];
+		_controllers = [[NSArray alloc] initWithArray:controllers];
 		_rowCount = -1;
 		_header = [WBSectionHeaderFooter new];
 		_footer = [WBSectionHeaderFooter new];
@@ -62,7 +62,6 @@
 - (void)dealloc
 {
 	[_controllers release];
-//	[_data release];
 	[_header release];
 	[_footer release];
 	[super dealloc];
@@ -82,13 +81,19 @@
 	NSParameterAssert(controller);
 	
 	if ( [self.controllers containsObject:controller] == NO ) {
-		[self.controllers addObject:controller];
+		self.controllers = [self.controllers arrayByAddingObject:controller];
 	}
 }
 
 - (void)removeController:(id<WBTableViewCellController>)controller
 {
-	[self.controllers removeObject:controller];
+	NSInteger index = [self.controllers indexOfObject:controller];
+	if ( index != NSNotFound ) {
+		NSMutableArray *temp = [[NSMutableArray alloc] initWithArray:self.controllers];
+		[temp removeObjectAtIndex:index];
+		self.controllers = temp;
+		[temp release];
+	}
 }
 
 - (id<WBTableViewCellController>)controllerAtIndex:(NSInteger)index
@@ -153,7 +158,7 @@
 
 
 @interface WBTableConfiguration()
-@property (nonatomic,retain) NSMutableArray *sections;
+@property (nonatomic,copy) NSArray *sections;
 @end
 
 
@@ -186,7 +191,7 @@
 	
 	self = [super init];
 	if ( self ) {
-		_sections = [[NSMutableArray alloc] initWithArray:sections];
+		_sections = [[NSArray alloc] initWithArray:sections];
 		_header = [WBTableHeaderFooter new];
 		_footer = [WBTableHeaderFooter new];
 	}
@@ -248,7 +253,7 @@
 {
 	NSParameterAssert(section);
 	if ( [self.sections containsObject:section] == NO ) {
-		[self.sections addObject:section];
+		self.sections = [self.sections arrayByAddingObject:section];
 	}
 }
 
@@ -257,7 +262,10 @@
 	NSParameterAssert(section);
 	if ( [self numberOfSections] >= index ) {
 		if ( [self.sections containsObject:section] == NO ) {
-			[self.sections insertObject:section atIndex:index];
+			NSMutableArray *temp = [[NSMutableArray alloc] initWithArray:self.sections];
+			[temp insertObject:section atIndex:index];
+			self.sections = temp;
+			[temp release];
 		}
 	}
 }
@@ -265,13 +273,19 @@
 - (void)removeSection:(WBTableSection *)section
 {
 	NSParameterAssert(section);
-	[self.sections removeObject:section];
+	NSInteger index = [self.sections indexOfObject:section];
+	if ( index != NSNotFound ) {
+		[self removeSectionAtIndex:index];
+	}
 }
 
 - (void)removeSectionAtIndex:(NSInteger)index
 {
 	if ( [self numberOfSections] > index ) {
-		[self.sections removeObjectAtIndex:index];
+		NSMutableArray *temp = [[NSMutableArray alloc] initWithArray:self.sections];
+		[temp removeObjectAtIndex:index];
+		self.sections = temp;
+		[temp release];
 	}
 }
 

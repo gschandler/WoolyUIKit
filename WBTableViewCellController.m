@@ -17,6 +17,7 @@
 
 @implementation WBTableViewCellController
 @synthesize contentInsets=_contentInsets;
+@synthesize hostViewController=_hostViewController;
 
 #define HORIZONTAL_INSET	(10.0)
 #define VERTICAL_INSET		(5.0)
@@ -46,6 +47,7 @@
 //
 -(void)dealloc
 {
+	[_hostViewController release];
 	[super dealloc];
 }
 
@@ -92,10 +94,10 @@
 //	Synopsis:
 //		
 //
-- (UITableViewCellAccessoryType) tableViewCellAccessoryType
-{
-	return UITableViewCellAccessoryNone;
-}
+//- (UITableViewCellAccessoryType) tableViewCellAccessoryType
+//{
+//	return UITableViewCellAccessoryNone;
+//}
 
 //
 //	Method:
@@ -104,10 +106,10 @@
 //	Synopsis:
 //		
 //
-- (UITableViewCellAccessoryType) tableViewCellEditingAccessoryType
-{
-	return UITableViewCellAccessoryNone;
-}
+//- (UITableViewCellAccessoryType) tableViewCellEditingAccessoryType
+//{
+//	return UITableViewCellAccessoryNone;
+//}
 
 //
 //	Method:
@@ -116,10 +118,10 @@
 //	Synopsis:
 //		
 //
--(UIView *) tableViewCellAccessoryView
-{
-	return nil;
-}
+//-(UIView *) tableViewCellAccessoryView
+//{
+//	return nil;
+//}
 
 //
 //	Method:
@@ -128,10 +130,10 @@
 //	Synopsis:
 //		
 //
-- (UIView *) tableViewCellEditingAccessoryView
-{
-	return nil;
-}
+//- (UIView *) tableViewCellEditingAccessoryView
+//{
+//	return nil;
+//}
 
 //
 //	Method:
@@ -140,10 +142,22 @@
 //	Synopsis:
 //		
 //
-- (NSString *) stringForTextLabel
-{
-	return nil;
-}
+//- (NSString *) stringForTextLabel
+//{
+//	return nil;
+//}
+//
+////
+////	Method:
+////		
+////
+////	Synopsis:
+////		
+////
+//- (NSString *) stringForDetailTextLabel
+//{
+//	return nil;
+//}
 
 //
 //	Method:
@@ -152,10 +166,10 @@
 //	Synopsis:
 //		
 //
-- (NSString *) stringForDetailTextLabel
-{
-	return nil;
-}
+//- (UIImage *) imageForImageView
+//{
+//	return nil;
+//}
 
 //
 //	Method:
@@ -164,22 +178,10 @@
 //	Synopsis:
 //		
 //
-- (UIImage *) imageForImageView
-{
-	return nil;
-}
-
-//
-//	Method:
-//		
-//
-//	Synopsis:
-//		
-//
-- (UITableViewCellSelectionStyle) tableViewCellSelectionStyle
-{
-	return UITableViewCellSelectionStyleBlue;
-}
+//- (UITableViewCellSelectionStyle) tableViewCellSelectionStyle
+//{
+//	return UITableViewCellSelectionStyleBlue;
+//}
 
 //
 //	Method:
@@ -209,18 +211,18 @@
 	NSParameterAssert(cell);
 	NSParameterAssert(indexPath);
 	NSParameterAssert(tableView);
-	
-	cell.textLabel.text			= [self stringForTextLabel];
-	cell.detailTextLabel.text	= [self stringForDetailTextLabel];
-	cell.imageView.image		= [self imageForImageView];	
+//	
+//	cell.textLabel.text			= [self stringForTextLabel];
+//	cell.detailTextLabel.text	= [self stringForDetailTextLabel];
+//	cell.imageView.image		= [self imageForImageView];	
 
-	cell.accessoryType			= [self tableViewCellAccessoryType];
-	cell.accessoryView			= [self tableViewCellAccessoryView];
+//	cell.accessoryType			= [self tableViewCellAccessoryType];
+//	cell.accessoryView			= [self tableViewCellAccessoryView];
 	
-	cell.editingAccessoryType	= [self tableViewCellEditingAccessoryType];
-	cell.editingAccessoryView	= [self tableViewCellEditingAccessoryView];
+//	cell.editingAccessoryType	= [self tableViewCellEditingAccessoryType];
+//	cell.editingAccessoryView	= [self tableViewCellEditingAccessoryView];
 
-	cell.selectionStyle			= [self tableViewCellSelectionStyle];
+//	cell.selectionStyle			= [self tableViewCellSelectionStyle];
 
 	// subclassers do their magic
 	[cell setNeedsDisplay];

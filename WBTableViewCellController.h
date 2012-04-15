@@ -52,11 +52,12 @@ typedef NSUInteger WBTableViewCellEvents;
 
 @interface WBTableViewCellController : NSObject<WBTableViewCellController>
 {
+	UIViewController *		_hostViewController;
 	UIEdgeInsets			_contentInsets;
 	NSMutableDictionary *	_targetActions;
 }
+@property (nonatomic,strong) UIViewController *hostViewController;
 
-// -actionSelector:(NSIndexPath *)indexPath inTableView:(UITableView *)tableView;
 - (void)addTarget:(id)target action:(SEL)action forTableViewCellEvent:(WBTableViewCellEvents)event;
 - (void)removeTarget:(id)target action:(SEL)action forTableViewCellEvent:(WBTableViewCellEvents)event;
 
@@ -65,17 +66,6 @@ typedef NSUInteger WBTableViewCellEvents;
 @property(nonatomic,readonly) NSString *tableViewCellReuseIdentifier;
 @property(nonatomic,readonly) Class tableViewCellClass;
 @property(nonatomic,readonly) UITableViewCellStyle tableViewCellStyle;
-@property(nonatomic,readonly) UITableViewCellAccessoryType tableViewCellAccessoryType;
-@property(nonatomic,readonly) UITableViewCellAccessoryType tableViewCellEditingAccessoryType;
-
-@property(nonatomic,readonly) UIView * tableViewCellAccessoryView;
-@property(nonatomic,readonly) UIView * tableViewCellEditingAccessoryView;
-
-@property(nonatomic,readonly,copy) NSString * stringForTextLabel;
-@property(nonatomic,readonly,copy) NSString * stringForDetailTextLabel;
-@property(nonatomic,readonly) UIImage *imageForImageView;
-
-@property(nonatomic,readonly) UITableViewCellSelectionStyle tableViewCellSelectionStyle;
 
 - (CGRect)contentBoundsFromCell:(UITableViewCell *)cell;
 

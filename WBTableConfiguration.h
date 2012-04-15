@@ -24,18 +24,17 @@
 
 @interface WBTableSection : NSObject
 {
-	NSInteger _tag;
-	WBSectionHeaderFooter *_header;
-	WBSectionHeaderFooter *_footer;
-	NSMutableArray *_controllers;
-	NSInteger _rowCount;
-//	id		_data;
+	NSInteger					_tag;
+	WBSectionHeaderFooter *		_header;
+	WBSectionHeaderFooter *		_footer;
+	NSArray *					_controllers;
+	NSInteger					_rowCount;
 }
 @property(nonatomic,retain,readonly) WBSectionHeaderFooter *header;
 @property(nonatomic,retain,readonly) WBSectionHeaderFooter *footer;
 @property(nonatomic,assign) NSInteger rowCount;
-//@property(nonatomic,retain) id	data;
 @property(nonatomic,assign) NSInteger tag;
+@property (nonatomic,readonly,copy) NSArray *controllers;
 
 - (id)initWithController:(id<WBTableViewCellController>)controller;
 - (id)initWithControllers:(NSArray *)controllers;
@@ -74,12 +73,13 @@
 
 @interface WBTableConfiguration : NSObject
 {
-	WBTableHeaderFooter *_header;
-	NSMutableArray *_sections;
-	WBTableHeaderFooter *_footer;
+	WBTableHeaderFooter *	_header;
+	WBTableHeaderFooter *	_footer;
+	NSArray *				_sections;
 }
 @property(nonatomic,retain,readonly) WBTableHeaderFooter *header;
 @property(nonatomic,retain,readonly) WBTableHeaderFooter *footer;
+@property ( nonatomic, copy, readonly ) NSArray *sections;
 
 - (id)initWithTableSections:(NSArray *)sections;
 - (id)initWithTableSection:(WBTableSection *)section;
