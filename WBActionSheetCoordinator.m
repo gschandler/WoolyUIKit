@@ -298,8 +298,7 @@ static NSString * const kActionKey				= @"action";
 	if ( actionSheet != _actionSheet ) return;
 	
 	if ( _completion ) {
-		NSString * title = (buttonIndex >= 0) ? [actionSheet buttonTitleAtIndex:buttonIndex] : nil;
-		_completion(buttonIndex,title);
+		_completion(_actionSheet,buttonIndex);
 	}
 	else {
 		NSString *title = [self buttonTitleAtIndex:buttonIndex];

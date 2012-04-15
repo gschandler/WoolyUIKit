@@ -28,7 +28,7 @@ typedef NSUInteger WBActionSheetState;
 
 
 #if NS_BLOCKS_AVAILABLE
-typedef void (^WBActionSheetCompletion)(NSUInteger buttonIndex, NSString *buttonTitle);
+typedef void (^WBActionSheetCompletion)(UIActionSheet *actionSheet, NSUInteger buttonIndex);
 #endif
 
 //
