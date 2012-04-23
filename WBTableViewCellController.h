@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @protocol WBTableViewCellController<NSObject>
-
 @required
+@property (nonatomic,strong) UIViewController *hostViewController;
+
 
 // configure a cell's content. called once upon creation of the cell.
 - (void)configureCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath inTableView:(UITableView *)tableView;
@@ -56,7 +57,6 @@ typedef NSUInteger WBTableViewCellEvents;
 	UIEdgeInsets			_contentInsets;
 	NSMutableDictionary *	_targetActions;
 }
-@property (nonatomic,strong) UIViewController *hostViewController;
 
 - (void)addTarget:(id)target action:(SEL)action forTableViewCellEvent:(WBTableViewCellEvents)event;
 - (void)removeTarget:(id)target action:(SEL)action forTableViewCellEvent:(WBTableViewCellEvents)event;
