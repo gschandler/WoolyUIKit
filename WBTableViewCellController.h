@@ -51,7 +51,7 @@ enum {
 };
 typedef NSUInteger WBTableViewCellEvents;
 
-@interface WBTableViewCellController : NSObject<WBTableViewCellController>
+@interface WBTableViewCellController : UIResponder<WBTableViewCellController>
 {
 	UIViewController *		_hostViewController;
 	UIEdgeInsets			_contentInsets;
