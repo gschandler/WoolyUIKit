@@ -27,7 +27,7 @@ const CGFloat kMagentaColorHue	= HUE(300.0);
 
 + (UIColor *)blueGrayColor
 {
-	return [UIColor colorWithHue:HUE(219.0) saturation:0.62 brightness:0.52 alpha:1.0];
+	return [UIColor colorWithHue:HUE(220.0) saturation:0.62 brightness:0.52 alpha:1.0];
 }
 
 @end
