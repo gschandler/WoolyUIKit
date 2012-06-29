@@ -10,6 +10,7 @@
 
 #define HUE(v)	(v/360.0)
 const CGFloat kRedColorHue		= HUE(0.0);
+const CGFloat kOrangeColorHue   = HUE(30.0);
 const CGFloat kYellowColorHue	= HUE(60.0);
 const CGFloat kGreenColorHue	= HUE(120.0);
 const CGFloat kCyanColorHue		= HUE(180.0);

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 extern const CGFloat kRedColorHue;
+extern const CGFloat kOrangeColorHue;
 extern const CGFloat kYellowColorHue;
 extern const CGFloat kGreenColorHue;
 extern const CGFloat kCyanColorHue;
