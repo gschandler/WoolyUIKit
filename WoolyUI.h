@@ -10,7 +10,7 @@
 #import "WoolyToolkit.h"
 
 #ifndef LOG_METHOD
-#if DEBUG
+#if WBDEBUG
 #define	LOG_METHOD	NSLog(@"%@:%d (%@)",NSStringFromSelector(_cmd),__LINE__,NSStringFromClass([self class]))
 #else
 #define	LOG_METHOD
@@ -18,7 +18,7 @@
 #endif
 
 #ifndef WBRelease
-#define	WBRelease(obj)	[obj release]; obj = nil
+#define	WBRelease(obj)	{[obj release]; obj = nil;}
 #endif
 
 #import "UIKit+Extensions.h"
