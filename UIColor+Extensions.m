@@ -14,6 +14,7 @@ const CGFloat kOrangeColorHue   = HUE(30.0);
 const CGFloat kYellowColorHue	= HUE(60.0);
 const CGFloat kGreenColorHue	= HUE(120.0);
 const CGFloat kCyanColorHue		= HUE(180.0);
+const CGFloat kAquaColorHue     = HUE(210.0);
 const CGFloat kBlueColorHue		= HUE(240.0);
 const CGFloat kMagentaColorHue	= HUE(300.0);
 

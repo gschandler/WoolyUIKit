@@ -13,6 +13,7 @@ extern const CGFloat kOrangeColorHue;
 extern const CGFloat kYellowColorHue;
 extern const CGFloat kGreenColorHue;
 extern const CGFloat kCyanColorHue;
+extern const CGFloat kAquaColorHue;
 extern const CGFloat kBlueColorHue;
 extern const CGFloat kMagentaColorHue;
 
