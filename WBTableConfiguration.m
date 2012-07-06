@@ -140,6 +140,13 @@
 	[self.controllers makeObjectsPerformSelector:selector withObject:object];
 }
 
+- (void)enumerateControllers:(void (^)(id<WBTableViewCellController>, NSInteger, BOOL *))block
+{
+    [self.controllers enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        id<WBTableViewCellController> controller = (id<WBTableViewCellController>)obj;
+        block(controller,idx,stop);
+    }];
+}
 @end
 
 @implementation WBTableHeaderFooter
@@ -338,6 +345,20 @@
 	for ( WBTableSection *section in self.sections ) {
 		[section makeControllersPerformSelector:selector withObject:object];
 	}
+}
+
+- (void)enumerateControllers:(void (^)(id<WBTableViewCellController>, NSIndexPath *, BOOL *))block
+{
+    NSParameterAssert(block);
+    [self.sections enumerateObjectsUsingBlock:^(id sectionObj, NSUInteger sectionIndex, BOOL *stopOuter) {
+        WBTableSection *section = (WBTableSection *)sectionObj;
+        [section enumerateControllers:^(id<WBTableViewCellController> controller, NSInteger rowIndex, BOOL *stopInner) {
+            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:rowIndex inSection:sectionIndex];
+            block(controller,indexPath,stopInner);
+            *stopOuter = *stopInner;
+        }];
+    }];
+
 }
 
 @end
