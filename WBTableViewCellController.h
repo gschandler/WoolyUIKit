@@ -63,7 +63,7 @@ typedef NSUInteger WBTableViewCellEvents;
 
 @property(nonatomic,assign) UIEdgeInsets contentInsets;
 
-@property(nonatomic,readonly) NSString *tableViewCellReuseIdentifier;
+@property(nonatomic,strong,readonly) NSString *tableViewCellReuseIdentifier;
 @property(nonatomic,readonly) Class tableViewCellClass;
 @property(nonatomic,readonly) UITableViewCellStyle tableViewCellStyle;
 
