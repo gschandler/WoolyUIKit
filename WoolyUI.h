@@ -33,3 +33,4 @@
 
 #import "WBTableConfiguration.h"
 #import "WBTableViewCellController.h"
+#import "WBAlertViewCoordinator.h"

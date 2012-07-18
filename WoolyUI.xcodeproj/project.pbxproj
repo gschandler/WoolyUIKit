@@ -18,6 +18,8 @@
 		4C7F081C144BE7AD0053363C /* WBTableViewCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7F0809144BE7AD0053363C /* WBTableViewCellController.m */; };
 		4C7F081D144BE7AD0053363C /* WBTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C7F080A144BE7AD0053363C /* WBTableViewController.h */; };
 		4C7F0820144BE7AD0053363C /* WBTableViewSectionHeaderView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C7F080C144BE7AD0053363C /* WBTableViewSectionHeaderView.h */; };
+		4C850D1A15B1CB3400D99721 /* WBAlertViewCoordinator.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C850D1815B1CB3400D99721 /* WBAlertViewCoordinator.h */; };
+		4C850D1B15B1CB3400D99721 /* WBAlertViewCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C850D1915B1CB3400D99721 /* WBAlertViewCoordinator.m */; };
 		4C9581B21336F71C00E0873C /* WBNetworkActivity.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C9581B01336F71C00E0873C /* WBNetworkActivity.h */; };
 		4C9581B31336F71C00E0873C /* WBNetworkActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9581B11336F71C00E0873C /* WBNetworkActivity.m */; };
 		4CA1A11614286A62003458B0 /* UISplitViewController+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA1A11514286A62003458B0 /* UISplitViewController+Extensions.m */; };
@@ -79,6 +81,8 @@
 		4C7F080B144BE7AD0053363C /* WBTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBTableViewController.m; sourceTree = "<group>"; };
 		4C7F080C144BE7AD0053363C /* WBTableViewSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBTableViewSectionHeaderView.h; sourceTree = "<group>"; };
 		4C7F080D144BE7AD0053363C /* WBTableViewSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBTableViewSectionHeaderView.m; sourceTree = "<group>"; };
+		4C850D1815B1CB3400D99721 /* WBAlertViewCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBAlertViewCoordinator.h; sourceTree = "<group>"; };
+		4C850D1915B1CB3400D99721 /* WBAlertViewCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBAlertViewCoordinator.m; sourceTree = "<group>"; };
 		4C9581B01336F71C00E0873C /* WBNetworkActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBNetworkActivity.h; sourceTree = "<group>"; };
 		4C9581B11336F71C00E0873C /* WBNetworkActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBNetworkActivity.m; sourceTree = "<group>"; };
 		4CA1A11414286A62003458B0 /* UISplitViewController+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISplitViewController+Extensions.h"; sourceTree = "<group>"; };
@@ -179,6 +183,7 @@
 		08FB77AEFE84172EC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				4C850D1715B1CB1000D99721 /* Alert VIew Coordinator */,
 				4C7F07E7144BE6430053363C /* Table Support */,
 				4C9581AF1336F6DB00E0873C /* Network Activity */,
 				4CBA6EAB13240CAE0052CED7 /* Action Sheet Coordinator */,
@@ -224,6 +229,15 @@
 				4C7F080D144BE7AD0053363C /* WBTableViewSectionHeaderView.m */,
 			);
 			name = Deprecated;
+			sourceTree = "<group>";
+		};
+		4C850D1715B1CB1000D99721 /* Alert VIew Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				4C850D1815B1CB3400D99721 /* WBAlertViewCoordinator.h */,
+				4C850D1915B1CB3400D99721 /* WBAlertViewCoordinator.m */,
+			);
+			name = "Alert VIew Coordinator";
 			sourceTree = "<group>";
 		};
 		4C9581AF1336F6DB00E0873C /* Network Activity */ = {
@@ -325,6 +339,7 @@
 				4C7F0820144BE7AD0053363C /* WBTableViewSectionHeaderView.h in Headers */,
 				4CA34E1C14CC014B00428088 /* UIBarButtonItem+Extensions.h in Headers */,
 				4C4BC4B515A1F91C00D160A6 /* WBGradientTableViewCell.h in Headers */,
+				4C850D1A15B1CB3400D99721 /* WBAlertViewCoordinator.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +477,7 @@
 				4C7F081B144BE7AD0053363C /* WBTableViewCellController.m in Sources */,
 				4CA34E1D14CC014B00428088 /* UIBarButtonItem+Extensions.m in Sources */,
 				4C4BC4B615A1F91C00D160A6 /* WBGradientTableViewCell.m in Sources */,
+				4C850D1B15B1CB3400D99721 /* WBAlertViewCoordinator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
