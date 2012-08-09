@@ -1,6 +1,6 @@
 /*
  *  MathUtils.h
- *  Gigbook
+ *  WoolyUI
  *
  *  Created by Scott Chandler on 12/9/10.
  *  Copyright 2010 Wooly Beast Software, LLC. All rights reserved.

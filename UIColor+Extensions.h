@@ -1,6 +1,6 @@
 //
 //  UIColor+Extensions.h
-//  Gigbook
+//  WoolyUI
 //
 //  Created by Scott Chandler on 5/6/10.
 //  Copyright 2010 Wooly Beast Software, LLC. All rights reserved.

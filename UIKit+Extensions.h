@@ -1,6 +1,6 @@
 /*
  *  UIKit+Extensions.h
- *  Gigbook
+ *  WoolyUI
  *
  *  Created by Scott Chandler on 4/10/10.
  *  Copyright 2010 Wooly Beast Software, LLC. All rights reserved.
