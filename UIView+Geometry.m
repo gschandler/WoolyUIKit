@@ -1,6 +1,6 @@
 //
 //  UIView+Geometry.m
-//  Gigbook
+//  WoolyUI
 //
 //  Created by Scott Chandler on 8/30/10.
 //  Copyright 2010 Wooly Beast Software, LLC. All rights reserved.
@@ -8,9 +8,8 @@
 
 #import "UIView+Geometry.h"
 
-#define	PI	(3.141592)
 #define	ONE_RAD_IN_DEGREES	(180.0)
-#define	DEG_TO_RAD(d)	((d/ONE_RAD_IN_DEGREES) * PI)
+#define	DEG_TO_RAD(d)	((d/ONE_RAD_IN_DEGREES) * M_PI)
 
 @implementation UIView(Geometry)
 
