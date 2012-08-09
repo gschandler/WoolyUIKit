@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIBarButtonItem (Extensions)
+@interface UIBarButtonItem (WoolyBeast)
 + (UIBarButtonItem *)flexibleSpace;
 + (UIBarButtonItem *)fixedSpaceWithWidth:(CGFloat)width;
 + (UIBarButtonItem *)actionBarButtonItemWithTarget:(id)target action:(SEL)action;

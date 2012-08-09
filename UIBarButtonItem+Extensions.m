@@ -8,7 +8,7 @@
 
 #import "UIBarButtonItem+Extensions.h"
 
-@implementation UIBarButtonItem (Extensions)
+@implementation UIBarButtonItem (WoolyBeast)
 + (UIBarButtonItem *)flexibleSpace
 {
 	return [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil] autorelease];
