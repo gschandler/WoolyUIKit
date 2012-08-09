@@ -12,7 +12,7 @@
 - (NSIndexPath *)indexPathForLastRowInSection:(NSUInteger)section
 {
 	NSIndexPath *indexPath = nil;
-	if ( self.numberOfSections > section ) {
+	if ( self.numberOfSections > section && [self numberOfRowsInSection:section] > 0 ) {
 		indexPath = [NSIndexPath indexPathForRow:[self numberOfRowsInSection:section]-1 inSection:section];
 	}
 	return indexPath;

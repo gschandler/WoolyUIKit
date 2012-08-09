@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIViewController (UIViewController_Extensions)
+@interface UIViewController (WoolyBeast)
 @property (nonatomic,readonly,getter = isModal) BOOL modal;
 
 @end
