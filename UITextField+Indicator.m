@@ -1,6 +1,6 @@
 //
 //  UITextField+Indicator.m
-//  Gigbook
+//  WoolyUI
 //
 //  Created by Scott Chandler on 11/24/10.
 //  Copyright 2010 Wooly Beast Software, LLC. All rights reserved.
@@ -13,50 +13,6 @@ static NSString * const kUnicodeCheckMark = @"\u2714";
 static NSString * const kUnicodeCrossMark = @"\u274C";
 
 @implementation UITextField(Indicator)
-#if 0
-- (void)showValidEntryIndicator:(BOOL)show isValid:(BOOL)valid
-{
-	UIView *view = nil;
-#if USE_UNICODE
-	UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, 20.0, 20.0)];
-	label.textColor = [UIColor lightGrayColor];
-	label.font = [UIFont boldSystemFontOfSize:24.0];
-	label.text = (valid) ? kUnicodeCheckMark : kUnicodeCrossMark;
-	view = label;
-#else
-	UIImage *image = [UIImage imageNamed:(valid) ? @"ValidName.png" : @"InvalidName.png"];
-	view = [[UIImageView alloc] initWithImage:image];
-#endif
-	view.backgroundColor = [UIColor clearColor];
-	self.leftView = view;
-	
-	self.leftViewMode = (show) ? UITextFieldViewModeAlways : UITextFieldViewModeNever;
-	WBRelease(view);
-}
-
-- (void)indicateInvalidText:(BOOL)invalid
-{
-	self.leftViewMode = (invalid) ? UITextFieldViewModeAlways : UITextFieldViewModeNever;
-	if ( invalid && self.text.length > 0 ) {
-		UIView *view = nil;
-#if USE_UNICODE
-		UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, 20.0, 20.0)];
-		label.font = [UIFont systemFontOfSize:24.0];
-		label.text = kUnicodeCrossMark;
-		view = label;
-#else
-		UIImage *image = [UIImage imageNamed:@"InvalidName.png"];
-		view = [[UIImageView alloc] initWithImage:image];
-#endif
-		self.leftView = view;
-	}
-	else {
-		self.leftView = nil;
-	}
-
-}
-#endif
-
 //
 //
 //
