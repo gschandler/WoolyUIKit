@@ -91,7 +91,16 @@ static const CGFloat kMaximumHue = 360.0;
 + (UIColor *)tangerineColor
 {
 	return [UIColor colorWithHue:kOrangeColorHue saturation:1.0 brightness:1.0 alpha:1.0];
-	
+}
+
++ (UIColor *)cantaloupeColor
+{
+	return [UIColor colorWithHue:(kOrangeColorHue+kOrangeColorHue+kYellowColorHue)/3.0 saturation:0.6 brightness:1.0 alpha:1.0];
+}
+
++ (UIColor *)bananaColor
+{
+	return [UIColor colorWithHue:kYellowColorHue saturation:0.6 brightness:1.0 alpha:1.0];
 }
 
 + (UIColor *)lemonColor
@@ -113,6 +122,16 @@ static const CGFloat kMaximumHue = 360.0;
 {
 	return [UIColor colorWithHue:kOrangeColorHue saturation:1.0 brightness:0.50 alpha:1.0];
 	
+}
+
++ (UIColor *)turquoiseColor
+{
+	return [UIColor colorWithHue:kCyanColorHue saturation:1.0 brightness:1.0 alpha:1.0];
+}
+
++ (UIColor *)iceColor
+{
+	return [UIColor colorWithHue:kCyanColorHue saturation:0.6 brightness:1.0 alpha:1.0];
 }
 
 + (UIColor *)aquaColor

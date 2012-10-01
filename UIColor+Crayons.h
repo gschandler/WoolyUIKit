@@ -24,8 +24,11 @@
 + (UIColor *)snowColor;
 
 + (UIColor *)aquaColor;
++ (UIColor *)bananaColor;
++ (UIColor *)cantaloupeColor;
 + (UIColor *)cayenneColor;
 + (UIColor *)blueberryColor;
++ (UIColor *)iceColor;
 + (UIColor *)lemonColor;
 + (UIColor *)limeColor;
 + (UIColor *)maraschinoColor;
@@ -35,4 +38,5 @@
 + (UIColor *)carnationColor;
 + (UIColor *)lavenderColor;
 + (UIColor *)skyColor;
++ (UIColor *)turquoiseColor;
 @end
