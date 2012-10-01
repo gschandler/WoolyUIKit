@@ -56,7 +56,7 @@ static WBAlertViewCoordinator *gSharedAlertViewCoordinator = nil;
 //
 + (id)allocWithZone:(NSZone *)zone
 {
-	return [self sharedAlertViewCoordinator];
+	return [[self sharedAlertViewCoordinator] retain];
 }
 
 //
