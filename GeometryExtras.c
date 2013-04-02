@@ -10,6 +10,25 @@
 #include "GeometryExtras.h"
 #include <math.h>
 
+//
+//	Method:
+//
+//
+//	Synopsis:
+//
+//
+CGPoint CGRectGetMidPoint( CGRect rect )
+{
+	return (CGPoint){CGRectGetMidX(rect),CGRectGetMidY(rect)};
+}
+
+//
+//	Method:
+//
+//
+//	Synopsis:
+//
+//
 CGRect	CGRectCenterRectInRect( CGRect rect, CGRect target )
 {
 	CGFloat dx = ((CGRectGetWidth(target) - CGRectGetWidth(rect))/2.0) + CGRectGetMinX(target) - CGRectGetMinX(rect);

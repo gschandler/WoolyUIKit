@@ -15,7 +15,9 @@
 #if __cplusplus
 extern "C" {
 #endif
-	
+
+CGPoint CGRectGetMidPoint( CGRect rect );
+
 CGRect	CGRectCenterRectInRect( CGRect rect, CGRect target );
 
 CGRect	CGRectAspectFillRectInRect( CGRect srcRect, CGRect dstRect );
