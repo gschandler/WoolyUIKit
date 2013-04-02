@@ -201,7 +201,7 @@ static WBAlertViewCoordinator *gSharedAlertViewCoordinator = nil;
     
     @synchronized(self.queue) {
         WBAlertQueueItem *item = [self.queue lastObject];
-        if ( item && !item.alert.isVisible ) {
+        if ( item != nil || !item.alert.isVisible ) {
             item = [WBAlertQueueItem new];
             item.alert = alert;
             item.delegate = alert.delegate;
@@ -210,7 +210,7 @@ static WBAlertViewCoordinator *gSharedAlertViewCoordinator = nil;
             [self.queue addObject:item];
             [item release];
             success = YES;
-      }
+		}
     }
     
     if ( success ) {
@@ -254,7 +254,7 @@ static WBAlertViewCoordinator *gSharedAlertViewCoordinator = nil;
     
     @synchronized(self.queue) {
         WBAlertQueueItem *item = [self.queue lastObject];
-        if ( item && !item.alert.isVisible ) {
+        if ( item == nil || !item.alert.isVisible ) {
             item = [WBAlertQueueItem new];
             item.alert = alert;
             item.delegate = alert.delegate;
