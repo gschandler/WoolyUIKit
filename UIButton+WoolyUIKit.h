@@ -1,5 +1,5 @@
 //
-//  UIButton+Extensions.h
+//  UIButton+WoolyUIKit.h
 //  WoolyUI
 //
 //  Created by Scott Chandler on 9/30/10.
@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 
-@interface UIButton(WoolyBeast)
+@interface UIButton(WoolyUIKit)
 - (void)stretchBackgroundImageWithLeftCapWidth:(CGFloat)leftCapWidth topCapHeight:(CGFloat)topCapHeight forState:(UIControlState)state;
 @end

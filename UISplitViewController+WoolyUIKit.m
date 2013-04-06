@@ -1,14 +1,14 @@
 //
-//  UISplitViewController+Extensions.m
+//  UISplitViewController+WoolyUIKit.m
 //  WoolyUI
 //
 //  Created by Scott Chandler on 9/19/11.
 //  Copyright 2011 Wooly Beast Software, LLC. All rights reserved.
 //
 
-#import "UISplitViewController+Extensions.h"
+#import "UISplitViewController+WoolyUIKit.h"
 
-@implementation UISplitViewController(WoolyBeast)
+@implementation UISplitViewController(WoolyUIKit)
 
 - (void)setMainViewController:(UIViewController *)mainViewController
 {

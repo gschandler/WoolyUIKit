@@ -18,10 +18,24 @@
 #endif
 
 #ifndef WBRelease
-#define	WBRelease(obj)	{[obj release]; obj = nil;}
+#if __has_feature(objc_arc)
+#define	WBRelease(obj)	obj = nil
+#else
+#define	WBRelease(obj)	[obj release]; obj = nil
+#endif
 #endif
 
-#import "UIKit+Extensions.h"
+#import "UIBarButtonItem+WoolyUIKit.h"
+#import "UIButton+WoolyUIKit.h"
+#import "UIColor+WoolyUIKit.h"
+#import "UIDevice+WoolyUIKit.h"
+#import "UIFont+WoolyUIKit.h"
+#import "UIImage+WoolyUIKit.h"
+#import "UISplitViewController+WoolyUIKit.h"
+#import "UITableView+WoolyUIKit.h"
+#import "UITextField+WoolyUIKit.h"
+#import "UIView+WoolyUIKit.h"
+#import "UIViewController+WoolyUIKit.h"
 
 #import "GeometryExtras.h"
 #import "MathUtils.h"

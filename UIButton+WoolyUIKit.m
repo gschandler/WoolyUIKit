@@ -1,15 +1,15 @@
 //
-//  UIButton+Extensions.m
+//  UIButton+WoolyUIKit.m
 //  WoolyUI
 //
 //  Created by Scott Chandler on 9/30/10.
 //  Copyright 2010 Wooly Beast Software, LLC. All rights reserved.
 //
 
-#import "UIButton+Extensions.h"
+#import "UIButton+WoolyUIKit.h"
 
 
-@implementation UIButton(WoolyBeast)
+@implementation UIButton(WoolyUIKit)
 - (void)stretchBackgroundImageWithLeftCapWidth:(CGFloat)leftCapWidth topCapHeight:(CGFloat)topCapHeight forState:(UIControlState)state
 {
 	NSParameterAssert(leftCapWidth<=1.0);

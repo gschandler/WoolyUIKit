@@ -1,15 +1,15 @@
 //
-//  UIDevice+Orientation.m
+//  UIDevice+WoolyUIKit.m
 //  WoolyUI
 //
 //  Created by Scott Chandler on 8/29/10.
 //  Copyright 2010 Wooly Beast Software, LLC. All rights reserved.
 //
 
-#import "UIDevice+Orientation.h"
+#import "UIDevice+WoolyUIKit.h"
 
 
-@implementation UIDevice(Orientation)
+@implementation UIDevice(WoolyUIKit)
 
 - (BOOL)isLandscape
 {

@@ -1,14 +1,14 @@
 //
-//  UIBarButtonItem+Extensions.m
+//  UIBarButtonItem+WoolyUIKit.m
 //  WoolyUI
 //
 //  Created by Scott Chandler on 1/22/12.
 //  Copyright (c) 2012 Wooly Beast Software, LLC. All rights reserved.
 //
 
-#import "UIBarButtonItem+Extensions.h"
+#import "UIBarButtonItem+WoolyUIKit.h"
 
-@implementation UIBarButtonItem (WoolyBeast)
+@implementation UIBarButtonItem (WoolyUIKit)
 + (UIBarButtonItem *)flexibleSpace
 {
 	return [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil] autorelease];

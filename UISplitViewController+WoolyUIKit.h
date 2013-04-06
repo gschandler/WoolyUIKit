@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UISplitViewController(WoolyBeast)
+@interface UISplitViewController(WoolyUIKit)
 @property (nonatomic,retain) UIViewController *mainViewController;
 @property (nonatomic,retain) UIViewController *detailViewController;
 @end

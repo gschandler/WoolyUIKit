@@ -1,15 +1,15 @@
 //
-//  UIImage+Extensions.m
+//  UIImage+WoolyUIKit.m
 //  WBUtilities
 //
 //  Created by Scott Chandler on 1/22/11.
 //  Copyright 2011 Wooly Beast Software, LLC. All rights reserved.
 //
 
-#import "UIImage+Extensions.h"
+#import "UIImage+WoolyUIKit.h"
 
 
-@implementation UIImage (WoolyBeast)
+@implementation UIImage (WoolyUIKit)
 - (UIImage *)stretchableImageWithLeftCapPercent:(CGFloat)leftCapPercent topCapPercent:(CGFloat)topCapPercent
 {
     NSParameterAssert(leftCapPercent>=0.0 && leftCapPercent<=1.0);
@@ -49,7 +49,28 @@
 	for (NSString *name in names ) {
 		[images addObject:[UIImage imageNamed:name]];
 	}
-	return images;
+	return [NSArray arrayWithArray:images];
 }
 
++ (NSArray *)imagesWithContentsOfFiles:(NSArray *)paths
+{
+	NSParameterAssert(paths);
+	
+	NSMutableArray *images = [NSMutableArray arrayWithCapacity:paths.count];
+	for ( id path in paths ) {
+		UIImage *image = nil;
+		
+		if ( [path isKindOfClass:[NSURL class]] ) {
+			image = [UIImage imageWithContentsOfFile:[path path]];
+		}
+		else {
+			image = [UIImage imageWithContentsOfFile:path];
+		}
+		
+		if ( image ) {
+			[images addObject:image];
+		}
+	}
+	return [NSArray arrayWithArray:images];
+}
 @end

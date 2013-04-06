@@ -1,5 +1,5 @@
 //
-//  UIViewController+Extensions.h
+//  UIViewController+WoolyUIKit.h
 //  WoolyUI
 //
 //  Created by Scott Chandler on 9/9/11.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIViewController (WoolyBeast)
+@interface UIViewController (WoolyUIKit)
 @property (nonatomic,readonly,getter = isModal) BOOL modal;
 
 @end

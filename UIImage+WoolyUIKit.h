@@ -1,5 +1,5 @@
 //
-//  UIImage+Extensions.h
+//  UIImage+WoolyUIKit.h
 //  WBUtilities
 //
 //  Created by Scott Chandler on 1/22/11.
@@ -9,11 +9,12 @@
 #import <UIKit/UIKit.h>
 
 
-@interface UIImage (WoolyBeast)
-- (UIImage *)stretchableImageWithLeftCapPercent:(CGFloat)leftCapPercent topCapPercent:(CGFloat)topCapPercent;
+@interface UIImage (WoolyUIKit)
+- (UIImage *)stretchableImageWithLeftCapPercent:(CGFloat)leftCapPercent topCapPercent:(CGFloat)topCapPercent;	// 0.0 - 1.0
 
 + (UIImage *)stretchableImageNamed:(NSString *)name leftCapPercent:(CGFloat)leftCapPercent topCapPercent:(CGFloat)topCapPercent;     // cap height/width 0.0 - 1.0
 + (UIImage *)stretchableImageNamed:(NSString *)name leftCapWidth:(NSUInteger)leftCapWidth topCapHeight:(NSUInteger)topCapHeight;     // cap height/width 0.0 - 
 
 + (NSArray *)imagesWithNames:(NSArray *)names;
++ (NSArray *)imagesWithContentsOfFiles:(NSArray *)paths;
 @end

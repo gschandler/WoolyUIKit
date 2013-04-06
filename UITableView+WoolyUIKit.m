@@ -1,14 +1,14 @@
 //
-//  UITableView+Extensions.m
+//  UITableView+WoolyUIKit.m
 //  WoolyUI
 //
 //  Created by Scott Chandler on 10/18/11.
 //  Copyright (c) 2011 Wooly Beast Software, LLC. All rights reserved.
 //
 
-#import "UITableView+Extensions.h"
+#import "UITableView+WoolyUIKit.h"
 
-@implementation UITableView (WoolyBeast)
+@implementation UITableView (WoolyUIKit)
 - (NSIndexPath *)indexPathForLastRowInSection:(NSUInteger)section
 {
 	NSIndexPath *indexPath = nil;

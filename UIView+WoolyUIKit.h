@@ -1,5 +1,5 @@
 //
-//  UIView+Geometry.h
+//  UIView+WoolyUIKit.h
 //  WoolyUI
 //
 //  Created by Scott Chandler on 8/30/10.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface UIView(Geometry)
+@interface UIView(WoolyUIKit)
 
 // rotation
 - (void)rotateToDegrees:(CGFloat)angle;

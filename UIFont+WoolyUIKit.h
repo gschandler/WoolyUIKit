@@ -1,5 +1,5 @@
 //
-//  UIFont+Extensions.h
+//  UIFont+WoolyUIKit.h
 //  WoolyUI
 //
 //  Created by Scott Chandler on 4/10/10.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIFont(WoolyBeast)
+@interface UIFont(WoolyUIKit)
 @property ( nonatomic, readonly) CGFloat height;
 
 @end

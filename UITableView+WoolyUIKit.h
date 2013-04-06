@@ -1,5 +1,5 @@
 //
-//  UITableView+Extensions.h
+//  UITableView+WoolyUIKit.h
 //  WoolyUI
 //
 //  Created by Scott Chandler on 10/18/11.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UITableView (WoolyBeast)
+@interface UITableView (WoolyUIKit)
 - (NSIndexPath *)indexPathForLastRowInSection:(NSUInteger)section;
 
 @end

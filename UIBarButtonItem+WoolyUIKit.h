@@ -1,5 +1,5 @@
 //
-//  UIBarButtonItem+Extensions.h
+//  UIBarButtonItem+WoolyUIKit.h
 //  WoolyUI
 //
 //  Created by Scott Chandler on 1/22/12.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIBarButtonItem (WoolyBeast)
+@interface UIBarButtonItem (WoolyUIKit)
 + (UIBarButtonItem *)flexibleSpace;
 + (UIBarButtonItem *)fixedSpaceWithWidth:(CGFloat)width;
 + (UIBarButtonItem *)actionBarButtonItemWithTarget:(id)target action:(SEL)action;

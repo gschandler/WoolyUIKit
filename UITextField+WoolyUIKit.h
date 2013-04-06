@@ -1,5 +1,5 @@
 //
-//  UITextField+Indicator.h
+//  UITextField+WoolyUIKit.h
 //  WoolyUI
 //
 //  Created by Scott Chandler on 11/24/10.
@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 
-@interface UITextField(Indicator)
+@interface UITextField(WoolyUIKit)
 - (void)showInvalidTextIndicator:(BOOL)show;
 @end

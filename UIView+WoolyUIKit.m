@@ -1,17 +1,17 @@
 //
-//  UIView+Geometry.m
+//  UIView+WoolyUIKit.m
 //  WoolyUI
 //
 //  Created by Scott Chandler on 8/30/10.
 //  Copyright 2010 Wooly Beast Software, LLC. All rights reserved.
 //
 
-#import "UIView+Geometry.h"
+#import "UIView+WoolyUIKit.h"
 
 #define	ONE_RAD_IN_DEGREES	(180.0)
 #define	DEG_TO_RAD(d)	((d/ONE_RAD_IN_DEGREES) * M_PI)
 
-@implementation UIView(Geometry)
+@implementation UIView(WoolyUIKit)
 
 #pragma mark -
 - (void)rotateToDegrees:(CGFloat)angle

@@ -1,18 +1,18 @@
 //
-//  UITextField+Indicator.m
+//  UITextField+WoolyUIKit.m
 //  WoolyUI
 //
 //  Created by Scott Chandler on 11/24/10.
 //  Copyright 2010 Wooly Beast Software, LLC. All rights reserved.
 //
 
-#import "UITextField+Indicator.h"
+#import "UITextField+WoolyUIKit.h"
 
 #define USE_UNICODE	(!0)
 static NSString * const kUnicodeCheckMark = @"\u2714";
 static NSString * const kUnicodeCrossMark = @"\u274C";
 
-@implementation UITextField(Indicator)
+@implementation UITextField(WoolyUIKit)
 //
 //
 //
