@@ -11,16 +11,31 @@
 
 @implementation UIDevice(WoolyUIKit)
 
+/*
+ *
+ *
+ *
+ */
 - (BOOL)isLandscape
 {
 	return UIDeviceOrientationIsLandscape(self.orientation);
 }
 
+/*
+ *
+ *
+ *
+ */
 - (BOOL)isPortrait
 {
 	return UIDeviceOrientationIsPortrait(self.orientation);
 }
 
+/*
+ *
+ *
+ *
+ */
 - (CGAffineTransform)transform
 {
 	CGFloat pi = 3.141592;

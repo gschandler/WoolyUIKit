@@ -54,7 +54,9 @@
 - (void)makeControllersPerformSelector:(SEL)selector;
 - (void)makeControllersPerformSelector:(SEL)selector withObject:(id)object;
 
+#if NS_BLOCKS_AVAILABLE
 - (void)enumerateControllers:(void (^)(id<WBTableViewCellController> controller, NSInteger idx, BOOL *stop))block;
+#endif
 @end
 
 
@@ -106,6 +108,7 @@
 - (void)makeControllersPerformSelector:(SEL)selector;
 - (void)makeControllersPerformSelector:(SEL)selector withObject:(id)object;
 
+#if NS_BLOCKS_AVAILABLE
 - (void)enumerateControllers:(void (^)(id<WBTableViewCellController> controller, NSIndexPath *indexPath, BOOL *stop))block;
-
+#endif
 @end

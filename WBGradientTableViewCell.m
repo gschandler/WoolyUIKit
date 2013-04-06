@@ -13,27 +13,21 @@
 @synthesize gradientStops=_gradientStops;
 @synthesize gradientColors=_gradientColors;
 
+/*
+ *
+ *
+ *
+ */
 + (Class)layerClass
 {
     return [CAGradientLayer class];
 }
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code
-    }
-    return self;
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
-}
-
+/*
+ *
+ *
+ *
+ */
 - (void)setGradientColors:(NSArray *)gradientColors
 {
     CAGradientLayer *layer = (CAGradientLayer *)self.layer;
@@ -41,11 +35,21 @@
     [layer setNeedsDisplay];
 }
 
+/*
+ *
+ *
+ *
+ */
 - (NSArray *)gradientColors
 {
     return ((CAGradientLayer *)self.layer).colors;
 }
 
+/*
+ *
+ *
+ *
+ */
 - (void)setGradientStops:(NSArray *)gradientStops
 {
     CAGradientLayer *layer = (CAGradientLayer *)self.layer;
@@ -53,6 +57,11 @@
     [layer setNeedsDisplay];
 }
 
+/*
+ *
+ *
+ *
+ */
 - (NSArray *)gradientStops
 {
     return ((CAGradientLayer *)self.layer).locations;

@@ -1,0 +1,413 @@
+// !$*UTF8*$!
+{
+	0867D690FE84028FC02AAC07 /* Project object */ = {
+		activeBuildConfigurationName = Release;
+		activeSDKPreference = iphoneos4.3;
+		activeTarget = D2AAC07D0554694100DB518D /* WoolyUI */;
+		addToTargets = (
+			4CD51AF9134BA4BF00F7AC76 /* WoolyUITests */,
+		);
+		breakpoints = (
+		);
+		codeSenseManager = 4CBA6E2B13240AB50052CED7 /* Code sense */;
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXExecutablesDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXExecutablesDataSource_NameID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					22,
+					300,
+					485.58349609375,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXExecutablesDataSource_ActiveFlagID,
+					PBXExecutablesDataSource_NameID,
+					PBXExecutablesDataSource_CommentsID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					598,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXTargetDataSource.PBXTargetDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					558,
+					60,
+					20,
+					48,
+					43,
+					43,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXTargetDataSource_PrimaryAttribute,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 328724312;
+			PBXWorkspaceStateSaveDate = 328724312;
+		};
+		perUserProjectItems = {
+			4C55ADF4138591B3003B885B /* PBXTextBookmark */ = 4C55ADF4138591B3003B885B /* PBXTextBookmark */;
+			4C55ADF5138591B3003B885B /* PBXTextBookmark */ = 4C55ADF5138591B3003B885B /* PBXTextBookmark */;
+			4C55ADF6138591B3003B885B /* PlistBookmark */ = 4C55ADF6138591B3003B885B /* PlistBookmark */;
+			4C55ADF7138591B3003B885B /* PBXTextBookmark */ = 4C55ADF7138591B3003B885B /* PBXTextBookmark */;
+			4C55ADF8138591B3003B885B /* PBXTextBookmark */ = 4C55ADF8138591B3003B885B /* PBXTextBookmark */;
+			4C55ADF9138591B3003B885B /* PBXTextBookmark */ = 4C55ADF9138591B3003B885B /* PBXTextBookmark */;
+			4C55ADFA138591B3003B885B /* PBXTextBookmark */ = 4C55ADFA138591B3003B885B /* PBXTextBookmark */;
+			4C55ADFB138591B3003B885B /* PBXTextBookmark */ = 4C55ADFB138591B3003B885B /* PBXTextBookmark */;
+			4C55ADFC138591B3003B885B /* PBXTextBookmark */ = 4C55ADFC138591B3003B885B /* PBXTextBookmark */;
+			4CFBA76A1397EF600000F00E /* PBXTextBookmark */ = 4CFBA76A1397EF600000F00E /* PBXTextBookmark */;
+			4CFBA7AA1397EFB30000F00E /* PBXTextBookmark */ = 4CFBA7AA1397EFB30000F00E /* PBXTextBookmark */;
+		};
+		sourceControlManager = 4CBA6E2A13240AB50052CED7 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	4C55ADF4138591B3003B885B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AA747D9E0F9514B9006C5449 /* WoolyUI_Prefix.pch */;
+		name = "WoolyUI_Prefix.pch: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 213;
+		vrLoc = 0;
+	};
+	4C55ADF5138591B3003B885B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4CBA6E8D13240B7B0052CED7 /* WoolyUI.h */;
+		name = "WoolyUI.h: 30";
+		rLen = 0;
+		rLoc = 579;
+		rType = 0;
+		vrLen = 581;
+		vrLoc = 0;
+	};
+	4C55ADF6138591B3003B885B /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 4CD51AFB134BA4BF00F7AC76 /* WoolyUITests-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/gsc/Development/Projects/iOS/WoolyUI/WoolyUITests-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775808;
+	};
+	4C55ADF7138591B3003B885B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4CBA6E0813240AB50052CED7 /* UIButton+Extensions.m */;
+		name = "UIButton+Extensions.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 821;
+		vrLoc = 0;
+	};
+	4C55ADF8138591B3003B885B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4CBA6E0A13240AB50052CED7 /* UIColor+Extensions.m */;
+		name = "UIColor+Extensions.m: 20";
+		rLen = 0;
+		rLoc = 336;
+		rType = 0;
+		vrLen = 460;
+		vrLoc = 0;
+	};
+	4C55ADF9138591B3003B885B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4CBA6E1413240AB50052CED7 /* UITextField+Indicator.m */;
+		name = "UITextField+Indicator.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1236;
+		vrLoc = 0;
+	};
+	4C55ADFA138591B3003B885B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4CBA6E1213240AB50052CED7 /* UIImage+Extensions.m */;
+		name = "UIImage+Extensions.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1404;
+		vrLoc = 0;
+	};
+	4C55ADFB138591B3003B885B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4CBA6E1013240AB50052CED7 /* UIFont+Extensions.m */;
+		name = "UIFont+Extensions.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 291;
+		vrLoc = 0;
+	};
+	4C55ADFC138591B3003B885B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4CBA6E0E13240AB50052CED7 /* UIDevice+Orientation.m */;
+		name = "UIDevice+Orientation.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 938;
+		vrLoc = 0;
+	};
+	4C9581B01336F71C00E0873C /* WBNetworkActivity.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {679, 338}}";
+			sepNavSelRange = "{175, 0}";
+			sepNavVisRange = "{0, 376}";
+		};
+	};
+	4C9581B11336F71C00E0873C /* WBNetworkActivity.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {679, 728}}";
+			sepNavSelRange = "{748, 0}";
+			sepNavVisRange = "{506, 435}";
+		};
+	};
+	4CBA6E0413240AB50052CED7 /* UIKit+Extensions.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {776, 510}}";
+			sepNavSelRange = "{398, 0}";
+			sepNavVisRange = "{0, 428}";
+		};
+	};
+	4CBA6E0713240AB50052CED7 /* UIButton+Extensions.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {957, 510}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 356}";
+		};
+	};
+	4CBA6E0813240AB50052CED7 /* UIButton+Extensions.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {985, 510}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 821}";
+		};
+	};
+	4CBA6E0913240AB50052CED7 /* UIColor+Extensions.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {776, 510}}";
+			sepNavSelRange = "{259, 0}";
+			sepNavVisRange = "{0, 293}";
+		};
+	};
+	4CBA6E0A13240AB50052CED7 /* UIColor+Extensions.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {776, 510}}";
+			sepNavSelRange = "{336, 0}";
+			sepNavVisRange = "{0, 460}";
+		};
+	};
+	4CBA6E0B13240AB50052CED7 /* UIColor+Crayons.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {776, 510}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 825}";
+		};
+	};
+	4CBA6E0C13240AB50052CED7 /* UIColor+Crayons.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {776, 1820}}";
+			sepNavSelRange = "{258, 7}";
+			sepNavVisRange = "{0, 622}";
+		};
+	};
+	4CBA6E0D13240AB50052CED7 /* UIDevice+Orientation.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {776, 510}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 353}";
+		};
+	};
+	4CBA6E0E13240AB50052CED7 /* UIDevice+Orientation.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {866, 510}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 938}";
+		};
+	};
+	4CBA6E0F13240AB50052CED7 /* UIFont+Extensions.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {626, 232}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 265}";
+		};
+	};
+	4CBA6E1013240AB50052CED7 /* UIFont+Extensions.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {776, 510}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 291}";
+		};
+	};
+	4CBA6E1113240AB50052CED7 /* UIImage+Extensions.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1146, 510}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 657}";
+		};
+	};
+	4CBA6E1213240AB50052CED7 /* UIImage+Extensions.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1034, 572}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 1404}";
+		};
+	};
+	4CBA6E1313240AB50052CED7 /* UITextField+Indicator.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {776, 510}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 270}";
+		};
+	};
+	4CBA6E1413240AB50052CED7 /* UITextField+Indicator.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {776, 1066}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 1236}";
+		};
+	};
+	4CBA6E1513240AB50052CED7 /* UIView+Geometry.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {776, 510}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 470}";
+		};
+	};
+	4CBA6E1613240AB50052CED7 /* UIView+Geometry.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {776, 689}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 809}";
+		};
+	};
+	4CBA6E2A13240AB50052CED7 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	4CBA6E2B13240AB50052CED7 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	4CBA6E8513240AF90052CED7 /* MathUtils.c */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {776, 510}}";
+			sepNavSelRange = "{445, 0}";
+			sepNavVisRange = "{0, 467}";
+		};
+	};
+	4CBA6E8613240AF90052CED7 /* MathUtils.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {776, 510}}";
+			sepNavSelRange = "{403, 0}";
+			sepNavVisRange = "{0, 497}";
+		};
+	};
+	4CBA6E8713240AF90052CED7 /* GeometryExtras.c */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {845, 1092}}";
+			sepNavSelRange = "{1362, 0}";
+			sepNavVisRange = "{662, 856}";
+			sepNavWindowFrame = "{{342, 23}, {769, 811}}";
+		};
+	};
+	4CBA6E8813240AF90052CED7 /* GeometryExtras.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {776, 510}}";
+			sepNavSelRange = "{550, 0}";
+			sepNavVisRange = "{0, 584}";
+		};
+	};
+	4CBA6E8D13240B7B0052CED7 /* WoolyUI.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {776, 510}}";
+			sepNavSelRange = "{579, 0}";
+			sepNavVisRange = "{0, 581}";
+		};
+	};
+	4CD51AF9134BA4BF00F7AC76 /* WoolyUITests */ = {
+		activeExec = 0;
+	};
+	4CD51BC4134BB53900F7AC76 /* MathUtilsTests.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {626, 338}}";
+			sepNavSelRange = "{425, 14}";
+			sepNavVisRange = "{150, 432}";
+		};
+	};
+	4CD51BD5134BB76F00F7AC76 /* GeometryExtrasTests.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {831, 1287}}";
+			sepNavSelRange = "{842, 0}";
+			sepNavVisRange = "{0, 1352}";
+		};
+	};
+	4CFBA76A1397EF600000F00E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4CBA6E0C13240AB50052CED7 /* UIColor+Crayons.m */;
+		name = "UIColor+Crayons.m: 15";
+		rLen = 7;
+		rLoc = 258;
+		rType = 0;
+		vrLen = 622;
+		vrLoc = 0;
+	};
+	4CFBA7AA1397EFB30000F00E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4CBA6E0C13240AB50052CED7 /* UIColor+Crayons.m */;
+		name = "UIColor+Crayons.m: 15";
+		rLen = 7;
+		rLoc = 258;
+		rType = 0;
+		vrLen = 622;
+		vrLoc = 0;
+	};
+	AA747D9E0F9514B9006C5449 /* WoolyUI_Prefix.pch */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {845, 510}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 213}";
+		};
+	};
+	D2AAC07D0554694100DB518D /* WoolyUI */ = {
+		activeExec = 0;
+	};
+}

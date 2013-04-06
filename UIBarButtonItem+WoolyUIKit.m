@@ -9,11 +9,21 @@
 #import "UIBarButtonItem+WoolyUIKit.h"
 
 @implementation UIBarButtonItem (WoolyUIKit)
+/*
+ *
+ *
+ *
+ */
 + (UIBarButtonItem *)flexibleSpace
 {
 	return [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil] autorelease];
 }
 
+/*
+ *
+ *
+ *
+ */
 + (UIBarButtonItem *)fixedSpaceWithWidth:(CGFloat)width
 {
 	UIBarButtonItem *item = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil] autorelease];
@@ -21,21 +31,41 @@
 	return item;
 }
 
+/*
+ *
+ *
+ *
+ */
 + (UIBarButtonItem *)actionBarButtonItemWithTarget:(id)target action:(SEL)action
 {
 	return [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:target action:action] autorelease];
 }
 
+/*
+ *
+ *
+ *
+ */
 + (UIBarButtonItem *)addBarButtonItemWithTarget:(id)target action:(SEL)action
 {
 	return [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:target action:action] autorelease];
 }
 
+/*
+ *
+ *
+ *
+ */
 + (UIBarButtonItem *)doneBarButtonItemWithTarget:(id)target action:(SEL)action
 {
 	return [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:target action:action] autorelease];
 }
 
+/*
+ *
+ *
+ *
+ */
 + (UIBarButtonItem *)cancelBarButtonItemWithTarget:(id)target action:(SEL)action
 {
 	return [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:target action:action] autorelease];

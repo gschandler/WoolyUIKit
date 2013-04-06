@@ -13,11 +13,11 @@ static NSString * const kUnicodeCheckMark = @"\u2714";
 static NSString * const kUnicodeCrossMark = @"\u274C";
 
 @implementation UITextField(WoolyUIKit)
-//
-//
-//
-//	Synopsis:
-//
+/*
+ *
+ *
+ *
+ */
 - (void)showInvalidTextIndicator:(BOOL)show
 {
 	UIView * view = nil;

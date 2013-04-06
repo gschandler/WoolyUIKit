@@ -9,6 +9,11 @@
 #import "UITableView+WoolyUIKit.h"
 
 @implementation UITableView (WoolyUIKit)
+/*
+ *
+ *
+ *
+ */
 - (NSIndexPath *)indexPathForLastRowInSection:(NSUInteger)section
 {
 	NSIndexPath *indexPath = nil;

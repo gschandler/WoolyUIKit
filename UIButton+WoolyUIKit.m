@@ -10,6 +10,11 @@
 
 
 @implementation UIButton(WoolyUIKit)
+/*
+ *
+ *
+ *
+ */
 - (void)stretchBackgroundImageWithLeftCapWidth:(CGFloat)leftCapWidth topCapHeight:(CGFloat)topCapHeight forState:(UIControlState)state
 {
 	NSParameterAssert(leftCapWidth<=1.0);

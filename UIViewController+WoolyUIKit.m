@@ -10,6 +10,11 @@
 
 @implementation UIViewController (WoolyUIKit)
 
+/*
+ *
+ *
+ *
+ */
 - (BOOL)isModal
 {
 	BOOL modal = self.presentingViewController != self;

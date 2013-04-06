@@ -8,8 +8,6 @@
 
 #import "WBPopoverCoordinator.h"
 
-static WBPopoverCoordinator *gSharedPopoverModerator = nil;
-
 @interface WBPopoverCoordinator()
 //@property (nonatomic,retain) UIPopoverController *popoverController;
 
@@ -31,98 +29,14 @@ static WBPopoverCoordinator *gSharedPopoverModerator = nil;
 //
 + (WBPopoverCoordinator *)sharedPopoverCoordinator
 {
-	if ( gSharedPopoverModerator == nil ) {
-		gSharedPopoverModerator = [[super allocWithZone:NULL] init];
-	}
-	return gSharedPopoverModerator;
-}
+	static WBPopoverCoordinator *popoverCooordinator = nil;
+	
+	static dispatch_once_t onceToken;
+	dispatch_once(&onceToken, ^{
+		popoverCooordinator = [WBPopoverCoordinator new];
+	});
 
-//
-//	Method:
-//		
-//
-//	Synopsis:
-//		
-//
-+ (id)allocWithZone:(NSZone *)zone
-{
-	return [[self sharedPopoverCoordinator] retain];
-}
-
-//
-//	Method:
-//		
-//
-//	Synopsis:
-//		
-//
-- (id)retain
-{
-	return self;
-}
-
-//
-//	Method:
-//		
-//
-//	Synopsis:
-//		
-//
-- (NSUInteger)retainCount
-{
-	return NSUIntegerMax;
-}
-
-//
-//	Method:
-//		
-//
-//	Synopsis:
-//		
-//
-- (oneway void)release
-{
-	// do nothing
-}
-
-//
-//	Method:
-//		
-//
-//	Synopsis:
-//		
-//
-- (id)autorelease
-{
-	return self;
-}
-
-//
-//	Method:
-//		
-//
-//	Synopsis:
-//		
-//
-- (id)init
-{
-	self = [super init];
-	if ( self ) {
-	}
-	return self;
-}
-
-//
-//	Method:
-//		
-//
-//	Synopsis:
-//		
-//
-- (void)dealloc
-{
-	WBRelease(_popoverController);
-	[super dealloc];
+	return popoverCooordinator;
 }
 
 //

@@ -9,7 +9,6 @@
 #import "WBActionSheetCoordinator.h"
 #import <objc/message.h>
 
-static WBActionSheetCoordinator *gActionSheetModeratorSingleton = nil;
 
 static NSString * const kCancelActionKey		= @"cancel";
 static NSString * const kDestructiveActionKey	= @"destructive";
@@ -37,45 +36,28 @@ static NSString * const kActionKey				= @"action";
 @synthesize delegate=_delegate;
 @synthesize data=_data;
 
+/*
+ *
+ *
+ *
+ */
 + (WBActionSheetCoordinator *)sharedActionSheetCoordinator
 {
-    if ( gActionSheetModeratorSingleton == nil ) {
-        gActionSheetModeratorSingleton = [[super allocWithZone:NULL] init];
-    }
+	static WBActionSheetCoordinator *actionSheetCoordinator = nil;
+
+	static dispatch_once_t onceToken;
+	dispatch_once(&onceToken, ^{
+		actionSheetCoordinator = [WBActionSheetCoordinator new];
+	});
     
-    return gActionSheetModeratorSingleton;
+    return actionSheetCoordinator;
 }
 
-+ (id)allocWithZone:(NSZone *)zone
-{
-	return [[self sharedActionSheetCoordinator] retain];
-}
-
-//- (id)copyWithZone:(NSZone *)zone
-//{
-//	return self;
-//}
-
-- (id)retain
-{
-	return self;
-}
-
-- (NSUInteger)retainCount
-{
-	return NSUIntegerMax;
-}
-
-- (oneway void)release
-{
-	// do nothing
-}
-
-- (id)autorelease
-{
-	return self;
-}
-
+/*
+ *
+ *
+ *
+ */
 - (void)cleanup
 {
 	self.actionSheet = nil;
@@ -88,6 +70,11 @@ static NSString * const kActionKey				= @"action";
 #endif	
 }
 
+/*
+ *
+ *
+ *
+ */
 - (UIActionSheet *)actionSheet
 {
 	if ( _actionSheet == nil ) {
@@ -97,6 +84,11 @@ static NSString * const kActionKey				= @"action";
 	return _actionSheet;
 }
 
+/*
+ *
+ *
+ *
+ */
 - (void)setActionSheet:(UIActionSheet *)actionSheet
 {
 	if ( _actionSheet != actionSheet ) {
@@ -108,6 +100,11 @@ static NSString * const kActionKey				= @"action";
 	}
 }
 
+/*
+ *
+ *
+ *
+ */
 - (NSMutableDictionary *)data
 {
 	if ( _data == nil ) {
@@ -116,6 +113,11 @@ static NSString * const kActionKey				= @"action";
 	return _data;
 }
 
+/*
+ *
+ *
+ *
+ */
 - (NSInvocation *)invocationForAction:(SEL)action target:(id)target object:(id)object
 {
 	if ( action == nil ) {
@@ -133,6 +135,11 @@ static NSString * const kActionKey				= @"action";
 	return invocation;
 }
 
+/*
+ *
+ *
+ *
+ */
 - (NSInteger)addButtonWithTitle:(NSString *)title action:(SEL)action target:(id)target object:(id)object
 {
 	NSParameterAssert(title);
@@ -147,6 +154,11 @@ static NSString * const kActionKey				= @"action";
 	return index;
 }
 
+/*
+ *
+ *
+ *
+ */
 - (NSRange)addButtonsWithTitles:(NSArray *)titles
 {
 	NSParameterAssert(titles);
@@ -159,6 +171,11 @@ static NSString * const kActionKey				= @"action";
 	return range;
 }
 
+/*
+ *
+ *
+ *
+ */
 - (void)dealloc
 {
 	WBRelease(_data);
@@ -166,6 +183,11 @@ static NSString * const kActionKey				= @"action";
 	[super dealloc];
 }
 
+/*
+ *
+ *
+ *
+ */
 - (void)showFromBarButtonItem:(UIBarButtonItem *)item animated:(BOOL)animated
 {
 	NSParameterAssert(item);
@@ -173,6 +195,11 @@ static NSString * const kActionKey				= @"action";
 	[self.actionSheet showFromBarButtonItem:item animated:animated];
 }
 
+/*
+ *
+ *
+ *
+ */
 - (void)showFromToolbar:(UIToolbar *)toolbar
 {
 	NSParameterAssert(toolbar);
@@ -180,6 +207,11 @@ static NSString * const kActionKey				= @"action";
 	[self.actionSheet showFromToolbar:toolbar];
 }
 
+/*
+ *
+ *
+ *
+ */
 - (void)showFromTabBar:(UITabBar *)tabBar
 {
 	NSParameterAssert(tabBar);
@@ -187,6 +219,11 @@ static NSString * const kActionKey				= @"action";
 	[self.actionSheet showFromTabBar:tabBar];
 }
 
+/*
+ *
+ *
+ *
+ */
 - (void)showFromRect:(CGRect)rect inView:(UIView *)view animated:(BOOL)animated
 {
 	NSParameterAssert(view);
@@ -195,6 +232,11 @@ static NSString * const kActionKey				= @"action";
 	[self.actionSheet showFromRect:rect inView:view animated:animated];
 }
 
+/*
+ *
+ *
+ *
+ */
 - (void)showInView:(UIView *)view
 {
 	NSParameterAssert(view);
@@ -202,11 +244,21 @@ static NSString * const kActionKey				= @"action";
 	[self.actionSheet showInView:view];
 }
 
+/*
+ *
+ *
+ *
+ */
 - (void)dismiss
 {
 	[self dismissAnimated:NO];
 }
 
+/*
+ *
+ *
+ *
+ */
 - (void)dismissAnimated:(BOOL)animated
 {
 	if ( self.isVisible ) {
@@ -218,10 +270,20 @@ static NSString * const kActionKey				= @"action";
 }
 
 #if NS_BLOCKS_AVAILABLE
+/*
+ *
+ *
+ *
+ */
 - (void)prepareToShow
 {
 }
 
+/*
+ *
+ *
+ *
+ */
 - (void)showFromToolbar:(UIToolbar *)view completion:(WBActionSheetCompletion)completion
 {
 	NSParameterAssert(view);
@@ -232,6 +294,11 @@ static NSString * const kActionKey				= @"action";
 	[self.actionSheet showFromToolbar:view];
 }
 
+/*
+ *
+ *
+ *
+ */
 - (void)showFromTabBar:(UITabBar *)view completion:(WBActionSheetCompletion)completion
 {
 	NSParameterAssert(view);
@@ -242,6 +309,11 @@ static NSString * const kActionKey				= @"action";
 	[self.actionSheet showFromTabBar:view];
 }
 
+/*
+ *
+ *
+ *
+ */
 - (void)showFromBarButtonItem:(UIBarButtonItem *)item animated:(BOOL)animated completion:(WBActionSheetCompletion)completion
 {
 	NSParameterAssert(item);
@@ -252,6 +324,11 @@ static NSString * const kActionKey				= @"action";
 	[self.actionSheet showFromBarButtonItem:item animated:animated];
 }
 
+/*
+ *
+ *
+ *
+ */
 - (void)showFromRect:(CGRect)rect inView:(UIView *)view animated:(BOOL)animated completion:(WBActionSheetCompletion)completion
 {
 	NSParameterAssert(view);
@@ -263,6 +340,11 @@ static NSString * const kActionKey				= @"action";
 	[self.actionSheet showFromRect:rect inView:view animated:animated];
 }
 
+/*
+ *
+ *
+ *
+ */
 - (void)showInView:(UIView *)view completion:(WBActionSheetCompletion)completion
 {
 	NSParameterAssert(view);
@@ -293,6 +375,11 @@ static NSString * const kActionKey				= @"action";
 //	}
 //}
 
+/*
+ *
+ *
+ *
+ */
 - (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
 	if ( actionSheet != _actionSheet ) return;
@@ -315,6 +402,11 @@ static NSString * const kActionKey				= @"action";
 }
 
 
+/*
+ *
+ *
+ *
+ */
 - (id)forwardingTargetForSelector:(SEL)aSelector
 {
 	return self.actionSheet;

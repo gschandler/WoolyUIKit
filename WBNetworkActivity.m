@@ -8,18 +8,31 @@
 
 #import "WBNetworkActivity.h"
 
-static WBNetworkActivity * gNetworkActivity = nil;
 
 @implementation WBNetworkActivity
 
+/*
+ *
+ *
+ *
+ */
 + (WBNetworkActivity *)sharedNetworkActivity
 {
-	if ( gNetworkActivity == nil ) {
-		gNetworkActivity = [WBNetworkActivity new];
-	}
-	return gNetworkActivity;
+	static WBNetworkActivity * networkActivity = nil;
+
+	static dispatch_once_t onceToken;
+	dispatch_once(&onceToken, ^{
+		networkActivity = [WBNetworkActivity new];
+	});
+
+	return networkActivity;
 }
 
+/*
+ *
+ *
+ *
+ */
 - (id)init
 {
 	self = [super init];
@@ -29,12 +42,22 @@ static WBNetworkActivity * gNetworkActivity = nil;
 	return self;
 }
 
+/*
+ *
+ *
+ *
+ */
 - (void)dealloc
 {
 	WBRelease(_lock);
 	[super dealloc];
 }
 
+/*
+ *
+ *
+ *
+ */
 - (void)beginNetworkActivity
 {
 	if ( [_lock tryLock] ) {
@@ -43,6 +66,11 @@ static WBNetworkActivity * gNetworkActivity = nil;
 	}
 }
 
+/*
+ *
+ *
+ *
+ */
 - (void)endNetworkActivity
 {
 	NSAssert(_count>0,@"Unbalanced begin/end network activity");

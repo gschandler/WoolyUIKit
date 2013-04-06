@@ -10,6 +10,11 @@
 
 
 @implementation UIImage (WoolyUIKit)
+/*
+ *
+ *
+ *
+ */
 - (UIImage *)stretchableImageWithLeftCapPercent:(CGFloat)leftCapPercent topCapPercent:(CGFloat)topCapPercent
 {
     NSParameterAssert(leftCapPercent>=0.0 && leftCapPercent<=1.0);
@@ -20,6 +25,11 @@
     return image;
 }
 
+/*
+ *
+ *
+ *
+ */
 + (UIImage *)stretchableImageNamed:(NSString *)name leftCapPercent:(CGFloat)leftCapPercent topCapPercent:(CGFloat)topCapPercent
 {
     NSParameterAssert(name);
@@ -33,6 +43,11 @@
     return image;
 }
 
+/*
+ *
+ *
+ *
+ */
 + (UIImage *)stretchableImageNamed:(NSString *)name leftCapWidth:(NSUInteger)leftCapWidth topCapHeight:(NSUInteger)topCapHeight
 {
     NSParameterAssert(name);
@@ -42,6 +57,11 @@
     return image;    
 }
 
+/*
+ *
+ *
+ *
+ */
 + (NSArray *)imagesWithNames:(NSArray *)names
 {
 	NSParameterAssert(names);
@@ -52,6 +72,11 @@
 	return [NSArray arrayWithArray:images];
 }
 
+/*
+ *
+ *
+ *
+ */
 + (NSArray *)imagesWithContentsOfFiles:(NSArray *)paths
 {
 	NSParameterAssert(paths);

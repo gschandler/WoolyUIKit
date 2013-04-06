@@ -14,23 +14,43 @@
 @implementation UIView(WoolyUIKit)
 
 #pragma mark -
+/*
+ *
+ *
+ *
+ */
 - (void)rotateToDegrees:(CGFloat)angle
 {
 	CGFloat radians = DEG_TO_RAD(angle);
 	[self rotateToRadians:radians];
 }
 
+/*
+ *
+ *
+ *
+ */
 - (void)rotateToRadians:(CGFloat)radians
 {
 	self.transform = CGAffineTransformRotate(CGAffineTransformIdentity,radians);
 }
 
+/*
+ *
+ *
+ *
+ */
 - (void)rotateByDegrees:(CGFloat)angle
 {
 	CGFloat radians = DEG_TO_RAD(angle);
 	[self rotateByRadians:radians];
 }
 
+/*
+ *
+ *
+ *
+ */
 - (void)rotateByRadians:(CGFloat)radians
 {
 	self.transform = CGAffineTransformRotate(self.transform,radians);
@@ -39,11 +59,21 @@
 
 #pragma mark -
 
+/*
+ *
+ *
+ *
+ */
 - (void)scaleToSize:(CGSize)size
 {
 	self.transform = CGAffineTransformScale(CGAffineTransformIdentity, size.width, size.height);
 }
 
+/*
+ *
+ *
+ *
+ */
 - (void)scaleBySize:(CGSize)size
 {
 	self.transform = CGAffineTransformScale(self.transform, size.width, size.height);

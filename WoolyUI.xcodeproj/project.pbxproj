@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4C3E9B70144E1360001E42C0 /* UITableView+WoolyUIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3E9B6F144E1360001E42C0 /* UITableView+WoolyUIKit.m */; };
+		4C44CF091710E6AD00E379BB /* libWoolyFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C23DCC61710E4C20081FB2F /* libWoolyFoundation.a */; };
 		4C4BC4B515A1F91C00D160A6 /* WBGradientTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C4BC4B315A1F91C00D160A6 /* WBGradientTableViewCell.h */; };
 		4C4BC4B615A1F91C00D160A6 /* WBGradientTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4BC4B415A1F91C00D160A6 /* WBGradientTableViewCell.m */; };
 		4C7F0814144BE7AD0053363C /* WBTableConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C7F0804144BE7AD0053363C /* WBTableConfiguration.h */; };
@@ -65,7 +66,32 @@
 		AA747D9F0F9514B9006C5449 /* WoolyUI_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* WoolyUI_Prefix.pch */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		4C23DCC51710E4C20081FB2F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C23DCC01710E4C10081FB2F /* WoolyFoundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
+			remoteInfo = WoolyFoundation;
+		};
+		4C23DCC71710E4C20081FB2F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C23DCC01710E4C10081FB2F /* WoolyFoundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4CD513F3134D08BE004E466E;
+			remoteInfo = WoolyFoundationTests;
+		};
+		4C44CF051710E6A500E379BB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C23DCC01710E4C10081FB2F /* WoolyFoundation.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = WoolyFoundation;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		4C23DCC01710E4C10081FB2F /* WoolyFoundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WoolyFoundation.xcodeproj; path = ../WoolyFoundation/WoolyFoundation.xcodeproj; sourceTree = "<group>"; };
 		4C3E9B6E144E1360001E42C0 /* UITableView+WoolyUIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+WoolyUIKit.h"; sourceTree = "<group>"; };
 		4C3E9B6F144E1360001E42C0 /* UITableView+WoolyUIKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+WoolyUIKit.m"; sourceTree = "<group>"; };
 		4C4BC4B315A1F91C00D160A6 /* WBGradientTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBGradientTableViewCell.h; sourceTree = "<group>"; };
@@ -135,6 +161,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C44CF091710E6AD00E379BB /* libWoolyFoundation.a in Frameworks */,
 				4CBA6E2E13240AE20052CED7 /* UIKit.framework in Frameworks */,
 				4CD51BBB134BB41C00F7AC76 /* CoreGraphics.framework in Frameworks */,
 			);
@@ -159,6 +186,7 @@
 				08FB77AEFE84172EC02AAC07 /* Classes */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
 				0867D69AFE84028FC02AAC07 /* Frameworks */,
+				4C23DCBF1710E48F0081FB2F /* Libraries */,
 				034768DFFF38A50411DB9C8B /* Products */,
 				4CD51AFB134BA4BF00F7AC76 /* WoolyUITests-Info.plist */,
 			);
@@ -198,6 +226,23 @@
 				4CBA6E8D13240B7B0052CED7 /* WoolyUI.h */,
 			);
 			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		4C23DCBF1710E48F0081FB2F /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				4C23DCC01710E4C10081FB2F /* WoolyFoundation.xcodeproj */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		4C23DCC11710E4C10081FB2F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4C23DCC61710E4C20081FB2F /* libWoolyFoundation.a */,
+				4C23DCC81710E4C20081FB2F /* WoolyFoundationTests.octest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		4C7F07E7144BE6430053363C /* Table Support */ = {
@@ -364,6 +409,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				4C44CF061710E6A500E379BB /* PBXTargetDependency */,
 			);
 			name = WoolyUI;
 			productName = WoolyUI;
@@ -391,6 +437,12 @@
 			mainGroup = 0867D691FE84028FC02AAC07 /* WoolyUI */;
 			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 4C23DCC11710E4C10081FB2F /* Products */;
+					ProjectRef = 4C23DCC01710E4C10081FB2F /* WoolyFoundation.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				D2AAC07D0554694100DB518D /* WoolyUI */,
@@ -398,6 +450,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		4C23DCC61710E4C20081FB2F /* libWoolyFoundation.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libWoolyFoundation.a;
+			remoteRef = 4C23DCC51710E4C20081FB2F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4C23DCC81710E4C20081FB2F /* WoolyFoundationTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = WoolyFoundationTests.octest;
+			remoteRef = 4C23DCC71710E4C20081FB2F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		4CD51AF5134BA4BF00F7AC76 /* Resources */ = {
@@ -470,6 +539,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4C44CF061710E6A500E379BB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = WoolyFoundation;
+			targetProxy = 4C44CF051710E6A500E379BB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1DEB921F08733DC00010E9CD /* Debug */ = {

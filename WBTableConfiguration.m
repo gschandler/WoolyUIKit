@@ -15,6 +15,11 @@
 @synthesize height=_height;
 
 
+/*
+ *
+ *
+ *
+ */
 - (void)dealloc
 {
 	[_title release];
@@ -35,16 +40,31 @@
 @synthesize rowCount=_rowCount;
 @synthesize tag=_tag;
 
+/*
+ *
+ *
+ *
+ */
 -(id)init
 {
 	return [self initWithControllers:[NSArray array]];
 }
 
+/*
+ *
+ *
+ *
+ */
 - (id)initWithController:(id<WBTableViewCellController>)controller
 {
 	return [self initWithControllers:[NSArray arrayWithObjects:controller, nil]];
 }
 
+/*
+ *
+ *
+ *
+ */
 - (id)initWithControllers:(NSArray *)controllers
 {
 	self = [super init];
@@ -59,6 +79,11 @@
 	
 }
 
+/*
+ *
+ *
+ *
+ */
 - (void)dealloc
 {
 	[_controllers release];
@@ -67,6 +92,11 @@
 	[super dealloc];
 }
 
+/*
+ *
+ *
+ *
+ */
 - (NSInteger)numberOfRows
 {
 	NSInteger rows = self.rowCount;
@@ -76,6 +106,11 @@
 	return rows;
 }
 
+/*
+ *
+ *
+ *
+ */
 - (void)addController:(id<WBTableViewCellController>)controller
 {
 	NSParameterAssert(controller);
@@ -85,6 +120,11 @@
 	}
 }
 
+/*
+ *
+ *
+ *
+ */
 - (void)removeController:(id<WBTableViewCellController>)controller
 {
 	NSInteger index = [self.controllers indexOfObject:controller];
@@ -96,6 +136,11 @@
 	}
 }
 
+/*
+ *
+ *
+ *
+ */
 - (id<WBTableViewCellController>)controllerAtIndex:(NSInteger)index
 {
 	id<WBTableViewCellController> controller = nil;
@@ -108,38 +153,73 @@
 	return controller;
 }
 
+/*
+ *
+ *
+ *
+ */
 - (id<WBTableViewCellController>)firstController
 {
 	return [self.controllers objectAtIndex:0];
 }
 
+/*
+ *
+ *
+ *
+ */
 - (id<WBTableViewCellController>)lastController
 {
 	return [self.controllers lastObject];
 }
 
+/*
+ *
+ *
+ *
+ */
 - (NSInteger)indexOfController:(id<WBTableViewCellController>)controller
 {
 	NSParameterAssert(controller);
 	return [self.controllers indexOfObject:controller];
 }
 
+/*
+ *
+ *
+ *
+ */
 - (NSEnumerator *)controllerEnumerator
 {
 	return [self.controllers objectEnumerator];
 }
 
-
+/*
+ *
+ *
+ *
+ */
 - (void)makeControllersPerformSelector:(SEL)selector
 {
 	[self.controllers makeObjectsPerformSelector:selector];
 }
 
+/*
+ *
+ *
+ *
+ */
 - (void)makeControllersPerformSelector:(SEL)selector withObject:(id)object
 {
 	[self.controllers makeObjectsPerformSelector:selector withObject:object];
 }
 
+/*
+ *
+ *
+ *
+ */
+#if NS_BLOCKS_AVAILABLE
 - (void)enumerateControllers:(void (^)(id<WBTableViewCellController>, NSInteger, BOOL *))block
 {
     [self.controllers enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
@@ -147,6 +227,7 @@
         block(controller,idx,stop);
     }];
 }
+#endif
 @end
 
 @implementation WBTableHeaderFooter
@@ -154,6 +235,11 @@
 @synthesize view=_view;
 @synthesize height=_height;
 
+/*
+ *
+ *
+ *
+ */
 - (void)dealloc
 {
 	[_view release];
@@ -175,6 +261,11 @@
 @synthesize sections = _sections;
 @synthesize footer = _footer;
 
+/*
+ *
+ *
+ *
+ */
 - (id)init
 {
 	self = [self initWithTableSections:[NSArray array]];
@@ -192,6 +283,11 @@
 //	return self;
 //}
 
+/*
+ *
+ *
+ *
+ */
 - (id)initWithTableSections:(NSArray *)sections
 {
 	NSParameterAssert(sections);
@@ -205,6 +301,11 @@
 	return self;
 }
 
+/*
+ *
+ *
+ *
+ */
 - (id)initWithTableSection:(WBTableSection *)section
 {
 	NSParameterAssert(section);
@@ -213,6 +314,11 @@
 }
 
 
+/*
+ *
+ *
+ *
+ */
 - (void)dealloc
 {
 	[_header release];
@@ -221,11 +327,21 @@
 	[super dealloc];
 }
 
+/*
+ *
+ *
+ *
+ */
 - (NSInteger)numberOfSections
 {
 	return [self.sections count];
 }
 
+/*
+ *
+ *
+ *
+ */
 - (WBTableSection *)sectionAtIndex:(NSInteger)index
 {
 	WBTableSection *section = nil;
@@ -235,6 +351,11 @@
 	return section;
 }
 
+/*
+ *
+ *
+ *
+ */
 - (WBTableSection *)sectionWithTag:(NSInteger)tag
 {
 	WBTableSection *section = nil;
@@ -245,17 +366,32 @@
 }
 
 
+/*
+ *
+ *
+ *
+ */
 - (WBTableSection *)lastSection
 {
 	return ([self numberOfSections]>0) ? [self.sections lastObject] : nil;
 }
 
+/*
+ *
+ *
+ *
+ */
 - (WBTableSection *)firstSection
 {
 	return ([self numberOfSections]>0) ? [self.sections objectAtIndex:0] : nil;
 }
 
 
+/*
+ *
+ *
+ *
+ */
 - (void)addSection:(WBTableSection *)section
 {
 	NSParameterAssert(section);
@@ -264,6 +400,11 @@
 	}
 }
 
+/*
+ *
+ *
+ *
+ */
 - (void)insertSection:(WBTableSection *)section atIndex:(NSInteger)index
 {
 	NSParameterAssert(section);
@@ -277,6 +418,11 @@
 	}
 }
 
+/*
+ *
+ *
+ *
+ */
 - (void)removeSection:(WBTableSection *)section
 {
 	NSParameterAssert(section);
@@ -286,6 +432,11 @@
 	}
 }
 
+/*
+ *
+ *
+ *
+ */
 - (void)removeSectionAtIndex:(NSInteger)index
 {
 	if ( [self numberOfSections] > index ) {
@@ -296,18 +447,33 @@
 	}
 }
 
+/*
+ *
+ *
+ *
+ */
 - (NSEnumerator *)sectionEnumerator
 {
 	return [self.sections objectEnumerator];
 }
 
 
+/*
+ *
+ *
+ *
+ */
 - (NSInteger)indexOfSection:(WBTableSection *)section
 {
 	NSParameterAssert(section);
 	return [self.sections indexOfObject:section];
 }
 
+/*
+ *
+ *
+ *
+ */
 - (id<WBTableViewCellController>)controllerForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	NSParameterAssert(indexPath);
@@ -318,6 +484,11 @@
 	return controller;
 }
 
+/*
+ *
+ *
+ *
+ */
 - (NSIndexPath *)indexPathOfController:(id<WBTableViewCellController>)controller
 {
 	NSIndexPath *indexPath = nil;
@@ -333,6 +504,11 @@
 	return indexPath;
 }
 
+/*
+ *
+ *
+ *
+ */
 - (void)makeControllersPerformSelector:(SEL)selector
 {
 	for ( WBTableSection *section in self.sections ) {
@@ -340,6 +516,11 @@
 	}
 }
 
+/*
+ *
+ *
+ *
+ */
 - (void)makeControllersPerformSelector:(SEL)selector withObject:(id)object
 {
 	for ( WBTableSection *section in self.sections ) {
@@ -347,6 +528,12 @@
 	}
 }
 
+/*
+ *
+ *
+ *
+ */
+#if NS_BLOCKS_AVAILABLE
 - (void)enumerateControllers:(void (^)(id<WBTableViewCellController>, NSIndexPath *, BOOL *))block
 {
     NSParameterAssert(block);
@@ -360,5 +547,5 @@
     }];
 
 }
-
+#endif
 @end
