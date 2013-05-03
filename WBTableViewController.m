@@ -7,7 +7,7 @@
 //
 
 #import "WBTableViewController.h"
-#import "WBTableViewCellController.h"
+#import "WBTableViewCellHandler.h"
 
 @interface WBTableViewController(AhFuckIt)
 - (void)validateTableConfiguration;
@@ -97,7 +97,7 @@
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
-	id<WBTableViewCellController> controller = [self.tableDefinition tableViewCellControllerForRowAtIndexPath:indexPath];
+	id<WBTableViewCellHandler> controller = [self.tableDefinition tableViewCellControllerForRowAtIndexPath:indexPath];
 	if ( [controller respondsToSelector:@selector(willDisplayCell:forRowAtIndexPath:inTableView:) ] ) {
 		[controller willDisplayCell:cell forRowAtIndexPath:indexPath inTableView:tableView];
 	}
@@ -108,7 +108,7 @@
 //
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	id<WBTableViewCellController> controller = [self.tableDefinition tableViewCellControllerForRowAtIndexPath:indexPath];
+	id<WBTableViewCellHandler> controller = [self.tableDefinition tableViewCellControllerForRowAtIndexPath:indexPath];
 	
 	if ( [controller respondsToSelector:@selector(willSelectRowAtIndexPath:inTableView:) ] ) {
 		indexPath = [controller willSelectRowAtIndexPath:indexPath inTableView:tableView];
@@ -120,7 +120,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
-	id<WBTableViewCellController> controller = [self.tableDefinition tableViewCellControllerForRowAtIndexPath:indexPath];
+	id<WBTableViewCellHandler> controller = [self.tableDefinition tableViewCellControllerForRowAtIndexPath:indexPath];
 	if ( [controller respondsToSelector:@selector(didSelectRowAtIndexPath:inTableView:) ] ) {
 		[controller didSelectRowAtIndexPath:indexPath inTableView:tableView];
 	}
@@ -144,7 +144,7 @@
 {
 	UITableViewCell * cell = nil;
 	
-	id<WBTableViewCellController> controller = [self.tableDefinition tableViewCellControllerForRowAtIndexPath:indexPath];
+	id<WBTableViewCellHandler> controller = [self.tableDefinition tableViewCellControllerForRowAtIndexPath:indexPath];
 	if ( controller ) {
 		cell = [controller cellForRowAtIndexPath:indexPath inTableView:tableView];
 	}

@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "WBTableViewCellController.h"
+#import "WBTableViewCellHandler.h"
 
-@class WBTableViewCellController;
+@class WBTableViewCellHandler;
 @class WBTableDefinition;
 
 @interface WBTableViewController : UIViewController<UITableViewDataSource,UITableViewDelegate> {
