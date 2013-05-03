@@ -11,6 +11,7 @@
 @interface UIBarButtonItem (WoolyUIKit)
 + (UIBarButtonItem *)flexibleSpace;
 + (UIBarButtonItem *)fixedSpaceWithWidth:(CGFloat)width;
+
 + (UIBarButtonItem *)actionBarButtonItemWithTarget:(id)target action:(SEL)action;
 + (UIBarButtonItem *)addBarButtonItemWithTarget:(id)target action:(SEL)action;
 
