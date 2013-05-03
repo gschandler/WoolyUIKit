@@ -44,7 +44,9 @@
 #import "WBPopoverCoordinator.h"
 #import "WBActionSheetCoordinator.h"
 #import "WBNetworkActivity.h"
-
-#import "WBTableConfiguration.h"
-#import "WBTableViewCellController.h"
 #import "WBAlertViewCoordinator.h"
+
+// Table View Support
+#import "WBTableConfiguration.h"
+#import "WBTableViewCellHandler.h"
+#import "WBTableViewSectionHeaderView.h"
