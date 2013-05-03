@@ -1,5 +1,5 @@
 //
-//  WBTableLayout.m
+//  WBTableConfiguration.m
 //  WoolyTasks
 //
 //  Created by Scott Chandler on 7/22/09.
@@ -7,13 +7,13 @@
 //
 
 #import "WBTableConfiguration.h"
+#import "WBTableViewCellHandler.h"
 
 @implementation WBSectionHeaderFooter
 
 @synthesize title=_title;
 @synthesize view=_view;
 @synthesize height=_height;
-
 
 /*
  *
@@ -30,13 +30,13 @@
 @end
 
 @interface WBTableSection()
-@property(nonatomic,copy) NSArray *controllers;
+@property(strong) NSArray *handlers;
 @end
 
 @implementation WBTableSection
 @synthesize header=_header;
 @synthesize footer=_footer;
-@synthesize controllers=_controllers;
+@synthesize handlers=_handlers;
 @synthesize rowCount=_rowCount;
 @synthesize tag=_tag;
 
@@ -47,7 +47,7 @@
  */
 -(id)init
 {
-	return [self initWithControllers:[NSArray array]];
+	return [self initWithTableViewCellHandlers:@[]];
 }
 
 /*
@@ -55,23 +55,12 @@
  *
  *
  */
-- (id)initWithController:(id<WBTableViewCellController>)controller
+- (id)initWithTableViewCellHandlers:(NSArray *)handlers
 {
-	return [self initWithControllers:[NSArray arrayWithObjects:controller, nil]];
-}
-
-/*
- *
- *
- *
- */
-- (id)initWithControllers:(NSArray *)controllers
-{
-	self = [super init];
-	if ( self ) {
+	if ( self = [super init], self != nil ) {
 		_tag = 0;
-		_controllers = [[NSArray alloc] initWithArray:controllers];
-		_rowCount = -1;
+		_handlers = [handlers retain];
+		_rowCount = 0;
 		_header = [WBSectionHeaderFooter new];
 		_footer = [WBSectionHeaderFooter new];
 	}
@@ -86,7 +75,7 @@
  */
 - (void)dealloc
 {
-	[_controllers release];
+	[_handlers release];
 	[_header release];
 	[_footer release];
 	[super dealloc];
@@ -97,13 +86,9 @@
  *
  *
  */
-- (NSInteger)numberOfRows
+- (NSInteger)rowCount
 {
-	NSInteger rows = self.rowCount;
-	if ( rows == -1 ) {
-		rows = [self.controllers count];
-	}
-	return rows;
+	return (_rowCount>0) ? _rowCount : self.handlers.count;
 }
 
 /*
@@ -111,12 +96,12 @@
  *
  *
  */
-- (void)addController:(id<WBTableViewCellController>)controller
+- (void)addTableViewCellHandler:(id<WBTableViewCellHandler>)handler
 {
-	NSParameterAssert(controller);
+	NSParameterAssert(handler);
 	
-	if ( [self.controllers containsObject:controller] == NO ) {
-		self.controllers = [self.controllers arrayByAddingObject:controller];
+	if ( [self.handlers containsObject:handler] == NO ) {
+		self.handlers = [self.handlers arrayByAddingObject:handler];
 	}
 }
 
@@ -125,13 +110,13 @@
  *
  *
  */
-- (void)removeController:(id<WBTableViewCellController>)controller
+- (void)removeTableViewCellHandler:(id<WBTableViewCellHandler>)handler
 {
-	NSInteger index = [self.controllers indexOfObject:controller];
+	NSInteger index = [self.handlers indexOfObject:handler];
 	if ( index != NSNotFound ) {
-		NSMutableArray *temp = [[NSMutableArray alloc] initWithArray:self.controllers];
+		NSMutableArray *temp = [[NSMutableArray alloc] initWithArray:self.handlers];
 		[temp removeObjectAtIndex:index];
-		self.controllers = temp;
+		self.handlers = [NSArray arrayWithArray:temp];
 		[temp release];
 	}
 }
@@ -141,14 +126,14 @@
  *
  *
  */
-- (id<WBTableViewCellController>)controllerAtIndex:(NSInteger)index
+- (id<WBTableViewCellHandler>)tableViewCellHandlerAtIndex:(NSInteger)index
 {
-	id<WBTableViewCellController> controller = nil;
-	if ( [self.controllers count] > index ) {
-		controller = [self.controllers objectAtIndex:index];
+	id<WBTableViewCellHandler> controller = nil;
+	if ( [self.handlers count] > index ) {
+		controller = [self.handlers objectAtIndex:index];
 	}
-	else if ([self.controllers count] > 0 ) {
-		controller = [self.controllers lastObject];
+	else if ([self.handlers count] > 0 ) {
+		controller = [self.handlers lastObject];
 	}
 	return controller;
 }
@@ -158,9 +143,9 @@
  *
  *
  */
-- (id<WBTableViewCellController>)firstController
+- (id<WBTableViewCellHandler>)firstTableViewCellHandler
 {
-	return [self.controllers objectAtIndex:0];
+	return [self.handlers objectAtIndex:0];
 }
 
 /*
@@ -168,9 +153,9 @@
  *
  *
  */
-- (id<WBTableViewCellController>)lastController
+- (id<WBTableViewCellHandler>)lastTableViewCellHandler
 {
-	return [self.controllers lastObject];
+	return [self.handlers lastObject];
 }
 
 /*
@@ -178,10 +163,10 @@
  *
  *
  */
-- (NSInteger)indexOfController:(id<WBTableViewCellController>)controller
+- (NSInteger)indexOfTableViewCellHandler:(id<WBTableViewCellHandler>)handler
 {
-	NSParameterAssert(controller);
-	return [self.controllers indexOfObject:controller];
+	NSParameterAssert(handler);
+	return [self.handlers indexOfObject:handler];
 }
 
 /*
@@ -189,9 +174,9 @@
  *
  *
  */
-- (NSEnumerator *)controllerEnumerator
+- (NSEnumerator *)tableViewCellHandlerEnumerator
 {
-	return [self.controllers objectEnumerator];
+	return [self.handlers objectEnumerator];
 }
 
 /*
@@ -199,9 +184,9 @@
  *
  *
  */
-- (void)makeControllersPerformSelector:(SEL)selector
+- (void)makeTableViewCellHandlersPerformSelector:(SEL)selector
 {
-	[self.controllers makeObjectsPerformSelector:selector];
+	[self.handlers makeObjectsPerformSelector:selector];
 }
 
 /*
@@ -209,9 +194,9 @@
  *
  *
  */
-- (void)makeControllersPerformSelector:(SEL)selector withObject:(id)object
+- (void)makeTableViewCellHandlersPerformSelector:(SEL)selector withObject:(id)object
 {
-	[self.controllers makeObjectsPerformSelector:selector withObject:object];
+	[self.handlers makeObjectsPerformSelector:selector withObject:object];
 }
 
 /*
@@ -220,10 +205,10 @@
  *
  */
 #if NS_BLOCKS_AVAILABLE
-- (void)enumerateControllers:(void (^)(id<WBTableViewCellController>, NSInteger, BOOL *))block
+- (void)enumerateTableViewCellHandlers:(void (^)(id<WBTableViewCellHandler>, NSInteger, BOOL *))block
 {
-    [self.controllers enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        id<WBTableViewCellController> controller = (id<WBTableViewCellController>)obj;
+    [self.handlers enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        id<WBTableViewCellHandler> controller = (id<WBTableViewCellHandler>)obj;
         block(controller,idx,stop);
     }];
 }
@@ -251,7 +236,7 @@
 
 
 @interface WBTableConfiguration()
-@property (nonatomic,copy) NSArray *sections;
+@property (strong) NSArray *sections;
 @end
 
 
@@ -260,6 +245,15 @@
 @synthesize header = _header;
 @synthesize sections = _sections;
 @synthesize footer = _footer;
+
+- (id)initWithDictionary:(NSDictionary *)dictionary
+{
+	NSParameterAssert(dictionary);
+	if ( self = [super init], self != nil ) {
+		
+	}
+	return self;
+}
 
 /*
  *
@@ -299,18 +293,6 @@
 		_footer = [WBTableHeaderFooter new];
 	}
 	return self;
-}
-
-/*
- *
- *
- *
- */
-- (id)initWithTableSection:(WBTableSection *)section
-{
-	NSParameterAssert(section);
-
-	return [self initWithTableSections:[NSArray arrayWithObject:section]];
 }
 
 
@@ -474,13 +456,13 @@
  *
  *
  */
-- (id<WBTableViewCellController>)controllerForRowAtIndexPath:(NSIndexPath *)indexPath
+- (id<WBTableViewCellHandler>)tableViewCellHandlerForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	NSParameterAssert(indexPath);
 	NSAssert1(indexPath.section<self.sections.count,@"Invalid section index (%d)",indexPath.section);
 	
 	WBTableSection *section = [self.sections objectAtIndex:indexPath.section];
-	id<WBTableViewCellController> controller = [section controllerAtIndex:indexPath.row];
+	id<WBTableViewCellHandler> controller = [section tableViewCellHandlerAtIndex:indexPath.row];
 	return controller;
 }
 
@@ -489,16 +471,16 @@
  *
  *
  */
-- (NSIndexPath *)indexPathOfController:(id<WBTableViewCellController>)controller
+- (NSIndexPath *)indexPathOfTableViewCellHandler:(id<WBTableViewCellHandler>)handler
 {
 	NSIndexPath *indexPath = nil;
 	NSArray * result = [self.sections filteredArrayUsingPredicate:[NSComparisonPredicate predicateWithLeftExpression:[NSExpression expressionForKeyPath:@"controllers"]
-																									 rightExpression:[NSExpression expressionForConstantValue:controller]
+																									 rightExpression:[NSExpression expressionForConstantValue:handler]
 																									  customSelector:@selector(containsObject:)]];
 	WBTableSection *tableSection = [result lastObject];
 	if ( tableSection ) {
 		NSInteger section = [self indexOfSection:tableSection];
-		NSInteger row = [tableSection indexOfController:controller];
+		NSInteger row = [tableSection indexOfTableViewCellHandler:handler];
 		indexPath = [NSIndexPath indexPathForRow:row inSection:section];
 	}
 	return indexPath;
@@ -509,10 +491,10 @@
  *
  *
  */
-- (void)makeControllersPerformSelector:(SEL)selector
+- (void)makeTableViewCellHandlersPerformSelector:(SEL)selector
 {
 	for ( WBTableSection *section in self.sections ) {
-		[section makeControllersPerformSelector:selector];
+		[section makeTableViewCellHandlersPerformSelector:selector];
 	}
 }
 
@@ -521,10 +503,10 @@
  *
  *
  */
-- (void)makeControllersPerformSelector:(SEL)selector withObject:(id)object
+- (void)makeTableViewCellHandlersPerformSelector:(SEL)selector withObject:(id)object
 {
 	for ( WBTableSection *section in self.sections ) {
-		[section makeControllersPerformSelector:selector withObject:object];
+		[section makeTableViewCellHandlersPerformSelector:selector withObject:object];
 	}
 }
 
@@ -534,12 +516,12 @@
  *
  */
 #if NS_BLOCKS_AVAILABLE
-- (void)enumerateControllers:(void (^)(id<WBTableViewCellController>, NSIndexPath *, BOOL *))block
+- (void)enumerateTableViewCellHandlers:(void (^)(id<WBTableViewCellHandler>, NSIndexPath *, BOOL *))block
 {
     NSParameterAssert(block);
     [self.sections enumerateObjectsUsingBlock:^(id sectionObj, NSUInteger sectionIndex, BOOL *stopOuter) {
         WBTableSection *section = (WBTableSection *)sectionObj;
-        [section enumerateControllers:^(id<WBTableViewCellController> controller, NSInteger rowIndex, BOOL *stopInner) {
+        [section enumerateTableViewCellHandlers:^(id<WBTableViewCellHandler> controller, NSInteger rowIndex, BOOL *stopInner) {
             NSIndexPath *indexPath = [NSIndexPath indexPathForRow:rowIndex inSection:sectionIndex];
             block(controller,indexPath,stopInner);
             *stopOuter = *stopInner;

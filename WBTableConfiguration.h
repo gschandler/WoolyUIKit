@@ -1,5 +1,5 @@
 //
-//  WBTableLayout.h
+//  WBTableConfiguration.h
 //  WoolyTasks
 //
 //  Created by Scott Chandler on 7/22/09.
@@ -7,86 +7,103 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "WBTableViewCellController.h"
 
+@class WBTableViewCellHandler;
+@protocol WBTableViewCellHandler;
+
+/*
+ *
+ *	WBSectionHeaderFooter
+ *
+ */
 @interface WBSectionHeaderFooter : NSObject
 {
 	NSString *_title;
 	UIView *_view;
 	CGFloat _height;
 }
-
-@property(nonatomic,copy) NSString *title;
-@property(nonatomic,retain) UIView *view;
-@property(nonatomic,assign) CGFloat height;
+@property(copy) NSString *title;
+@property(strong) UIView *view;
+@property(assign) CGFloat height;
 
 @end
 
+
+/*
+ *
+ *	WBTableSection
+ *
+ */
 @interface WBTableSection : NSObject
 {
 	NSInteger					_tag;
 	WBSectionHeaderFooter *		_header;
 	WBSectionHeaderFooter *		_footer;
-	NSArray *					_controllers;
+	NSArray *					_handlers;
 	NSInteger					_rowCount;
 }
-@property(nonatomic,retain,readonly) WBSectionHeaderFooter *header;
-@property(nonatomic,retain,readonly) WBSectionHeaderFooter *footer;
+@property(strong,readonly) WBSectionHeaderFooter *header;
+@property(strong,readonly) WBSectionHeaderFooter *footer;
 @property(nonatomic,assign) NSInteger rowCount;
-@property(nonatomic,assign) NSInteger tag;
-@property (nonatomic,readonly,copy) NSArray *controllers;
+@property(assign) NSInteger tag;
+@property (strong,readonly) NSArray *mediators;
 
-- (id)initWithController:(id<WBTableViewCellController>)controller;
-- (id)initWithControllers:(NSArray *)controllers;
+- (id)initWithTableViewCellHandlers:(NSArray *)handlers;
 
-- (NSInteger)numberOfRows;
+- (void)addTableViewCellHandler:(id<WBTableViewCellHandler>)handler;
+- (void)removeTableViewCellHandler:(id<WBTableViewCellHandler>)handler;
+- (id<WBTableViewCellHandler>)tableViewCellHandlerAtIndex:(NSInteger)index;
+- (id<WBTableViewCellHandler>)firstTableViewCellHandler;
+- (id<WBTableViewCellHandler>)lastTableViewCellHandler;
 
-- (void)addController:(id<WBTableViewCellController>)controller;
-- (void)removeController:(id<WBTableViewCellController>)controller;
-- (id<WBTableViewCellController>)controllerAtIndex:(NSInteger)index;
-- (id<WBTableViewCellController>)firstController;
-- (id<WBTableViewCellController>)lastController;
+- (NSEnumerator *)tableViewCellHandlerEnumerator;
 
-- (NSEnumerator *)controllerEnumerator;
+- (NSInteger)indexOfTableViewCellHandler:(id<WBTableViewCellHandler>)controller;
 
-- (NSInteger)indexOfController:(id<WBTableViewCellController>)controller;
-
-- (void)makeControllersPerformSelector:(SEL)selector;
-- (void)makeControllersPerformSelector:(SEL)selector withObject:(id)object;
+- (void)makeTableViewCellHandlersPerformSelector:(SEL)selector;
+- (void)makeTableViewCellHandlersPerformSelector:(SEL)selector withObject:(id)object;
 
 #if NS_BLOCKS_AVAILABLE
-- (void)enumerateControllers:(void (^)(id<WBTableViewCellController> controller, NSInteger idx, BOOL *stop))block;
+- (void)enumerateTableViewCellHandlers:(void (^)(id<WBTableViewCellHandler> handler, NSInteger idx, BOOL *stop))block;
 #endif
 @end
 
 
-
+/*
+ *
+ *	WBTableHeaderFooter
+ *
+ */
 @interface WBTableHeaderFooter : NSObject
 {
 	UIView *_view;
 	CGFloat _height;
 }
 
-@property(nonatomic,retain) UIView *view;
-@property(nonatomic,assign) CGFloat height;
+@property(strong) UIView *view;
+@property(assign) CGFloat height;
 
 @end
 
 
 
-
+/*
+ *
+ *	WBTableConfiguration
+ *
+ */
 @interface WBTableConfiguration : NSObject
 {
 	WBTableHeaderFooter *	_header;
 	WBTableHeaderFooter *	_footer;
 	NSArray *				_sections;
 }
-@property(nonatomic,retain,readonly) WBTableHeaderFooter *header;
-@property(nonatomic,retain,readonly) WBTableHeaderFooter *footer;
-@property ( nonatomic, copy, readonly ) NSArray *sections;
+@property(strong,readonly) WBTableHeaderFooter *header;
+@property(strong,readonly) WBTableHeaderFooter *footer;
+@property (strong,readonly) NSArray *sections;
 
+- (id)initWithDictionary:(NSDictionary *)dictionary;
 - (id)initWithTableSections:(NSArray *)sections;
-- (id)initWithTableSection:(WBTableSection *)section;
 
 - (NSInteger)numberOfSections;
 - (WBTableSection *)sectionAtIndex:(NSInteger)index;
@@ -102,13 +119,13 @@
 
 - (NSInteger)indexOfSection:(WBTableSection *)section;
 
-- (id<WBTableViewCellController>)controllerForRowAtIndexPath:(NSIndexPath *)indexPath;
-- (NSIndexPath *)indexPathOfController:(id<WBTableViewCellController>)controller;
+- (id<WBTableViewCellHandler>)tableViewCellHandlerForRowAtIndexPath:(NSIndexPath *)indexPath;
+- (NSIndexPath *)indexPathOfTableViewCellHandler:(id<WBTableViewCellHandler>)controller;
 
-- (void)makeControllersPerformSelector:(SEL)selector;
-- (void)makeControllersPerformSelector:(SEL)selector withObject:(id)object;
+- (void)makeTableViewCellHandlersPerformSelector:(SEL)selector;
+- (void)makeTableViewCellHandlersPerformSelector:(SEL)selector withObject:(id)object;
 
 #if NS_BLOCKS_AVAILABLE
-- (void)enumerateControllers:(void (^)(id<WBTableViewCellController> controller, NSIndexPath *indexPath, BOOL *stop))block;
+- (void)enumerateTableViewCellHandlers:(void (^)(id<WBTableViewCellHandler> handler, NSIndexPath *indexPath, BOOL *stop))block;
 #endif
 @end

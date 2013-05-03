@@ -10,15 +10,14 @@
 
 
 @interface WBTableViewSectionHeaderView : UIView {
-	UIColor *gradientStartColor;
-	UIColor *gradientEndColor;
-	CGGradientRef gradient;
-	CGColorRef firstLine;
-	CGColorRef nextLine;
-	CGColorRef lastLine;
-	
+	UILabel *_textLabel;
+	NSArray *_gradientColors;
+	UIColor *_topEdgeColor;
+	UIColor *_bottomEdgeColor;
+	CGGradientRef _gradient;
 }
-@property(nonatomic,retain)	UIColor *gradientStartColor;
-@property(nonatomic,retain)	UIColor *gradientEndColor;
-
+@property (nonatomic,strong,readonly) UILabel *textLabel;
+@property (nonatomic,strong) NSArray *gradientColors;
+@property (nonatomic,strong) UIColor *topEdgeColor;
+@property (nonatomic,strong) UIColor *bottomEdgeColor;
 @end
