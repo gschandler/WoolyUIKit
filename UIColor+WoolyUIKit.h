@@ -22,6 +22,11 @@ extern const CGFloat kMagentaColorHue;
 
 + (UIColor *)blueGrayColor;
 
+// adjust a current color by component and return new color
+- (UIColor *)colorWithHue:(CGFloat)hue;
+- (UIColor *)colorWithSaturation:(CGFloat)saturation;
+- (UIColor *)colorWithBrightness:(CGFloat)brightness;
+
 @end
 
 
