@@ -474,9 +474,11 @@
 - (NSIndexPath *)indexPathOfTableViewCellHandler:(id<WBTableViewCellHandler>)handler
 {
 	NSIndexPath *indexPath = nil;
-	NSArray * result = [self.sections filteredArrayUsingPredicate:[NSComparisonPredicate predicateWithLeftExpression:[NSExpression expressionForKeyPath:@"controllers"]
-																									 rightExpression:[NSExpression expressionForConstantValue:handler]
-																									  customSelector:@selector(containsObject:)]];
+	NSArray * result = [self.sections filteredArrayUsingPredicate:
+						[NSComparisonPredicate predicateWithLeftExpression:[NSExpression expressionForKeyPath:NSStringFromSelector(@selector(handlers))]
+														   rightExpression:[NSExpression expressionForConstantValue:handler]
+															customSelector:@selector(containsObject:)]];
+	
 	WBTableSection *tableSection = [result lastObject];
 	if ( tableSection ) {
 		NSInteger section = [self indexOfSection:tableSection];

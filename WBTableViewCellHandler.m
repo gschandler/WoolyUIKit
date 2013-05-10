@@ -8,6 +8,9 @@
 
 #import "WBTableViewCellHandler.h"
 
+NSString *WBTableViewCellHandlerDidChangeNotification = @"WBTableViewCellHandlerDidChangeNotification";
+
+
 @interface WBTableViewCellHandler()
 @property (nonatomic,retain,readonly) NSMutableDictionary *targetActions;
 
@@ -19,9 +22,9 @@
 @synthesize contentInsets=_contentInsets;
 @synthesize delegate=_delegate;
 @synthesize tag=_tag;
-@synthesize title=_title;
-@synthesize image=_image;
-@synthesize details=_details;
+@synthesize tableViewCellTitle=_title;
+@synthesize tableViewCellImage=_image;
+@synthesize tableViewCellDetails=_details;
 
 #define HORIZONTAL_INSET	(10.0)
 #define VERTICAL_INSET		(5.0)
@@ -100,10 +103,10 @@
 //	Synopsis:
 //		
 //
-//- (UITableViewCellAccessoryType) tableViewCellAccessoryType
-//{
-//	return UITableViewCellAccessoryNone;
-//}
+- (UITableViewCellAccessoryType)tableViewCellAccessortType
+{
+	return UITableViewCellAccessoryNone;
+}
 
 //
 //	Method:
@@ -112,82 +115,10 @@
 //	Synopsis:
 //		
 //
-//- (UITableViewCellAccessoryType) tableViewCellEditingAccessoryType
-//{
-//	return UITableViewCellAccessoryNone;
-//}
-
-//
-//	Method:
-//		
-//
-//	Synopsis:
-//		
-//
-//-(UIView *) tableViewCellAccessoryView
-//{
-//	return nil;
-//}
-
-//
-//	Method:
-//		
-//
-//	Synopsis:
-//		
-//
-//- (UIView *) tableViewCellEditingAccessoryView
-//{
-//	return nil;
-//}
-
-//
-//	Method:
-//		
-//
-//	Synopsis:
-//		
-//
-//- (NSString *) stringForTextLabel
-//{
-//	return nil;
-//}
-//
-////
-////	Method:
-////		
-////
-////	Synopsis:
-////		
-////
-//- (NSString *) stringForDetailTextLabel
-//{
-//	return nil;
-//}
-
-//
-//	Method:
-//		
-//
-//	Synopsis:
-//		
-//
-//- (UIImage *) imageForImageView
-//{
-//	return nil;
-//}
-
-//
-//	Method:
-//		
-//
-//	Synopsis:
-//		
-//
-//- (UITableViewCellSelectionStyle) tableViewCellSelectionStyle
-//{
-//	return UITableViewCellSelectionStyleBlue;
-//}
+- (UITableViewCellAccessoryType)tableViewCellEditingAccessoryType
+{
+	return UITableViewCellAccessoryNone;
+}
 
 //
 //	Method:
@@ -202,11 +133,6 @@
 	NSParameterAssert(indexPath);
 	NSParameterAssert(tableView);
 	
-	cell.textLabel.text = self.title;
-	if ( cell.detailTextLabel ) {
-		cell.detailTextLabel.text = self.details;
-	}
-	cell.imageView.image = self.image;
 	
 	[cell layoutIfNeeded];
 }
@@ -223,18 +149,12 @@
 	NSParameterAssert(cell);
 	NSParameterAssert(indexPath);
 	NSParameterAssert(tableView);
-//	
-//	cell.textLabel.text			= [self stringForTextLabel];
-//	cell.detailTextLabel.text	= [self stringForDetailTextLabel];
-//	cell.imageView.image		= [self imageForImageView];	
-
-//	cell.accessoryType			= [self tableViewCellAccessoryType];
-//	cell.accessoryView			= [self tableViewCellAccessoryView];
 	
-//	cell.editingAccessoryType	= [self tableViewCellEditingAccessoryType];
-//	cell.editingAccessoryView	= [self tableViewCellEditingAccessoryView];
-
-//	cell.selectionStyle			= [self tableViewCellSelectionStyle];
+	cell.textLabel.text = self.tableViewCellTitle;
+	if ( cell.detailTextLabel ) {
+		cell.detailTextLabel.text = self.tableViewCellDetails;
+	}
+	cell.imageView.image = self.tableViewCellImage;
 
 	// subclassers do their magic
 	[cell setNeedsDisplay];
@@ -325,6 +245,8 @@
 - (void)didSelectRowAtIndexPath:(NSIndexPath *)indexPath inTableView:(UITableView *)tableView
 {
 	[self performTargetActionsForTableViewCellEvent:WBTableViewCellEventDidSelect];
+	UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+	[self updateCell:cell forRowAtIndexPath:indexPath inTableView:tableView];
 }
 
 //
@@ -350,6 +272,8 @@
 - (void)didDeselectRowAtIndexPath:(NSIndexPath *)indexPath inTableView:(UITableView *)tableView
 {
 	[self performTargetActionsForTableViewCellEvent:WBTableViewCellEventDidDeselect];
+	UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+	[self updateCell:cell forRowAtIndexPath:indexPath inTableView:tableView];
 }
 
 //

@@ -51,6 +51,7 @@
 - (void)tableViewCellHandler:(id<WBTableViewCellHandler>)controller dismissViewController:(UIViewController *)viewController;
 @end
 
+extern NSString *WBTableViewCellHandlerDidChangeNotification;
 
 typedef NS_ENUM(NSUInteger,WBTableViewCellEvents) {
 	WBTableViewCellEventWillSelect = 1,
@@ -75,9 +76,9 @@ typedef NS_ENUM(NSUInteger,WBTableViewCellEvents) {
 - (void)removeTarget:(id)target action:(SEL)action forTableViewCellEvent:(WBTableViewCellEvents)event;
 
 @property (nonatomic,assign) UIEdgeInsets contentInsets;
-@property (strong) NSString *title;
-@property (strong) NSString *details;
-@property (strong) UIImage *image;
+@property (strong) NSString *tableViewCellTitle;
+@property (strong) NSString *tableViewCellDetails;
+@property (strong) UIImage *tableViewCellImage;
 @property (nonatomic,strong,readonly) NSString *tableViewCellReuseIdentifier;
 @property (nonatomic,readonly) Class tableViewCellClass;
 @property (nonatomic,readonly) UITableViewCellStyle tableViewCellStyle;
