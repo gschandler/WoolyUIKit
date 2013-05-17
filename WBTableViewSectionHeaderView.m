@@ -18,7 +18,7 @@
 - (id)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame], self != nil) {
         // Initialization code
-		
+		self.backgroundColor = [UIColor clearColor];
     }
     return self;
 }
