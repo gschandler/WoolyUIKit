@@ -30,13 +30,13 @@
 @end
 
 @interface WBTableSection()
-@property(strong) NSArray *handlers;
+@property(strong) NSArray *tableViewCellHandlers;
 @end
 
 @implementation WBTableSection
 @synthesize header=_header;
 @synthesize footer=_footer;
-@synthesize handlers=_handlers;
+@synthesize tableViewCellHandlers=_handlers;
 @synthesize rowCount=_rowCount;
 @synthesize tag=_tag;
 
@@ -88,7 +88,7 @@
  */
 - (NSInteger)rowCount
 {
-	return (_rowCount>0) ? _rowCount : self.handlers.count;
+	return (_rowCount>0) ? _rowCount : self.tableViewCellHandlers.count;
 }
 
 /*
@@ -100,8 +100,8 @@
 {
 	NSParameterAssert(handler);
 	
-	if ( [self.handlers containsObject:handler] == NO ) {
-		self.handlers = [self.handlers arrayByAddingObject:handler];
+	if ( [self.tableViewCellHandlers containsObject:handler] == NO ) {
+		self.tableViewCellHandlers = [self.tableViewCellHandlers arrayByAddingObject:handler];
 	}
 }
 
@@ -112,11 +112,11 @@
  */
 - (void)removeTableViewCellHandler:(id<WBTableViewCellHandler>)handler
 {
-	NSInteger index = [self.handlers indexOfObject:handler];
+	NSInteger index = [self.tableViewCellHandlers indexOfObject:handler];
 	if ( index != NSNotFound ) {
-		NSMutableArray *temp = [[NSMutableArray alloc] initWithArray:self.handlers];
+		NSMutableArray *temp = [[NSMutableArray alloc] initWithArray:self.tableViewCellHandlers];
 		[temp removeObjectAtIndex:index];
-		self.handlers = [NSArray arrayWithArray:temp];
+		self.tableViewCellHandlers = [NSArray arrayWithArray:temp];
 		[temp release];
 	}
 }
@@ -129,11 +129,11 @@
 - (id<WBTableViewCellHandler>)tableViewCellHandlerAtIndex:(NSInteger)index
 {
 	id<WBTableViewCellHandler> controller = nil;
-	if ( [self.handlers count] > index ) {
-		controller = [self.handlers objectAtIndex:index];
+	if ( [self.tableViewCellHandlers count] > index ) {
+		controller = [self.tableViewCellHandlers objectAtIndex:index];
 	}
-	else if ([self.handlers count] > 0 ) {
-		controller = [self.handlers lastObject];
+	else if ([self.tableViewCellHandlers count] > 0 ) {
+		controller = [self.tableViewCellHandlers lastObject];
 	}
 	return controller;
 }
@@ -145,7 +145,7 @@
  */
 - (id<WBTableViewCellHandler>)firstTableViewCellHandler
 {
-	return [self.handlers objectAtIndex:0];
+	return [self.tableViewCellHandlers objectAtIndex:0];
 }
 
 /*
@@ -155,7 +155,7 @@
  */
 - (id<WBTableViewCellHandler>)lastTableViewCellHandler
 {
-	return [self.handlers lastObject];
+	return [self.tableViewCellHandlers lastObject];
 }
 
 /*
@@ -166,7 +166,7 @@
 - (NSInteger)indexOfTableViewCellHandler:(id<WBTableViewCellHandler>)handler
 {
 	NSParameterAssert(handler);
-	return [self.handlers indexOfObject:handler];
+	return [self.tableViewCellHandlers indexOfObject:handler];
 }
 
 /*
@@ -176,7 +176,7 @@
  */
 - (NSEnumerator *)tableViewCellHandlerEnumerator
 {
-	return [self.handlers objectEnumerator];
+	return [self.tableViewCellHandlers objectEnumerator];
 }
 
 /*
@@ -186,7 +186,7 @@
  */
 - (void)makeTableViewCellHandlersPerformSelector:(SEL)selector
 {
-	[self.handlers makeObjectsPerformSelector:selector];
+	[self.tableViewCellHandlers makeObjectsPerformSelector:selector];
 }
 
 /*
@@ -196,7 +196,7 @@
  */
 - (void)makeTableViewCellHandlersPerformSelector:(SEL)selector withObject:(id)object
 {
-	[self.handlers makeObjectsPerformSelector:selector withObject:object];
+	[self.tableViewCellHandlers makeObjectsPerformSelector:selector withObject:object];
 }
 
 /*
@@ -207,7 +207,7 @@
 #if NS_BLOCKS_AVAILABLE
 - (void)enumerateTableViewCellHandlers:(void (^)(id<WBTableViewCellHandler>, NSInteger, BOOL *))block
 {
-    [self.handlers enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+    [self.tableViewCellHandlers enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         id<WBTableViewCellHandler> controller = (id<WBTableViewCellHandler>)obj;
         block(controller,idx,stop);
     }];
@@ -475,7 +475,7 @@
 {
 	NSIndexPath *indexPath = nil;
 	NSArray * result = [self.sections filteredArrayUsingPredicate:
-						[NSComparisonPredicate predicateWithLeftExpression:[NSExpression expressionForKeyPath:NSStringFromSelector(@selector(handlers))]
+						[NSComparisonPredicate predicateWithLeftExpression:[NSExpression expressionForKeyPath:NSStringFromSelector(@selector(tableViewCellHandlers))]
 														   rightExpression:[NSExpression expressionForConstantValue:handler]
 															customSelector:@selector(containsObject:)]];
 	

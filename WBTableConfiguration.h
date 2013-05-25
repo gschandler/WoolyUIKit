@@ -46,7 +46,7 @@
 @property(strong,readonly) WBSectionHeaderFooter *footer;
 @property(nonatomic,assign) NSInteger rowCount;
 @property(assign) NSInteger tag;
-@property (strong,readonly) NSArray *mediators;
+@property (strong,readonly) NSArray *tableViewCellHandlers;
 
 - (id)initWithTableViewCellHandlers:(NSArray *)handlers;
 
