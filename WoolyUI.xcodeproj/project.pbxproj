@@ -9,17 +9,6 @@
 /* Begin PBXBuildFile section */
 		4C3E9B70144E1360001E42C0 /* UITableView+WoolyUIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3E9B6F144E1360001E42C0 /* UITableView+WoolyUIKit.m */; };
 		4C44CF091710E6AD00E379BB /* libWoolyFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C23DCC61710E4C20081FB2F /* libWoolyFoundation.a */; };
-		4C4BC4B515A1F91C00D160A6 /* WBGradientTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C4BC4B315A1F91C00D160A6 /* WBGradientTableViewCell.h */; };
-		4C4BC4B615A1F91C00D160A6 /* WBGradientTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4BC4B415A1F91C00D160A6 /* WBGradientTableViewCell.m */; };
-		4C7F0814144BE7AD0053363C /* WBTableConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C7F0804144BE7AD0053363C /* WBTableConfiguration.h */; };
-		4C7F0816144BE7AD0053363C /* WBTableConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7F0805144BE7AD0053363C /* WBTableConfiguration.m */; };
-		4C7F081A144BE7AD0053363C /* WBTableViewCellHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C7F0808144BE7AD0053363C /* WBTableViewCellHandler.h */; };
-		4C7F081C144BE7AD0053363C /* WBTableViewCellHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7F0809144BE7AD0053363C /* WBTableViewCellHandler.m */; };
-		4C7F0820144BE7AD0053363C /* WBTableViewSectionHeaderView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C7F080C144BE7AD0053363C /* WBTableViewSectionHeaderView.h */; };
-		4C850D1A15B1CB3400D99721 /* WBAlertViewCoordinator.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C850D1815B1CB3400D99721 /* WBAlertViewCoordinator.h */; };
-		4C850D1B15B1CB3400D99721 /* WBAlertViewCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C850D1915B1CB3400D99721 /* WBAlertViewCoordinator.m */; };
-		4C9581B21336F71C00E0873C /* WBNetworkActivity.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C9581B01336F71C00E0873C /* WBNetworkActivity.h */; };
-		4C9581B31336F71C00E0873C /* WBNetworkActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9581B11336F71C00E0873C /* WBNetworkActivity.m */; };
 		4CA1A11614286A62003458B0 /* UISplitViewController+WoolyUIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA1A11514286A62003458B0 /* UISplitViewController+WoolyUIKit.m */; };
 		4CA34E1C14CC014B00428088 /* UIBarButtonItem+WoolyUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CA34E1A14CC014B00428088 /* UIBarButtonItem+WoolyUIKit.h */; };
 		4CA34E1D14CC014B00428088 /* UIBarButtonItem+WoolyUIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA34E1B14CC014B00428088 /* UIBarButtonItem+WoolyUIKit.m */; };
@@ -43,10 +32,6 @@
 		4CBA6E8B13240AF90052CED7 /* GeometryExtras.c in Sources */ = {isa = PBXBuildFile; fileRef = 4CBA6E8713240AF90052CED7 /* GeometryExtras.c */; };
 		4CBA6E8C13240AF90052CED7 /* GeometryExtras.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CBA6E8813240AF90052CED7 /* GeometryExtras.h */; };
 		4CBA6E8E13240B7B0052CED7 /* WoolyUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CBA6E8D13240B7B0052CED7 /* WoolyUI.h */; };
-		4CBA6EA913240CA50052CED7 /* WBPopoverCoordinator.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CBA6EA713240CA50052CED7 /* WBPopoverCoordinator.h */; };
-		4CBA6EAA13240CA50052CED7 /* WBPopoverCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBA6EA813240CA50052CED7 /* WBPopoverCoordinator.m */; };
-		4CBA6EAE13240CC00052CED7 /* WBActionSheetCoordinator.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CBA6EAC13240CC00052CED7 /* WBActionSheetCoordinator.h */; };
-		4CBA6EAF13240CC00052CED7 /* WBActionSheetCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBA6EAD13240CC00052CED7 /* WBActionSheetCoordinator.m */; };
 		4CC5125E144E164600DF8734 /* UITableView+WoolyUIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3E9B6F144E1360001E42C0 /* UITableView+WoolyUIKit.m */; };
 		4CC5125F144E165800DF8734 /* UITableView+WoolyUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C3E9B6E144E1360001E42C0 /* UITableView+WoolyUIKit.h */; };
 		4CD26508141AEF4200DAD9D5 /* UIViewController+WoolyUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CD26506141AEF4200DAD9D5 /* UIViewController+WoolyUIKit.h */; };
@@ -60,10 +45,6 @@
 		4CD51BCE134BB62F00F7AC76 /* MathUtils.c in Sources */ = {isa = PBXBuildFile; fileRef = 4CBA6E8513240AF90052CED7 /* MathUtils.c */; };
 		4CD51BCF134BB63000F7AC76 /* GeometryExtras.c in Sources */ = {isa = PBXBuildFile; fileRef = 4CBA6E8713240AF90052CED7 /* GeometryExtras.c */; };
 		4CD51BD6134BB76F00F7AC76 /* GeometryExtrasTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD51BD5134BB76F00F7AC76 /* GeometryExtrasTests.m */; };
-		4CF0EE15173068550012CED5 /* WBTableConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7F0805144BE7AD0053363C /* WBTableConfiguration.m */; };
-		4CF0EE16173068550012CED5 /* WBTableViewCellHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7F0809144BE7AD0053363C /* WBTableViewCellHandler.m */; };
-		4CF0EE17173068550012CED5 /* WBTableViewSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7F080D144BE7AD0053363C /* WBTableViewSectionHeaderView.m */; };
-		4CF0EE191730685A0012CED5 /* WBTableViewSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7F080D144BE7AD0053363C /* WBTableViewSectionHeaderView.m */; };
 		AA747D9F0F9514B9006C5449 /* WoolyUI_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* WoolyUI_Prefix.pch */; };
 /* End PBXBuildFile section */
 
@@ -95,18 +76,6 @@
 		4C23DCC01710E4C10081FB2F /* WoolyFoundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WoolyFoundation.xcodeproj; path = ../WoolyFoundation/WoolyFoundation.xcodeproj; sourceTree = "<group>"; };
 		4C3E9B6E144E1360001E42C0 /* UITableView+WoolyUIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+WoolyUIKit.h"; sourceTree = "<group>"; };
 		4C3E9B6F144E1360001E42C0 /* UITableView+WoolyUIKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+WoolyUIKit.m"; sourceTree = "<group>"; };
-		4C4BC4B315A1F91C00D160A6 /* WBGradientTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBGradientTableViewCell.h; sourceTree = "<group>"; };
-		4C4BC4B415A1F91C00D160A6 /* WBGradientTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBGradientTableViewCell.m; sourceTree = "<group>"; };
-		4C7F0804144BE7AD0053363C /* WBTableConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBTableConfiguration.h; sourceTree = "<group>"; };
-		4C7F0805144BE7AD0053363C /* WBTableConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBTableConfiguration.m; sourceTree = "<group>"; };
-		4C7F0808144BE7AD0053363C /* WBTableViewCellHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBTableViewCellHandler.h; sourceTree = "<group>"; };
-		4C7F0809144BE7AD0053363C /* WBTableViewCellHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBTableViewCellHandler.m; sourceTree = "<group>"; };
-		4C7F080C144BE7AD0053363C /* WBTableViewSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBTableViewSectionHeaderView.h; sourceTree = "<group>"; };
-		4C7F080D144BE7AD0053363C /* WBTableViewSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBTableViewSectionHeaderView.m; sourceTree = "<group>"; };
-		4C850D1815B1CB3400D99721 /* WBAlertViewCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBAlertViewCoordinator.h; sourceTree = "<group>"; };
-		4C850D1915B1CB3400D99721 /* WBAlertViewCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBAlertViewCoordinator.m; sourceTree = "<group>"; };
-		4C9581B01336F71C00E0873C /* WBNetworkActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBNetworkActivity.h; sourceTree = "<group>"; };
-		4C9581B11336F71C00E0873C /* WBNetworkActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBNetworkActivity.m; sourceTree = "<group>"; };
 		4CA1A11414286A62003458B0 /* UISplitViewController+WoolyUIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISplitViewController+WoolyUIKit.h"; sourceTree = "<group>"; };
 		4CA1A11514286A62003458B0 /* UISplitViewController+WoolyUIKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISplitViewController+WoolyUIKit.m"; sourceTree = "<group>"; };
 		4CA34E1A14CC014B00428088 /* UIBarButtonItem+WoolyUIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+WoolyUIKit.h"; sourceTree = "<group>"; };
@@ -131,10 +100,6 @@
 		4CBA6E8713240AF90052CED7 /* GeometryExtras.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = GeometryExtras.c; sourceTree = "<group>"; };
 		4CBA6E8813240AF90052CED7 /* GeometryExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeometryExtras.h; sourceTree = "<group>"; };
 		4CBA6E8D13240B7B0052CED7 /* WoolyUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WoolyUI.h; sourceTree = "<group>"; };
-		4CBA6EA713240CA50052CED7 /* WBPopoverCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBPopoverCoordinator.h; sourceTree = "<group>"; };
-		4CBA6EA813240CA50052CED7 /* WBPopoverCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBPopoverCoordinator.m; sourceTree = "<group>"; };
-		4CBA6EAC13240CC00052CED7 /* WBActionSheetCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBActionSheetCoordinator.h; sourceTree = "<group>"; };
-		4CBA6EAD13240CC00052CED7 /* WBActionSheetCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBActionSheetCoordinator.m; sourceTree = "<group>"; };
 		4CD26506141AEF4200DAD9D5 /* UIViewController+WoolyUIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+WoolyUIKit.h"; sourceTree = "<group>"; };
 		4CD26507141AEF4200DAD9D5 /* UIViewController+WoolyUIKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+WoolyUIKit.m"; sourceTree = "<group>"; };
 		4CD51AFA134BA4BF00F7AC76 /* WoolyUITests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WoolyUITests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -204,12 +169,28 @@
 		08FB77AEFE84172EC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				4C850D1715B1CB1000D99721 /* Alert VIew Coordinator */,
-				4C7F07E7144BE6430053363C /* Table Support */,
-				4C9581AF1336F6DB00E0873C /* Network Activity */,
-				4CBA6EAB13240CAE0052CED7 /* Action Sheet Coordinator */,
-				4CBA6EA613240C880052CED7 /* Popover Coordinator */,
-				4CBA6EA513240C760052CED7 /* UIKit */,
+				4CBA6E0713240AB50052CED7 /* UIButton+WoolyUIKit.h */,
+				4CBA6E0813240AB50052CED7 /* UIButton+WoolyUIKit.m */,
+				4CBA6E0913240AB50052CED7 /* UIColor+WoolyUIKit.h */,
+				4CBA6E0A13240AB50052CED7 /* UIColor+WoolyUIKit.m */,
+				4CBA6E0D13240AB50052CED7 /* UIDevice+WoolyUIKit.h */,
+				4CBA6E0E13240AB50052CED7 /* UIDevice+WoolyUIKit.m */,
+				4CBA6E0F13240AB50052CED7 /* UIFont+WoolyUIKit.h */,
+				4CBA6E1013240AB50052CED7 /* UIFont+WoolyUIKit.m */,
+				4CBA6E1113240AB50052CED7 /* UIImage+WoolyUIKit.h */,
+				4CBA6E1213240AB50052CED7 /* UIImage+WoolyUIKit.m */,
+				4CBA6E1313240AB50052CED7 /* UITextField+WoolyUIKit.h */,
+				4CBA6E1413240AB50052CED7 /* UITextField+WoolyUIKit.m */,
+				4CBA6E1513240AB50052CED7 /* UIView+WoolyUIKit.h */,
+				4CBA6E1613240AB50052CED7 /* UIView+WoolyUIKit.m */,
+				4CD26506141AEF4200DAD9D5 /* UIViewController+WoolyUIKit.h */,
+				4CD26507141AEF4200DAD9D5 /* UIViewController+WoolyUIKit.m */,
+				4CA1A11414286A62003458B0 /* UISplitViewController+WoolyUIKit.h */,
+				4CA1A11514286A62003458B0 /* UISplitViewController+WoolyUIKit.m */,
+				4C3E9B6E144E1360001E42C0 /* UITableView+WoolyUIKit.h */,
+				4C3E9B6F144E1360001E42C0 /* UITableView+WoolyUIKit.m */,
+				4CA34E1A14CC014B00428088 /* UIBarButtonItem+WoolyUIKit.h */,
+				4CA34E1B14CC014B00428088 /* UIBarButtonItem+WoolyUIKit.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -244,86 +225,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4C7F07E7144BE6430053363C /* Table Support */ = {
-			isa = PBXGroup;
-			children = (
-				4C7F0804144BE7AD0053363C /* WBTableConfiguration.h */,
-				4C7F0805144BE7AD0053363C /* WBTableConfiguration.m */,
-				4C7F0808144BE7AD0053363C /* WBTableViewCellHandler.h */,
-				4C7F0809144BE7AD0053363C /* WBTableViewCellHandler.m */,
-				4C7F080C144BE7AD0053363C /* WBTableViewSectionHeaderView.h */,
-				4C7F080D144BE7AD0053363C /* WBTableViewSectionHeaderView.m */,
-				4C4BC4B315A1F91C00D160A6 /* WBGradientTableViewCell.h */,
-				4C4BC4B415A1F91C00D160A6 /* WBGradientTableViewCell.m */,
-			);
-			name = "Table Support";
-			sourceTree = "<group>";
-		};
-		4C850D1715B1CB1000D99721 /* Alert VIew Coordinator */ = {
-			isa = PBXGroup;
-			children = (
-				4C850D1815B1CB3400D99721 /* WBAlertViewCoordinator.h */,
-				4C850D1915B1CB3400D99721 /* WBAlertViewCoordinator.m */,
-			);
-			name = "Alert VIew Coordinator";
-			sourceTree = "<group>";
-		};
-		4C9581AF1336F6DB00E0873C /* Network Activity */ = {
-			isa = PBXGroup;
-			children = (
-				4C9581B01336F71C00E0873C /* WBNetworkActivity.h */,
-				4C9581B11336F71C00E0873C /* WBNetworkActivity.m */,
-			);
-			name = "Network Activity";
-			sourceTree = "<group>";
-		};
-		4CBA6EA513240C760052CED7 /* UIKit */ = {
-			isa = PBXGroup;
-			children = (
-				4CBA6E0713240AB50052CED7 /* UIButton+WoolyUIKit.h */,
-				4CBA6E0813240AB50052CED7 /* UIButton+WoolyUIKit.m */,
-				4CBA6E0913240AB50052CED7 /* UIColor+WoolyUIKit.h */,
-				4CBA6E0A13240AB50052CED7 /* UIColor+WoolyUIKit.m */,
-				4CBA6E0D13240AB50052CED7 /* UIDevice+WoolyUIKit.h */,
-				4CBA6E0E13240AB50052CED7 /* UIDevice+WoolyUIKit.m */,
-				4CBA6E0F13240AB50052CED7 /* UIFont+WoolyUIKit.h */,
-				4CBA6E1013240AB50052CED7 /* UIFont+WoolyUIKit.m */,
-				4CBA6E1113240AB50052CED7 /* UIImage+WoolyUIKit.h */,
-				4CBA6E1213240AB50052CED7 /* UIImage+WoolyUIKit.m */,
-				4CBA6E1313240AB50052CED7 /* UITextField+WoolyUIKit.h */,
-				4CBA6E1413240AB50052CED7 /* UITextField+WoolyUIKit.m */,
-				4CBA6E1513240AB50052CED7 /* UIView+WoolyUIKit.h */,
-				4CBA6E1613240AB50052CED7 /* UIView+WoolyUIKit.m */,
-				4CD26506141AEF4200DAD9D5 /* UIViewController+WoolyUIKit.h */,
-				4CD26507141AEF4200DAD9D5 /* UIViewController+WoolyUIKit.m */,
-				4CA1A11414286A62003458B0 /* UISplitViewController+WoolyUIKit.h */,
-				4CA1A11514286A62003458B0 /* UISplitViewController+WoolyUIKit.m */,
-				4C3E9B6E144E1360001E42C0 /* UITableView+WoolyUIKit.h */,
-				4C3E9B6F144E1360001E42C0 /* UITableView+WoolyUIKit.m */,
-				4CA34E1A14CC014B00428088 /* UIBarButtonItem+WoolyUIKit.h */,
-				4CA34E1B14CC014B00428088 /* UIBarButtonItem+WoolyUIKit.m */,
-			);
-			name = UIKit;
-			sourceTree = "<group>";
-		};
-		4CBA6EA613240C880052CED7 /* Popover Coordinator */ = {
-			isa = PBXGroup;
-			children = (
-				4CBA6EA713240CA50052CED7 /* WBPopoverCoordinator.h */,
-				4CBA6EA813240CA50052CED7 /* WBPopoverCoordinator.m */,
-			);
-			name = "Popover Coordinator";
-			sourceTree = "<group>";
-		};
-		4CBA6EAB13240CAE0052CED7 /* Action Sheet Coordinator */ = {
-			isa = PBXGroup;
-			children = (
-				4CBA6EAC13240CC00052CED7 /* WBActionSheetCoordinator.h */,
-				4CBA6EAD13240CC00052CED7 /* WBActionSheetCoordinator.m */,
-			);
-			name = "Action Sheet Coordinator";
-			sourceTree = "<group>";
-		};
 		4CD51B05134BAC1100F7AC76 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -352,16 +253,8 @@
 				4CBA6E8A13240AF90052CED7 /* MathUtils.h in Headers */,
 				4CBA6E8C13240AF90052CED7 /* GeometryExtras.h in Headers */,
 				4CBA6E8E13240B7B0052CED7 /* WoolyUI.h in Headers */,
-				4CBA6EA913240CA50052CED7 /* WBPopoverCoordinator.h in Headers */,
-				4CBA6EAE13240CC00052CED7 /* WBActionSheetCoordinator.h in Headers */,
-				4C9581B21336F71C00E0873C /* WBNetworkActivity.h in Headers */,
 				4CD26508141AEF4200DAD9D5 /* UIViewController+WoolyUIKit.h in Headers */,
-				4C7F0814144BE7AD0053363C /* WBTableConfiguration.h in Headers */,
-				4C7F081A144BE7AD0053363C /* WBTableViewCellHandler.h in Headers */,
-				4C7F0820144BE7AD0053363C /* WBTableViewSectionHeaderView.h in Headers */,
 				4CA34E1C14CC014B00428088 /* UIBarButtonItem+WoolyUIKit.h in Headers */,
-				4C4BC4B515A1F91C00D160A6 /* WBGradientTableViewCell.h in Headers */,
-				4C850D1A15B1CB3400D99721 /* WBAlertViewCoordinator.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,10 +387,7 @@
 				4CD51BD6134BB76F00F7AC76 /* GeometryExtrasTests.m in Sources */,
 				4CD2650A141AEF4200DAD9D5 /* UIViewController+WoolyUIKit.m in Sources */,
 				4CA1A11614286A62003458B0 /* UISplitViewController+WoolyUIKit.m in Sources */,
-				4C7F0816144BE7AD0053363C /* WBTableConfiguration.m in Sources */,
-				4C7F081C144BE7AD0053363C /* WBTableViewCellHandler.m in Sources */,
 				4C3E9B70144E1360001E42C0 /* UITableView+WoolyUIKit.m in Sources */,
-				4CF0EE191730685A0012CED5 /* WBTableViewSectionHeaderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,16 +405,8 @@
 				4CBA6E2913240AB50052CED7 /* UIView+WoolyUIKit.m in Sources */,
 				4CBA6E8913240AF90052CED7 /* MathUtils.c in Sources */,
 				4CBA6E8B13240AF90052CED7 /* GeometryExtras.c in Sources */,
-				4CBA6EAA13240CA50052CED7 /* WBPopoverCoordinator.m in Sources */,
-				4CBA6EAF13240CC00052CED7 /* WBActionSheetCoordinator.m in Sources */,
-				4C9581B31336F71C00E0873C /* WBNetworkActivity.m in Sources */,
 				4CD26509141AEF4200DAD9D5 /* UIViewController+WoolyUIKit.m in Sources */,
 				4CA34E1D14CC014B00428088 /* UIBarButtonItem+WoolyUIKit.m in Sources */,
-				4C4BC4B615A1F91C00D160A6 /* WBGradientTableViewCell.m in Sources */,
-				4C850D1B15B1CB3400D99721 /* WBAlertViewCoordinator.m in Sources */,
-				4CF0EE15173068550012CED5 /* WBTableConfiguration.m in Sources */,
-				4CF0EE16173068550012CED5 /* WBTableViewCellHandler.m in Sources */,
-				4CF0EE17173068550012CED5 /* WBTableViewSectionHeaderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
