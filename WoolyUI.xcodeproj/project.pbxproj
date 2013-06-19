@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C1A3248176FB3710092D76B /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C1A3247176FB3710092D76B /* SenTestingKit.framework */; };
 		4C3E9B70144E1360001E42C0 /* UITableView+WoolyUIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3E9B6F144E1360001E42C0 /* UITableView+WoolyUIKit.m */; };
 		4C44CF091710E6AD00E379BB /* libWoolyFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C23DCC61710E4C20081FB2F /* libWoolyFoundation.a */; };
 		4CA1A11614286A62003458B0 /* UISplitViewController+WoolyUIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA1A11514286A62003458B0 /* UISplitViewController+WoolyUIKit.m */; };
@@ -73,6 +74,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C1A3247176FB3710092D76B /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		4C23DCC01710E4C10081FB2F /* WoolyFoundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WoolyFoundation.xcodeproj; path = ../WoolyFoundation/WoolyFoundation.xcodeproj; sourceTree = "<group>"; };
 		4C3E9B6E144E1360001E42C0 /* UITableView+WoolyUIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+WoolyUIKit.h"; sourceTree = "<group>"; };
 		4C3E9B6F144E1360001E42C0 /* UITableView+WoolyUIKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+WoolyUIKit.m"; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C1A3248176FB3710092D76B /* SenTestingKit.framework in Frameworks */,
 				4CD51B96134BB3EE00F7AC76 /* UIKit.framework in Frameworks */,
 				4CD51B9B134BB41700F7AC76 /* CoreGraphics.framework in Frameworks */,
 			);
@@ -146,6 +149,7 @@
 		0867D691FE84028FC02AAC07 /* WoolyUI */ = {
 			isa = PBXGroup;
 			children = (
+				4C1A3247176FB3710092D76B /* SenTestingKit.framework */,
 				4CD51B05134BAC1100F7AC76 /* Tests */,
 				08FB77AEFE84172EC02AAC07 /* Classes */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
