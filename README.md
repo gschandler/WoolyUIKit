@@ -8,6 +8,8 @@ quite sparse.
 
 Best if used in conjunction with WoolyFoundation, but not required.
 
+Please note that none of the category method signatures have been prefixed, so it is possible for a future naming collision if Apple should choose to implement a similar method in UIKit. I will fix this at some point.
+
 Installation
 ------------
 1. Add WoolyUI.xcodeproj to your current project.
